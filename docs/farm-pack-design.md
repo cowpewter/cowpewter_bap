@@ -587,6 +587,8 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       `~/cowpewter-bap-clean.mrpack`. Exit code 0 and no `PROBLEMS` block.
       Read the "dropped overrides" list for anything that *should* ship.
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
+      Draft page copy: `docs/modrinth-description.md` (summary in the header
+      comment). Update it when features change.
 - [ ] Pack name everywhere it shows. The export is still named
       `cowpewter-bap` / `0.0.1-alpha`:
       - Prism export dialog: name **Seed & Stock**, version e.g. `1.0.0`
