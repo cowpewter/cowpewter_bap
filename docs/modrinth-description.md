@@ -33,7 +33,7 @@ Nature doesn't pick the winners on this farm. You do.
 > **Farm** → **Sell** → **Buy livestock** → **Breed** → **Farm more**
 
 - **Everything you earn comes from the farm.** Drop produce into the **Selling Bin** and it pays out in emeralds. Raw crops keep you going, animal products pay better, and cooked meals are where the real money is.
-- **New animals come from the Wandering Trader.** He's the pack's livestock dealer, and every visit brings a different selection. Hunt him down for the animal you've been waiting for.
+- **Round up wild animals, then buy the rest.** Cows, sheep, pigs and chickens roam as usual. The **Wandering Trader** sells what the wild doesn't: animals from far-off biomes, rare breeds, and the exact animal you've been waiting for. Every visit brings a different selection.
 - **Breed for better stock.** Every animal carries genes. Pair them carefully and each generation can outdo the last.
 
 ## 🐄 Animals worth caring about

@@ -191,8 +191,9 @@ section says otherwise. The pack has not had a real playtest — remaining
 unknowns are mostly about feel and pacing, not function.
 
 **Doc audit 2026-09-14** — checked against the actual files. Fixed:
-- `gamerules.js` had `doTraderSpawning: false`, which would have killed the only
-  livestock source on any fresh world. The test world escaped because its rules
+- `gamerules.js` had `doTraderSpawning: false`, which would have switched off the
+  wandering trader — the emerald sink and only source of rare stock — on any
+  fresh world. The test world escaped because its rules
   were applied before that line existed. Now `true`.
 - Wolf trade was documented but missing from `wanderer_trades.js`. Added (20–28).
 - `zz_recipe_probe.js` debug script deleted (it made KubeJS report 5/5).
@@ -224,8 +225,16 @@ Three systems interlock:
                  (selling bin)      (wandering trader)
 ```
 
-Nothing else generates emeralds. Nothing else supplies animals. That's
-deliberate — a single faucet and a single sink means the numbers are yours.
+Nothing else generates emeralds, and the trader is the only thing worth spending
+them on. That's deliberate — a single faucet and a single sink means the numbers
+are yours.
+
+**Animals come from two places.** Passive mobs spawn normally (In Control! only
+denies hostiles), so a new player can round up wild cows, sheep, pigs and
+chickens for a first herd. The trader supplies what the wild doesn't: species
+from biomes you haven't found, rare and top-tier stock (mooshroom, panda,
+axolotl, sniffer, allay), and a way to buy a specific animal instead of hunting
+for it. Confirmed 2026-09-14.
 
 **Two reward channels, two different verbs.** The bin rewards *volume* — it pays
 per item and can't see quality, because produce carries no genetic data. Quests
@@ -267,7 +276,8 @@ The In Control! side is a single rule in `config/incontrol/spawn.json`:
 
 **`doTraderSpawning` must stay `true`.** It sits right next to the patrol rule
 and looks like it belongs with the spawns being switched off, but the wandering
-trader is the pack's only livestock source. It was briefly `false` by mistake.
+trader is the emerald sink and the only source of rare stock. It was briefly
+`false` by mistake.
 
 **Gamerules apply once per world.** The script sets a `packGamerulesApplied`
 flag in persistent data and skips on later loads, so editing `gamerules.js` does
@@ -367,10 +377,9 @@ doesn't bring him sooner — with one-player sleep on, he feels like one per 4�
 mornings. A fresh world's `level.dat` shows `WanderingTraderSpawnDelay 24000`,
 `WanderingTraderSpawnChance 25`.
 
-A player hunting one *specific* common animal waits ~3 traders (~2+ hours).
-Wild passive mobs still spawn in the start biomes (In Control! only denies
-hostiles), so the trader may matter less for the first herd than for
-uncommon/rare stock. Further fixes deferred to playtest — see Open Questions.
+A player hunting one *specific* common animal waits ~3 traders (~2+ hours) —
+but common animals also spawn wild, so the first herd doesn't wait on him. His
+spawn rate matters most for uncommon, rare and top-tier stock. Further fixes deferred to playtest — see Open Questions.
 
 **Prices above 64 emeralds are clamped** by the stack limit — a payment slot is
 one ItemStack. Sniffer and allay bill in emerald blocks to get above it.
@@ -894,18 +903,18 @@ Break these and something becomes a money loop:
 - **Does early game work?** Spawn guarantees terrain and animals, and the
   pre-iron tier (flint knife, copper shears and bucket) means no mining detour,
   but a new player still has no emeralds until the first harvest sells.
-- **Wandering trader spawn rate is load-bearing.** Vanilla averages ~2.2
-  in-game days between traders (§3). Pool split done 2026-09-14; the rest waits
-  on playtest. Watch: do wild animals carry the first herd? Do uncommon/rare
-  tiers feel reachable? If not, options in order of effort:
+- **Is the wandering trader's spawn rate right?** Vanilla averages ~2.2
+  in-game days between traders (§3). Wild animals cover the first herd, so this
+  is about the uncommon/rare tiers and giving emeralds something to buy. Pool
+  split done 2026-09-14; the rest waits on playtest. Watch: do uncommon/rare
+  tiers feel reachable? Do players sit on unspent emeralds? If not, options in order of effort:
   - *Scripted spawns* (KubeJS): guaranteed trader around day 2–3, then every
     N days near a player. Simple, tunable, invisible to the player.
   - *Summon him* (KubeJS + block/item + quest): e.g. ring a market bell, he
     arrives next morning, multi-day cooldown. Turns his arrival into a player
     choice — fits farm → sell → buy best. Most work.
-- **"Nothing else supplies animals" may be false.** Start biomes still spawn
-  wild cows, sheep, pigs and chickens. Confirm at playtest and reword §Core
-  premise if so.
+- ~~"Nothing else supplies animals" may be false~~ — confirmed false
+  2026-09-14: passive animals spawn normally. Core premise and §3 reworded.
 - ~~Nothing teaches any of this~~ — resolved. 24 quests across 5 chapters cover
   no-combat, JEI, the pre-iron tier, the care system, the bin, cooking and
   storage. Untested for pacing.
