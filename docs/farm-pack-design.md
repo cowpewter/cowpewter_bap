@@ -581,10 +581,17 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 
 ### Before exporting a release
 
-- [ ] `config/iris.properties`: `enableShaders=false`,
+**0.1.0-alpha (2026-09-14):** exported as `~/Seed & Stock.mrpack`, cleaned to
+`~/Seed & Stock-clean.mrpack` (0.3 MB, 173 downloads), imported fresh and a
+world created: 5/5 server scripts, all `[cowpewter_bap]` lines, 24 quests /
+5 chapters, 15 gamerules, no registry or data map errors, windowed, icon and
+crash-screen config correct. Re-tick the boxes below for each new release.
+
+
+- [x] `config/iris.properties`: `enableShaders=false`,
       `shaderPack=ComplementaryReimagined_r5.9.1.zip`.
-- [ ] Prism → Export → Modrinth with defaults, to `~/cowpewter-bap.mrpack`.
-- [ ] `python3 tools/clean_mrpack.py ~/cowpewter-bap.mrpack` → uploads
+- [x] Prism → Export → Modrinth with defaults, to `~/cowpewter-bap.mrpack`.
+- [x] `python3 tools/clean_mrpack.py ~/cowpewter-bap.mrpack` → uploads
       `~/cowpewter-bap-clean.mrpack`. Exit code 0 and no `PROBLEMS` block.
       Read the "dropped overrides" list for anything that *should* ship.
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
