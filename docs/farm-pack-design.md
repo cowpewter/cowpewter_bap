@@ -585,7 +585,10 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 `~/Seed & Stock-clean.mrpack` (0.3 MB, 173 downloads), imported fresh and a
 world created: 5/5 server scripts, all `[cowpewter_bap]` lines, 24 quests /
 5 chapters, 15 gamerules, no registry or data map errors, windowed, icon and
-crash-screen config correct. Re-tick the boxes below for each new release.
+crash-screen config correct. Uploaded to Modrinth as an Alpha version with environment **Singleplayer
+only** — the pack's gameplay is server-side data, and the export marks client-only
+mods (Sodium, Iris, Xaero, shaders) as required on servers too, so a dedicated
+server install would crash. Re-tick the boxes below for each new release.
 
 
 - [x] `config/iris.properties`: `enableShaders=false`,
