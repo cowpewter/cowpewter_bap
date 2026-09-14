@@ -38,9 +38,35 @@ DENY = [
 # Only these shader packs may be referenced (license: see docs §5b).
 ALLOWED_SHADERS = {"shaderpacks/ComplementaryReimagined_r5.9.1.zip"}
 
+# Dev-machine settings rewritten to player defaults at export, so the dev
+# instance can keep its own. {override path: [(toml section, key, value)]}.
+# A patch whose section/key isn't found is reported as a PROBLEM.
+TOML_PATCHES = {
+    "config/chloride-client.toml": [
+        ("fullscreen", "mode", '"WINDOWED"'),   # dev Deck boots fullscreen
+        ("fpsDisplay", "mode", '"OFF"'),        # dev FPS overlay
+    ],
+}
+
 
 def matches(path, patterns):
     return any(fnmatch.fnmatchcase(path, p) for p in patterns)
+
+
+def patch_toml(text, section, key, value):
+    """Set `key = value` inside [section]. Returns (text, found)."""
+    out, current, found = [], None, False
+    for line in text.split("\n"):
+        s = line.strip()
+        if s.startswith("[") and s.endswith("]"):
+            current = s[1:-1].strip()
+        elif (current == section and not found and "=" in s
+              and s.split("=", 1)[0].strip() == key):
+            indent = line[:len(line) - len(line.lstrip())]
+            line = f"{indent}{key} = {value}"
+            found = True
+        out.append(line)
+    return "\n".join(out), found
 
 
 def main():
@@ -94,7 +120,17 @@ def main():
             if matches(rel, ALLOW) and not matches(rel, DENY):
                 if rel.endswith(".jar"):
                     problems.append(f"jar in overrides: {rel}")
-                zout.writestr(info, zin.read(name))
+                data = zin.read(name)
+                if rel in TOML_PATCHES:
+                    text = data.decode("utf-8")
+                    for section, key, value in TOML_PATCHES[rel]:
+                        text, found = patch_toml(text, section, key, value)
+                        if found:
+                            print(f"  patched: {rel} [{section}] {key} = {value}")
+                        else:
+                            problems.append(f"patch target missing: {rel} [{section}] {key}")
+                    data = text.encode("utf-8")
+                zout.writestr(info, data)
                 kept += 1
             else:
                 dropped[rel.split("/")[0] if "/" in rel else rel] += 1

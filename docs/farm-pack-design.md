@@ -525,6 +525,20 @@ modified.
 New mods that write files to `minecraft/` are excluded by default — if
 something needs to ship, add it to `ALLOW` in the script.
 
+**Export-time patches (`TOML_PATCHES`).** Some shipped configs hold dev-machine
+preferences. Rather than change the dev instance, the script rewrites them in
+the pack only, and reports a PROBLEM if a target key disappears:
+
+| File | Setting | Dev | Shipped |
+|---|---|---|---|
+| `config/chloride-client.toml` | `[fullscreen] mode` | FULLSCREEN | WINDOWED |
+| `config/chloride-client.toml` | `[fpsDisplay] mode` | ADVANCED | OFF |
+
+Found by the first import test: Chloride applies its window mode at boot, so
+every player started fullscreen (the `options.txt` `fullscreen` line doesn't
+matter — Chloride overrides it). When a fresh import looks wrong, suspect a
+shipped config before `options.txt`.
+
 **`tools/release/options.txt`** is the shipped options file: only `version`,
 `resourcePacks` and `incompatibleResourcePacks` (Comforts Modernized is flagged
 incompatible but works — without that line Minecraft silently disables it).
@@ -563,6 +577,8 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       mods, 8 resource packs, Reimagined present with shaders off, all binds
       applied. Remaining shared keys are all menu-vs-world (A, R, T, U, `]`)
       or creative-only (C). Title screen only — not yet loaded into a world.
+      That import booted fullscreen (Chloride config); fixed by export-time
+      patch, re-import to confirm.
 
 ---
 
