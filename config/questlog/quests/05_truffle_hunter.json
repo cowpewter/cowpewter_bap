@@ -1,0 +1,35 @@
+{
+  "title": "Truffle Hunter",
+  "description": "A well-kept pig will root for truffles given suitable ground.\n\nThey fetch a fine price — pigs earn their keep without ever going to the block.",
+  "description_completed": "Worth more than the pig that found it.",
+  "icon": {
+    "item": "animalhusbandry:truffle"
+  },
+  "sort_order": 5,
+  "requirements": [
+    {
+      "type": "questlog:entity_breed",
+      "entity": "minecraft:pig"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "animalhusbandry:truffle",
+      "required_amount": 1,
+      "name": "Obtain a truffle"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:emerald",
+      "count": 4
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 15
+    }
+  ],
+  "chapter": "questlog:farm"
+}

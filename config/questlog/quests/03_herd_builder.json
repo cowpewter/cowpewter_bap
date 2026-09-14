@@ -1,0 +1,35 @@
+{
+  "title": "The Growing Herd",
+  "description": "Scale up. A serious operation is measured in dozens, not pairs.",
+  "description_completed": "Fifty head. The neighbours are talking.",
+  "icon": {
+    "item": "minecraft:hay_block"
+  },
+  "sort_order": 3,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:02_four_species"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:stat",
+      "stat": "minecraft:animals_bred",
+      "required_amount": 50,
+      "name": "Breed 50 animals"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:emerald_block",
+      "count": 2
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 50
+    }
+  ],
+  "chapter": "questlog:farm"
+}

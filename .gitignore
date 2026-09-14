@@ -1,0 +1,12 @@
+# Track only the pack's authored content: kubejs/ and config/.
+# Everything else in minecraft/ (mods, saves, logs, caches) is ignored.
+/*
+!/.gitignore
+!/kubejs/
+!/config/
+
+# Generated password for Resourceful Config's (disabled) web editor
+/config/resourceful-config-web.json
+
+# Mod-written backups
+*_backup[0-9]*

@@ -1,0 +1,23 @@
+{
+  "title": "The Cutting Board",
+  "icon": {
+    "item": "farmersdelight:cutting_board"
+  },
+  "sort_order": 30,
+  "description": "Place a **Cutting Board**, put an item on it with right-click, then hit it with the right tool.\n\nA **knife** breaks food into parts — one chicken becomes two chicken cuts, one cow's worth of beef becomes minced beef. More portions from the same animal.\n\nAn **axe** strips logs. **Shears** cut wool into string — worth knowing, since nothing drops string in this pack.\n\n*Hover an item in JEI and press U to see if it can be cut.*",
+  "objectives": [
+    {
+      "type": "questlog:block_place",
+      "block": "farmersdelight:cutting_board",
+      "name": "Place a Cutting Board"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "requirements": [],
+  "chapter": "questlog:kitchen"
+}

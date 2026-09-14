@@ -1,0 +1,9 @@
+{
+  "name": "The Herd",
+  "icon": {
+    "item": "minecraft:cow_spawn_egg"
+  },
+  "order": 2,
+  "default_chapter": false,
+  "hidden": false
+}

@@ -1,0 +1,24 @@
+{
+  "maxSoundsPerRegion": 3,
+  "maxTotalPerRegion": 6,
+  "windowTicks": 20,
+  "regionSize": 16.0,
+  "limitHostile": 3,
+  "limitNeutral": 2,
+  "limitBlock": 5,
+  "limitAmbient": 4,
+  "limitDefault": 3,
+  "debugLogging": false,
+  "whitelistedSounds": [
+    "minecraft:entity.player.hurt",
+    "minecraft:entity.player.death",
+    "minecraft:entity.experience_orb.pickup",
+    "minecraft:entity.item.pickup",
+    "minecraft:block.note_block.harp",
+    "minecraft:entity.generic.explode",
+    "minecraft:entity.lightning_bolt.thunder",
+    "minecraft:entity.creeper.primed",
+    "minecraft:entity.tnt.primed"
+  ],
+  "enabledCategories": []
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Looking Things Up",
+  "icon": {
+    "item": "minecraft:book"
+  },
+  "sort_order": 11,
+  "description": "New to modded Minecraft? This is the single most useful thing to learn.\n\nThe item list down the right side of your inventory is **JEI**. It knows every recipe in the pack.\n\n**Hover an item and press R** — shows you how to make it.\n**Hover an item and press U** — shows you what it's used for.\n\nYou never need a wiki. If you're wondering how something is made, or what a strange item does, R and U will tell you.\n\nThere's a search box at the bottom too.",
+  "objectives": [
+    {
+      "type": "questlog:read"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 5,
+      "auto_claim": true
+    }
+  ],
+  "requirements": []
+}

@@ -1,0 +1,49 @@
+{
+  "title": "A Proper Farmyard",
+  "description": "A farm with one animal is a pet. Breed all four staples and you have livestock.",
+  "description_completed": "Cows, pigs, sheep, chickens. A farmyard worth the name.",
+  "icon": {
+    "item": "minecraft:cow_spawn_egg"
+  },
+  "sort_order": 2,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:01_first_breeding"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:entity_breed",
+      "entity": "minecraft:cow",
+      "name": "Breed cows"
+    },
+    {
+      "type": "questlog:entity_breed",
+      "entity": "minecraft:pig",
+      "name": "Breed pigs"
+    },
+    {
+      "type": "questlog:entity_breed",
+      "entity": "minecraft:sheep",
+      "name": "Breed sheep"
+    },
+    {
+      "type": "questlog:entity_breed",
+      "entity": "minecraft:chicken",
+      "name": "Breed chickens"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:emerald",
+      "count": 8
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 25
+    }
+  ],
+  "chapter": "questlog:farm"
+}

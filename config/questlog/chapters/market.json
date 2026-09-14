@@ -1,0 +1,9 @@
+{
+  "name": "The Market",
+  "icon": {
+    "item": "minecraft:emerald"
+  },
+  "order": 3,
+  "default_chapter": false,
+  "hidden": false
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Something on the Stove",
+  "icon": {
+    "item": "farmersdelight:cooking_pot"
+  },
+  "sort_order": 31,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:30_cutting_board"
+    }
+  ],
+  "description": "The **Cooking Pot** turns raw ingredients into meals. Set it on any heat source — campfire, stove, even a furnace — add ingredients, and wait.\n\nMost recipes need a container. Keep bowls handy.\n\nMeals are worth far more than their ingredients when sold. A beef stew beats selling the beef, the carrot and the potato separately — and meals made with meat and milk are worth more than vegetable ones.\n\nThis is the main way a farm turns into an income.",
+  "objectives": [
+    {
+      "type": "questlog:item_craft",
+      "item": "farmersdelight:cooking_pot",
+      "name": "Craft a Cooking Pot"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:bowl",
+      "count": 8
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 15
+    }
+  ],
+  "chapter": "questlog:kitchen"
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Welcome to the Farm",
+  "icon": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "sort_order": 10,
+  "show_popup_on_unlock": true,
+  "description": "This is a pack about raising animals and running a farm. A few things work differently from normal Minecraft.\n\n**Nothing will attack you.** Hostile mobs don't spawn. No creepers, no skeletons, no need to build walls or dig a bunker on night one.\n\n**You still get hungry.** Difficulty is Normal, not Peaceful — food still matters, and growing it is the point.\n\n**Emeralds come from selling farm goods**, not from villagers. There are no villages.\n\nThis journal will fill in as you go. Check it whenever the badge appears on your inventory screen.",
+  "description_completed": "Go raise something.",
+  "objectives": [
+    {
+      "type": "questlog:read"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:wheat_seeds",
+      "count": 8,
+      "auto_claim": true
+    }
+  ],
+  "requirements": []
+}

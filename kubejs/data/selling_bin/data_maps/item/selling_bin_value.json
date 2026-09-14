@@ -1,0 +1,528 @@
+{
+  "values": {
+    "#minecraft:wool": {
+      "base_value": 12,
+      "processors": []
+    },
+    "animalhusbandry:truffle": {
+      "base_value": 50,
+      "processors": []
+    },
+    "farmersdelight:apple_cider": {
+      "base_value": 48,
+      "processors": []
+    },
+    "farmersdelight:apple_pie": {
+      "base_value": 159,
+      "processors": []
+    },
+    "farmersdelight:bacon": {
+      "base_value": 7,
+      "processors": []
+    },
+    "farmersdelight:bacon_and_eggs": {
+      "base_value": 64.2,
+      "processors": []
+    },
+    "farmersdelight:bacon_sandwich": {
+      "base_value": 90.6,
+      "processors": []
+    },
+    "farmersdelight:baked_cod_stew": {
+      "base_value": 51,
+      "processors": []
+    },
+    "farmersdelight:barbecue_stick": {
+      "base_value": 36.3,
+      "processors": []
+    },
+    "farmersdelight:beef_patty": {
+      "base_value": 8.4,
+      "processors": []
+    },
+    "farmersdelight:beef_stew": {
+      "base_value": 39,
+      "processors": []
+    },
+    "farmersdelight:bone_broth": {
+      "base_value": 13.5,
+      "processors": []
+    },
+    "farmersdelight:cabbage": {
+      "base_value": 8,
+      "processors": []
+    },
+    "farmersdelight:cabbage_leaf": {
+      "base_value": 4,
+      "processors": []
+    },
+    "farmersdelight:cabbage_rolls": {
+      "base_value": 21,
+      "processors": []
+    },
+    "farmersdelight:chicken_cuts": {
+      "base_value": 6,
+      "processors": []
+    },
+    "farmersdelight:chicken_sandwich": {
+      "base_value": 85.8,
+      "processors": []
+    },
+    "farmersdelight:chicken_soup": {
+      "base_value": 42,
+      "processors": []
+    },
+    "farmersdelight:chocolate_pie": {
+      "base_value": 177,
+      "processors": []
+    },
+    "farmersdelight:cod_roll": {
+      "base_value": 14.2,
+      "processors": []
+    },
+    "farmersdelight:cod_slice": {
+      "base_value": 5,
+      "processors": []
+    },
+    "farmersdelight:cooked_bacon": {
+      "base_value": 8.4,
+      "processors": []
+    },
+    "farmersdelight:cooked_chicken_cuts": {
+      "base_value": 7.2,
+      "processors": []
+    },
+    "farmersdelight:cooked_cod_slice": {
+      "base_value": 6,
+      "processors": []
+    },
+    "farmersdelight:cooked_mutton_chops": {
+      "base_value": 7.2,
+      "processors": []
+    },
+    "farmersdelight:cooked_rice": {
+      "base_value": 9,
+      "processors": []
+    },
+    "farmersdelight:cooked_salmon_slice": {
+      "base_value": 7.2,
+      "processors": []
+    },
+    "farmersdelight:dog_food": {
+      "base_value": 34.5,
+      "processors": []
+    },
+    "farmersdelight:dumplings": {
+      "base_value": 24,
+      "processors": []
+    },
+    "farmersdelight:egg_sandwich": {
+      "base_value": 96,
+      "processors": []
+    },
+    "farmersdelight:fish_stew": {
+      "base_value": 63,
+      "processors": []
+    },
+    "farmersdelight:fried_egg": {
+      "base_value": 12,
+      "processors": []
+    },
+    "farmersdelight:fried_rice": {
+      "base_value": 45,
+      "processors": []
+    },
+    "farmersdelight:fruit_salad": {
+      "base_value": 55.5,
+      "processors": []
+    },
+    "farmersdelight:gleaming_salad_block": {
+      "base_value": 385.5,
+      "processors": []
+    },
+    "farmersdelight:glow_berry_custard": {
+      "base_value": 69,
+      "processors": []
+    },
+    "farmersdelight:grilled_salmon": {
+      "base_value": 46.8,
+      "processors": []
+    },
+    "farmersdelight:ham": {
+      "base_value": 14,
+      "processors": []
+    },
+    "farmersdelight:hamburger": {
+      "base_value": 102.6,
+      "processors": []
+    },
+    "farmersdelight:honey_cookie": {
+      "base_value": 9.6,
+      "processors": []
+    },
+    "farmersdelight:honey_glazed_ham_block": {
+      "base_value": 143.7,
+      "processors": []
+    },
+    "farmersdelight:hot_cocoa": {
+      "base_value": 63,
+      "processors": []
+    },
+    "farmersdelight:kelp_roll": {
+      "base_value": 54,
+      "processors": []
+    },
+    "farmersdelight:melon_popsicle": {
+      "base_value": 19.5,
+      "processors": []
+    },
+    "farmersdelight:milk_bottle": {
+      "base_value": 14,
+      "processors": []
+    },
+    "farmersdelight:minced_beef": {
+      "base_value": 7,
+      "processors": []
+    },
+    "farmersdelight:mixed_salad": {
+      "base_value": 33,
+      "processors": []
+    },
+    "farmersdelight:mushroom_rice": {
+      "base_value": 42,
+      "processors": []
+    },
+    "farmersdelight:mutton_chops": {
+      "base_value": 6,
+      "processors": []
+    },
+    "farmersdelight:mutton_wrap": {
+      "base_value": 78,
+      "processors": []
+    },
+    "farmersdelight:nether_salad": {
+      "base_value": 3,
+      "processors": []
+    },
+    "farmersdelight:noodle_soup": {
+      "base_value": 54,
+      "processors": []
+    },
+    "farmersdelight:onion": {
+      "base_value": 8,
+      "processors": []
+    },
+    "farmersdelight:onion_soup": {
+      "base_value": 105,
+      "processors": []
+    },
+    "farmersdelight:organic_compost": {
+      "base_value": 8,
+      "processors": []
+    },
+    "farmersdelight:pasta_with_meatballs": {
+      "base_value": 58.5,
+      "processors": []
+    },
+    "farmersdelight:pasta_with_mutton_chop": {
+      "base_value": 66,
+      "processors": []
+    },
+    "farmersdelight:pie_crust": {
+      "base_value": 30,
+      "processors": []
+    },
+    "farmersdelight:pumpkin_slice": {
+      "base_value": 5,
+      "processors": []
+    },
+    "farmersdelight:pumpkin_soup": {
+      "base_value": 55.5,
+      "processors": []
+    },
+    "farmersdelight:ratatouille": {
+      "base_value": 45,
+      "processors": []
+    },
+    "farmersdelight:raw_pasta": {
+      "base_value": 8,
+      "processors": []
+    },
+    "farmersdelight:rice": {
+      "base_value": 6,
+      "processors": []
+    },
+    "farmersdelight:rice_panicle": {
+      "base_value": 6,
+      "processors": []
+    },
+    "farmersdelight:rice_roll_medley_block": {
+      "base_value": 116.7,
+      "processors": []
+    },
+    "farmersdelight:roast_chicken_block": {
+      "base_value": 135,
+      "processors": []
+    },
+    "farmersdelight:roasted_mutton_chops": {
+      "base_value": 51.3,
+      "processors": []
+    },
+    "farmersdelight:salmon_roll": {
+      "base_value": 15.8,
+      "processors": []
+    },
+    "farmersdelight:salmon_slice": {
+      "base_value": 6,
+      "processors": []
+    },
+    "farmersdelight:shepherds_pie_block": {
+      "base_value": 48,
+      "processors": []
+    },
+    "farmersdelight:smoked_ham": {
+      "base_value": 16.8,
+      "processors": []
+    },
+    "farmersdelight:squid_ink_pasta": {
+      "base_value": 48,
+      "processors": []
+    },
+    "farmersdelight:steak_and_potatoes": {
+      "base_value": 58.5,
+      "processors": []
+    },
+    "farmersdelight:stuffed_potato": {
+      "base_value": 51,
+      "processors": []
+    },
+    "farmersdelight:stuffed_pumpkin_block": {
+      "base_value": 90,
+      "processors": []
+    },
+    "farmersdelight:sweet_berry_cheesecake": {
+      "base_value": 141,
+      "processors": []
+    },
+    "farmersdelight:sweet_berry_cookie": {
+      "base_value": 4.1,
+      "processors": []
+    },
+    "farmersdelight:tomato": {
+      "base_value": 8,
+      "processors": []
+    },
+    "farmersdelight:tomato_sauce": {
+      "base_value": 24,
+      "processors": []
+    },
+    "farmersdelight:tree_bark": {
+      "base_value": 3,
+      "processors": []
+    },
+    "farmersdelight:vegetable_noodles": {
+      "base_value": 48,
+      "processors": []
+    },
+    "farmersdelight:vegetable_soup": {
+      "base_value": 36,
+      "processors": []
+    },
+    "farmersdelight:wheat_dough": {
+      "base_value": 8,
+      "processors": []
+    },
+    "minecraft:apple": {
+      "base_value": 12,
+      "processors": []
+    },
+    "minecraft:beef": {
+      "base_value": 14,
+      "processors": []
+    },
+    "minecraft:beetroot": {
+      "base_value": 8,
+      "processors": []
+    },
+    "minecraft:beetroot_soup": {
+      "base_value": 39,
+      "processors": []
+    },
+    "minecraft:bread": {
+      "base_value": 40,
+      "processors": []
+    },
+    "minecraft:brown_mushroom": {
+      "base_value": 8,
+      "processors": []
+    },
+    "minecraft:cake": {
+      "base_value": 138,
+      "processors": []
+    },
+    "minecraft:carrot": {
+      "base_value": 6,
+      "processors": []
+    },
+    "minecraft:chicken": {
+      "base_value": 12,
+      "processors": []
+    },
+    "minecraft:cocoa_beans": {
+      "base_value": 10,
+      "processors": []
+    },
+    "minecraft:cooked_beef": {
+      "base_value": 20,
+      "processors": [
+        {
+          "type": "selling_bin:food_processor"
+        }
+      ]
+    },
+    "minecraft:cooked_chicken": {
+      "base_value": 18,
+      "processors": [
+        {
+          "type": "selling_bin:food_processor"
+        }
+      ]
+    },
+    "minecraft:cooked_mutton": {
+      "base_value": 18,
+      "processors": [
+        {
+          "type": "selling_bin:food_processor"
+        }
+      ]
+    },
+    "minecraft:cooked_porkchop": {
+      "base_value": 20,
+      "processors": [
+        {
+          "type": "selling_bin:food_processor"
+        }
+      ]
+    },
+    "minecraft:cooked_rabbit": {
+      "base_value": 20,
+      "processors": [
+        {
+          "type": "selling_bin:food_processor"
+        }
+      ]
+    },
+    "minecraft:cookie": {
+      "base_value": 15,
+      "processors": []
+    },
+    "minecraft:egg": {
+      "base_value": 10,
+      "processors": []
+    },
+    "minecraft:feather": {
+      "base_value": 6,
+      "processors": []
+    },
+    "minecraft:glow_berries": {
+      "base_value": 14,
+      "processors": []
+    },
+    "minecraft:golden_carrot": {
+      "base_value": 160,
+      "processors": []
+    },
+    "minecraft:hay_block": {
+      "base_value": 76,
+      "processors": []
+    },
+    "minecraft:honey_bottle": {
+      "base_value": 35,
+      "processors": []
+    },
+    "minecraft:honeycomb": {
+      "base_value": 25,
+      "processors": []
+    },
+    "minecraft:leather": {
+      "base_value": 20,
+      "processors": []
+    },
+    "minecraft:melon_slice": {
+      "base_value": 3,
+      "processors": []
+    },
+    "minecraft:milk_bucket": {
+      "base_value": 40,
+      "processors": []
+    },
+    "minecraft:mushroom_stew": {
+      "base_value": 27,
+      "processors": []
+    },
+    "minecraft:mutton": {
+      "base_value": 12,
+      "processors": []
+    },
+    "minecraft:pitcher_plant": {
+      "base_value": 90,
+      "processors": []
+    },
+    "minecraft:porkchop": {
+      "base_value": 14,
+      "processors": []
+    },
+    "minecraft:potato": {
+      "base_value": 6,
+      "processors": []
+    },
+    "minecraft:pumpkin": {
+      "base_value": 20,
+      "processors": []
+    },
+    "minecraft:pumpkin_pie": {
+      "base_value": 51,
+      "processors": []
+    },
+    "minecraft:rabbit": {
+      "base_value": 14,
+      "processors": []
+    },
+    "minecraft:rabbit_foot": {
+      "base_value": 70,
+      "processors": []
+    },
+    "minecraft:rabbit_hide": {
+      "base_value": 10,
+      "processors": []
+    },
+    "minecraft:rabbit_stew": {
+      "base_value": 54,
+      "processors": []
+    },
+    "minecraft:red_mushroom": {
+      "base_value": 8,
+      "processors": []
+    },
+    "minecraft:sugar": {
+      "base_value": 8,
+      "processors": []
+    },
+    "minecraft:sugar_cane": {
+      "base_value": 5,
+      "processors": []
+    },
+    "minecraft:sweet_berries": {
+      "base_value": 6,
+      "processors": []
+    },
+    "minecraft:torchflower": {
+      "base_value": 90,
+      "processors": []
+    },
+    "minecraft:wheat": {
+      "base_value": 8,
+      "processors": []
+    }
+  }
+}

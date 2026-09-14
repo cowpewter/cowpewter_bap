@@ -1,0 +1,9 @@
+{
+  "name": "Getting Started",
+  "icon": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "order": 1,
+  "default_chapter": true,
+  "hidden": false
+}

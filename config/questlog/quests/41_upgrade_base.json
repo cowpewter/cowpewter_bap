@@ -1,0 +1,34 @@
+{
+  "title": "Upgrade Slots",
+  "icon": {
+    "item": "sophisticatedbackpacks:upgrade_base"
+  },
+  "sort_order": 41,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:40_backpack"
+    }
+  ],
+  "description": "Backpacks have **upgrade slots** along the side. This is where the mod stops being a bigger inventory and starts being a tool.\n\nEvery upgrade is built on an **Upgrade Base**, so make a few.\n\nHigher backpack tiers have more slots. Copper is the first step up, and copper is easy to come by here.\n\n*Press U on an Upgrade Base to see everything it becomes.*",
+  "objectives": [
+    {
+      "type": "questlog:item_craft",
+      "item": "sophisticatedbackpacks:upgrade_base",
+      "required_amount": 2,
+      "name": "Craft 2 Upgrade Bases"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:copper_ingot",
+      "count": 12
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 15
+    }
+  ],
+  "chapter": "questlog:storage"
+}

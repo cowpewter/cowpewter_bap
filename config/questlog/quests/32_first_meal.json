@@ -1,0 +1,54 @@
+{
+  "title": "A Proper Meal",
+  "icon": {
+    "item": "farmersdelight:vegetable_soup"
+  },
+  "sort_order": 32,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:31_cooking_pot"
+    }
+  ],
+  "description": "Cook something. Anything.\n\nThen check its price — shift-hover any item to see what the selling bin pays for it. Compare the meal against what its ingredients were worth on their own.\n\nThat gap is the whole economy of this pack in one number.",
+  "objectives": [
+    {
+      "type": "questlog:or",
+      "name": "Cook any meal",
+      "objectives": [
+        {
+          "type": "questlog:item_obtain",
+          "item": "farmersdelight:vegetable_soup"
+        },
+        {
+          "type": "questlog:item_obtain",
+          "item": "farmersdelight:beef_stew"
+        },
+        {
+          "type": "questlog:item_obtain",
+          "item": "farmersdelight:chicken_soup"
+        },
+        {
+          "type": "questlog:item_obtain",
+          "item": "farmersdelight:cooked_rice"
+        },
+        {
+          "type": "questlog:item_obtain",
+          "item": "minecraft:mushroom_stew"
+        }
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:emerald",
+      "count": 6
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 20
+    }
+  ],
+  "chapter": "questlog:kitchen"
+}

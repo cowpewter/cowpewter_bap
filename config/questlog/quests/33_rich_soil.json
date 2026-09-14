@@ -1,0 +1,29 @@
+{
+  "title": "Better Ground",
+  "icon": {
+    "item": "farmersdelight:rich_soil"
+  },
+  "sort_order": 33,
+  "description": "**Organic Compost** is made from farm waste — rotten flesh, tree bark, straw, spare crops. Leave it beside dirt and it spreads, turning it into **Rich Soil**.\n\nCrops on rich soil grow noticeably faster, and it never needs re-tilling or hydrating the way farmland does.\n\nFor a farm selling by the stack, faster growth is the difference between scraping by and running a business.",
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:rich_soil",
+      "required_amount": 1,
+      "name": "Obtain Rich Soil"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "farmersdelight:organic_compost",
+      "count": 4
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 15
+    }
+  ],
+  "requirements": [],
+  "chapter": "questlog:kitchen"
+}

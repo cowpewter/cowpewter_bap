@@ -1,0 +1,5 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"minecraft:emerald_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"selling_bin:selling_bin"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

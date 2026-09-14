@@ -1,0 +1,33 @@
+{
+  "title": "Bloodline",
+  "description": "Each generation is counted. Breed your stock forward through five generations and the herd becomes genuinely yours — nothing in it was ever caught wild.",
+  "description_completed": "Five generations deep. A bloodline, not a collection.",
+  "icon": {
+    "item": "minecraft:lead"
+  },
+  "sort_order": 7,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:03_herd_builder"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:unobtainable",
+      "name": "Raise a 5th-generation animal"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:emerald_block",
+      "count": 3
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 75
+    }
+  ],
+  "chapter": "questlog:farm"
+}

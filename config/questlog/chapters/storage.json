@@ -1,0 +1,9 @@
+{
+  "name": "Hauling & Storage",
+  "icon": {
+    "item": "sophisticatedbackpacks:backpack"
+  },
+  "order": 5,
+  "default_chapter": false,
+  "hidden": false
+}

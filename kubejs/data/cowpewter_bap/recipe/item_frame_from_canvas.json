@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cowpewter_bap_item_frame",
+  "pattern": [
+    "SSS",
+    "SCS",
+    "SSS"
+  ],
+  "key": {
+    "S": { "item": "minecraft:stick" },
+    "C": { "item": "farmersdelight:canvas" }
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:item_frame"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "feather_falling": {
+    "//": [
+      "Boots with the feather falling enchantment at a level greater than or equal to  ",
+      "this value will not trample crops. Setting this to 0 will disable this feature. "
+    ],
+    "//range": ">=0",
+    "//default": 1,
+    "value": 1
+  },
+  "creative_mode": {
+    "//": "When enabled, players in creative mode can not trample crops.",
+    "//default": true,
+    "value": true
+  },
+  "barefoot": {
+    "//": "When enabled, players with no footwear will not trample crops.",
+    "//default": false,
+    "value": false
+  }
+}
