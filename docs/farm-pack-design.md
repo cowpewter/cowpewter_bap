@@ -600,6 +600,9 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       `https://github.com/cowpewter/seed-and-stock-issues/issues/new` with
       GitHub wording ("Report the issue on the Seed & Stock issue tracker").
       Created 2026-09-14; GitHub API confirms public, `has_issues: true`.
+      Has issue forms (`.github/ISSUE_TEMPLATE/`: crash report asking for the
+      Crash Assistant *Upload all* message, bug, feedback/balance; blank issues
+      off; labels `crash`/`bug`/`feedback`) and a README.
       - [ ] Set the Modrinth project's *Issues* link to the same repo.
       Without this, `help_link` was `CHANGE_ME`, which sends crashing players
       to the NeoForge Discord.
