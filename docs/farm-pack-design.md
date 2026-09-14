@@ -209,9 +209,13 @@ Wolf trade confirmed in a trader's stock at 24 emeralds.
 ## Core premise
 
 Animals and crops are the progression. You farm, you sell, you buy better
-animals, you farm more. Combat is removed entirely, but **hunger stays** — the
-game runs on Normal difficulty, not Peaceful, because hunger is what makes food
-production matter.
+animals, you farm more. Combat is removed entirely.
+
+**The economy is what makes food production matter, not hunger.** Produce is
+worth emeralds, cooked food is worth more than its ingredients, and emeralds
+buy livestock. Hunger is still on (Normal difficulty, §1) but it's a minor
+background concern: any working farm feeds the player many times over. Don't
+design around hunger pressure or pitch it to players.
 
 Three systems interlock:
 
@@ -232,9 +236,11 @@ the quest layer, selective breeding would be invisible to the economy.
 
 ## 1. Combat removal
 
-Difficulty stays **Normal** so hunger, natural regeneration costs, and food
-value all still work. Peaceful would have been simpler but removes the hunger
-loop, which is the point of a farming pack.
+Difficulty stays **Normal**, not Peaceful. Peaceful would have been simpler,
+but it turns hunger off entirely, and eating is part of the farm-life feel even
+if it's a minor concern (see Core premise). It also keeps vanilla food values
+and natural regeneration working as players expect. The pressure that drives
+production is the selling bin, not the hunger bar.
 
 | Layer | Mechanism |
 |---|---|
