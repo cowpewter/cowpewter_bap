@@ -571,14 +571,16 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       `~/cowpewter-bap-clean.mrpack`. Exit code 0 and no `PROBLEMS` block.
       Read the "dropped overrides" list for anything that *should* ship.
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
-- [ ] Import the `.mrpack` into a fresh Prism instance and launch once. Check
+- [x] Import the `.mrpack` into a fresh Prism instance and launch once. Check
       its `options.txt`: resource packs enabled, shipped binds applied, and no
       new in-game keybind clashes. Done for the 2026-09-14 alpha export: 164
       mods, 8 resource packs, Reimagined present with shaders off, all binds
       applied. Remaining shared keys are all menu-vs-world (A, R, T, U, `]`)
-      or creative-only (C). Title screen only — not yet loaded into a world.
-      That import booted fullscreen (Chloride config); fixed by export-time
-      patch, re-import to confirm.
+      or creative-only (C). That import booted fullscreen (Chloride config);
+      fixed by export-time patch. Re-import confirmed windowed, no FPS
+      overlay, and a world created from the download: 5/5 server scripts, all
+      `[cowpewter_bap]` lines, 24 quests / 5 chapters, `Applied 15 default
+      gamerules`, no registry or selling_bin data map errors.
 
 ---
 
