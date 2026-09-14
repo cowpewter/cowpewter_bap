@@ -637,7 +637,12 @@ crash-screen config correct. **That file contained the AI icon** — superseded 
 `~/Seed & Stock-noicon.mrpack` (identical except `overrides/icon.png` removed).
 That file was re-uploaded as 0.1.0-alpha (original version deleted), downloaded
 from Modrinth and imported into Prism: Modrinth-managed instance, 164 mods,
-no `icon.png`, default Prism icon. Uploaded to Modrinth as an Alpha version with environment **Singleplayer
+no `icon.png`, default Prism icon.
+**Submitted to Modrinth for review 2026-09-14**, requesting Unlisted, as a BAP
+entry. Disclosures: AI-generated content; external system interactions (Crash
+Assistant: separate process, Windows Event Log, browser, clipboard). Category:
+Quests. Environment: singleplayer only. License: MIT. No icon yet (must be
+human-made). Uploaded to Modrinth as an Alpha version with environment **Singleplayer
 only** — the pack's gameplay is server-side data, and the export marks client-only
 mods (Sodium, Iris, Xaero, shaders) as required on servers too, so a dedicated
 server install would crash. Re-tick the boxes below for each new release.
