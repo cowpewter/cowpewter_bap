@@ -13,7 +13,7 @@ Keep claims in sync with docs/farm-pack-design.md.
 
 **A cozy, combat-free farming and animal-breeding pack for Minecraft 1.21.1.**
 
-There are no monsters to fight and no swords to swing. Your days are spent tending a herd, planting fields, cooking what you grow, and selling the harvest to build something bigger. Hunger still matters, so food is always worth making. The rest is up to you and your animals.
+There are no monsters to fight and no swords to swing. Your days are spent tending a herd, planting fields, cooking what you grow, and selling the harvest to build something bigger. The rest is up to you and your animals.
 
 ---
 
