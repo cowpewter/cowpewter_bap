@@ -33,6 +33,8 @@ docs/
 tools/
   regenerate_prices.py          rebuilds Farmer's Delight bin prices (see below)
   fd_recipes/                   bundled FD recipe JSONs it reads
+  clean_mrpack.py               strips personal/local files from an export (§5b)
+  release/options.txt           options.txt shipped to players (§5b)
 
 shaderpacks/
   complementary-reimagined.pw.toml   Modrinth metadata for the shipped shader (§5b)
@@ -83,8 +85,10 @@ Git repo at `minecraft/` (branch `main`), pushed to
 `git@github.com:cowpewter/cowpewter_bap.git`. The Deck authenticates with
 `~/.ssh/id_ed25519` (no passphrase). `.gitignore` ignores
 everything except `docs/`, `tools/`, `kubejs/`, `config/` and the shipped shader's `.pw.toml`. Also excluded:
-`config/resourceful-config-web.json` (holds a generated web-editor password)
-and mod-written `*_backup1`-style files. Not tracked: mods, saves, logs.
+`config/resourceful-config-web.json` (holds a generated web-editor password),
+`kubejs/config/web_server.json` (KubeJS web server auth token — was committed
+before 2026-09-14, so it's in history), `config/jei/world/` (per-world lookup
+history) and mod-written `*_backup1`-style files. Not tracked: mods, saves, logs.
 
 After a change is verified in game: `git add -A && git commit -m "..." && git push`.
 Mods rewrite their own configs, so `git diff config/` after a launch can show
@@ -500,16 +504,41 @@ source. Toggling shaders or switching packs in game rewrites
 committing so a local preference doesn't ship. Shader *settings* live in
 `shaderpacks/<pack>.zip.txt`, untracked, so local tuning never ships.
 
+### Cleaning the export — `tools/clean_mrpack.py`
+
+Prism's Modrinth export puts everything in `minecraft/` into `overrides/`.
+The first export (2026-09-14) was 18.2 MB and shipped: `usercache.json` (dev
+username + UUID), `command_history.txt`, Xaero waypoints, SimpleBackups data
+for every test world, Crash Assistant's copied jars, mixin dumps, the dev's own
+`options.txt` (fullscreen, 30 FPS cap, inverted mouse), the Resourceful Config
+web password and the KubeJS web server auth token.
+
+The script rebuilds the pack with an **allowlist** of overrides (`config/`,
+`kubejs/`, `icon.png`) minus a deny list (web password, KubeJS token,
+`config/sounds/chat.json` whose mention keyword is the dev's username,
+per-world JEI history, `*_backup*`). It swaps in `tools/release/options.txt`,
+drops `.disabled` mods and any shader other than Reimagined from the index,
+and exits non-zero if it finds a jar in overrides or a non-Modrinth download.
+Clean result: 0.3 MB, 173 downloads, 317 override files. The input is never
+modified.
+
+New mods that write files to `minecraft/` are excluded by default — if
+something needs to ship, add it to `ALLOW` in the script.
+
+**`tools/release/options.txt`** is the shipped options file: only `version`,
+`resourcePacks` and `incompatibleResourcePacks` (Comforts Modernized is flagged
+incompatible but works — without that line Minecraft silently disables it).
+Everything else falls back to Minecraft's defaults. If a resource pack is added
+or reordered, copy the two pack lines from the dev `options.txt` into it.
+
 ### Before exporting a release
 
 - [ ] `config/iris.properties`: `enableShaders=false`,
       `shaderPack=ComplementaryReimagined_r5.9.1.zip`.
-- [ ] Prism → Export → Modrinth: **untick** `shaderpacks/Solas Shader…` and
-      `shaderpacks/ComplementaryUnbound…` (and their `.pw.toml`); keep
-      Reimagined. Also untick `saves/`, `logs/`, `docs/`, `tools/`, `.git`.
-- [ ] Open the `.mrpack` (it's a zip) and check `modrinth.index.json` lists
-      `shaderpacks/ComplementaryReimagined_r5.9.1.zip` as a download, and the
-      zip itself is **not** in `overrides/`.
+- [ ] Prism → Export → Modrinth with defaults, to `~/cowpewter-bap.mrpack`.
+- [ ] `python3 tools/clean_mrpack.py ~/cowpewter-bap.mrpack` → uploads
+      `~/cowpewter-bap-clean.mrpack`. Exit code 0 and no `PROBLEMS` block.
+      Read the "dropped overrides" list for anything that *should* ship.
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
 - [ ] Import the `.mrpack` into a fresh Prism instance and launch once.
 

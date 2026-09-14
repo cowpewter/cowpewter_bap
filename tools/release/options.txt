@@ -1,0 +1,3 @@
+version:3955
+resourcePacks:["vanilla","mod_resources","moonlight:merged_pack","file/Better-Leaves-9.5.zip","file/Comforts Modernized - V1.1.zip","file/FA+Player-v1.1.zip","file/Icon Xaero's 1.22.zip","file/RAYs_3D_Ladders_v2.2.zip","file/Simple Grass Flowers v2.0.0.zip","file/Theone's Eating Animation Pack v1.0.zip","mod/boatiview","file/FreshAnimations_v1.10.4.zip","vanillabackport:freshly_animated_legacy","vanillabackport:freshly_animated"]
+incompatibleResourcePacks:["file/Comforts Modernized - V1.1.zip"]

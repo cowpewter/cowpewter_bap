@@ -16,6 +16,10 @@ __pycache__/
 
 # Generated password for Resourceful Config's (disabled) web editor
 /config/resourceful-config-web.json
+# KubeJS web server auth token
+/kubejs/config/web_server.json
+# Per-world JEI lookup history (named after local test worlds)
+/config/jei/world/
 
 # Mod-written backups
 *_backup[0-9]*
