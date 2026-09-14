@@ -591,10 +591,17 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       `cowpewter-bap` / `0.0.1-alpha`:
       - Prism export dialog: name **Seed & Stock**, version e.g. `1.0.0`
       - Modrinth project title **Seed & Stock: Swords to Ploughshares**
-      - `config/crash_assistant/config.toml` `modpack_name` (currently
-        `"Minecraft"`, shown as "Oops, Minecraft crashed!")
-      - optional: `kubejs/config/client.json` `window_title` (currently empty)
       - optional: Getting Started quest text
+      - done 2026-09-14: crash screen `modpack_name = "Seed & Stock"`,
+        window title `Seed & Stock: Swords to Ploughshares`
+- [ ] **Create the public issues repo `cowpewter/seed-and-stock-issues`**
+      (exact name; Issues enabled). The main repo is private, so crash reports
+      go here. Crash Assistant already points at
+      `https://github.com/cowpewter/seed-and-stock-issues/issues/new` with
+      GitHub wording ("Report the issue on the Seed & Stock issue tracker").
+      Set the Modrinth project's *Issues* link to the same repo.
+      Without this, `help_link` was `CHANGE_ME`, which sends crashing players
+      to the NeoForge Discord.
 - [x] Import the `.mrpack` into a fresh Prism instance and launch once. Check
       its `options.txt`: resource packs enabled, shipped binds applied, and no
       new in-game keybind clashes. Done for the 2026-09-14 alpha export: 164
