@@ -8,6 +8,12 @@ __pycache__/
 !/kubejs/
 !/config/
 
+# Shipped shader: track only its Modrinth metadata (the zip is downloaded by
+# the .mrpack). Solas/Unbound are local-only.
+!/shaderpacks/
+/shaderpacks/*
+!/shaderpacks/complementary-reimagined.pw.toml
+
 # Generated password for Resourceful Config's (disabled) web editor
 /config/resourceful-config-web.json
 

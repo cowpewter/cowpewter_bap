@@ -34,6 +34,9 @@ tools/
   regenerate_prices.py          rebuilds Farmer's Delight bin prices (see below)
   fd_recipes/                   bundled FD recipe JSONs it reads
 
+shaderpacks/
+  complementary-reimagined.pw.toml   Modrinth metadata for the shipped shader (§5b)
+
 kubejs/server_scripts/
   gamerules.js                  15 gamerules, applies once per world (see §1)
   wanderer_trades.js            trader stock (needs MoreJS)
@@ -79,7 +82,7 @@ above. Everything in it now lives in the repo; the copies in the zip are stale.
 Git repo at `minecraft/` (branch `main`), pushed to
 `git@github.com:cowpewter/cowpewter_bap.git`. The Deck authenticates with
 `~/.ssh/id_ed25519` (no passphrase). `.gitignore` ignores
-everything except `docs/`, `tools/`, `kubejs/` and `config/`. Also excluded:
+everything except `docs/`, `tools/`, `kubejs/`, `config/` and the shipped shader's `.pw.toml`. Also excluded:
 `config/resourceful-config-web.json` (holds a generated web-editor password)
 and mod-written `*_backup1`-style files. Not tracked: mods, saves, logs.
 
@@ -465,6 +468,53 @@ Improved Village Placement removed alongside.
 
 ---
 
+## 5b. Shaders and release
+
+**Distribution: Modrinth `.mrpack`, exported from Prism.** Mods and the shader
+are referenced by Modrinth download URL (their `.pw.toml` metadata), never
+re-uploaded.
+
+**Shipped shader: Complementary Reimagined r5.9.1, off by default.**
+`config/iris.properties` has `shaderPack=ComplementaryReimagined_r5.9.1.zip`
+and `enableShaders=false`. Players turn it on with **K** or Video Settings →
+Shader Packs. Off because jam players are on unknown hardware — Solas at its
+HIGH defaults visibly chugged a Steam Deck.
+
+**Why Reimagined.** Its license (Complementary License Agreement 1.7, §1.2)
+explicitly allows modpack inclusion when: added through Modrinth/CurseForge's
+systems (not a file upload), contents unmodified, and problems are the pack
+author's responsibility. Visible credit on the pack page is required *if it's
+enabled by default* — it isn't, but credit it anyway. Lighter than Unbound.
+
+**Not shipped:**
+- *Solas* — Modrinth license is `LicenseRef-All-Rights-Reserved`, no modpack
+  permission stated. Would need Septonious's permission first.
+- *Complementary Unbound* — allowed, but heavier than Reimagined.
+
+Both stay installed locally. Git tracks only
+`shaderpacks/complementary-reimagined.pw.toml`.
+
+**Local vs shipped.** This instance is both the dev install and the release
+source. Toggling shaders or switching packs in game rewrites
+`config/iris.properties` — check `git diff config/iris.properties` before
+committing so a local preference doesn't ship. Shader *settings* live in
+`shaderpacks/<pack>.zip.txt`, untracked, so local tuning never ships.
+
+### Before exporting a release
+
+- [ ] `config/iris.properties`: `enableShaders=false`,
+      `shaderPack=ComplementaryReimagined_r5.9.1.zip`.
+- [ ] Prism → Export → Modrinth: **untick** `shaderpacks/Solas Shader…` and
+      `shaderpacks/ComplementaryUnbound…` (and their `.pw.toml`); keep
+      Reimagined. Also untick `saves/`, `logs/`, `docs/`, `tools/`, `.git`.
+- [ ] Open the `.mrpack` (it's a zip) and check `modrinth.index.json` lists
+      `shaderpacks/ComplementaryReimagined_r5.9.1.zip` as a download, and the
+      zip itself is **not** in `overrides/`.
+- [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
+- [ ] Import the `.mrpack` into a fresh Prism instance and launch once.
+
+---
+
 ## 6. Quests — Questlog
 
 **24 quests across 5 chapters.** Two jobs: teach the pack's custom systems to
@@ -788,6 +838,7 @@ redundant with KubeJS may not be.
 | Questlog | Quests, JSON-driven, `config/questlog/quests/` |
 | Farmer's Delight (canvas) | Leather substitute via `c:leathers` |
 | Animal Husbandry | Genetics, care, domestication — the pack's core loop |
+| Iris + Complementary Reimagined | Optional shaders, shipped off by default (§5b) |
 
 Installed but not yet discussed in this doc. Roles below are what the mods do,
 not decisions recorded here yet:
