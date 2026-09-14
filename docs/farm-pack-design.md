@@ -634,7 +634,10 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 world created: 5/5 server scripts, all `[cowpewter_bap]` lines, 24 quests /
 5 chapters, 15 gamerules, no registry or data map errors, windowed,
 crash-screen config correct. **That file contained the AI icon** — superseded by
-`~/Seed & Stock-noicon.mrpack` (identical except `overrides/icon.png` removed). Uploaded to Modrinth as an Alpha version with environment **Singleplayer
+`~/Seed & Stock-noicon.mrpack` (identical except `overrides/icon.png` removed).
+That file was re-uploaded as 0.1.0-alpha (original version deleted), downloaded
+from Modrinth and imported into Prism: Modrinth-managed instance, 164 mods,
+no `icon.png`, default Prism icon. Uploaded to Modrinth as an Alpha version with environment **Singleplayer
 only** — the pack's gameplay is server-side data, and the export marks client-only
 mods (Sodium, Iris, Xaero, shaders) as required on servers too, so a dedicated
 server install would crash. Re-tick the boxes below for each new release.
