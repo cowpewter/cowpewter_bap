@@ -590,9 +590,9 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
       Draft page copy: `docs/modrinth-description.md` (summary in the header
       comment). Update it when features change.
-- [ ] Modrinth project icon: `tools/icon/icon.png` (512px). The same image is the
+- [x] Modrinth project icon: `tools/icon/icon.png` (512px). The same image is the
       instance `icon.png`, which ships in the export and becomes the Prism
-      icon on import.
+      icon on import. Uploaded to Modrinth and set on the BAP instance 2026-09-14.
 - [ ] Modrinth license: **MIT** (chosen 2026-09-14). Covers the pack's own
       scripts, quests and configs only; the description says so. All 174
       referenced projects were checked — none constrain the pack's license.
