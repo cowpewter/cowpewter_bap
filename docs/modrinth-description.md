@@ -64,7 +64,7 @@ He also carries one hard-to-find supply each visit: a waystone, ender pearls, bl
 ## 🕊️ Swords to Ploughshares
 
 - **No hostile mobs.** No zombies, creepers, wardens, phantoms, raids or patrols.
-- **No swords.** They're gone from crafting and loot. A **knife** handles cobwebs, and an **axe** is the tool for culling livestock.
+- **No swords.** They're gone from crafting and loot. The **knife** took over their job: it cuts through cobwebs, and it's the best tool for culling livestock because it guarantees drops.
 - **No villages, pillager outposts or mansions.** The farm is the economy.
 - **Copper tools come first.** Make shears and buckets from copper and a knife from flint, so you can start farming without a trip underground.
 - **Leather-free storage.** Canvas made from straw stands in for leather in backpack recipes, so you never have to cull your breeding stock for a satchel.
