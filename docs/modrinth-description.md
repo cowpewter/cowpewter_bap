@@ -3,7 +3,7 @@ Modrinth page copy for Seed & Stock.
 
 Summary field (max 256 chars) — paste this into "Summary":
 
-A cozy, combat-free farming pack. Raise and selectively breed livestock, grow and cook crops, sell your harvest for emeralds, and buy new animals from the wandering trader. No swords, no monsters, just the farm.
+A cozy, combat-free farming pack about evolution by hand. Selectively breed livestock into better bloodlines, grow and cook crops, sell your harvest for emeralds, and buy new animals from the wandering trader. No swords, no monsters.
 
 Everything below the line goes in "Description".
 Keep claims in sync with docs/farm-pack-design.md.
@@ -16,6 +16,17 @@ Keep claims in sync with docs/farm-pack-design.md.
 There are no monsters to fight and no swords to swing. Your days are spent tending a herd, planting fields, cooking what you grow, and selling the harvest to build something bigger. Hunger still matters, so food is always worth making. The rest is up to you and your animals.
 
 ---
+
+## 🧬 Evolution, by hand
+
+*Made for the Big Autumn Packjam, theme: **Evolution**.*
+
+Nature doesn't pick the winners on this farm. You do.
+
+- **Every animal carries traits.** Yield, fertility, growth rate and constitution are inherited from its parents, and no two animals are quite alike.
+- **You choose who breeds.** Keep the best producers, pair them up, and each generation gets a little better than the last. Every birth adds a generation, so you can watch a bloodline grow.
+- **The farm evolves too.** Start with flint and copper, then build up to rich soil, full kitchens, a trading economy and rare animals bought with emerald blocks.
+- **Even the world has evolved.** The swords are gone, beaten into ploughshares. What's left is a life built around growing things.
 
 ## 🌾 The loop
 

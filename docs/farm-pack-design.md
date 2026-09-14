@@ -19,6 +19,40 @@ survives only in internal identifiers (namespace, instance name, repo name).
 Chosen 2026-09-14. Free as a Modrinth modpack title at the time; also checked
 against Greener Pastures, Good Stock, Heirloom, Clover & Kin/Fold/Sow.
 
+### Jam theme: Evolution
+
+BAP's theme is **Evolution**, and every submission must use it. Voters score
+the packs, so the theme has to be visible, not just implied.
+
+How Seed & Stock uses it:
+
+- **Selective breeding is evolution by hand (artificial selection).** Animal
+  Husbandry animals carry heritable, varying traits (`producYield`,
+  `fertility`, `growthRate`, `constitution`, `trait`), and `generation` counts
+  every birth. The player is the selection pressure. The quest layer (§7) makes
+  this visible: *Prize Stock* rewards a high-yield animal, *Bloodline* rewards
+  generation depth. This is the pack's core loop, so the theme is gameplay, not
+  decoration.
+- **The farm evolves:** flint and copper → rich soil and kitchens → a trading
+  economy → rare stock bought in emerald blocks.
+- **The world has evolved:** swords removed, beaten into ploughshares (the
+  subtitle).
+
+Where it's stated: Modrinth summary ("evolution by hand") and the
+"🧬 Evolution, by hand" section at the top of `docs/modrinth-description.md`.
+
+**Keep it visible when changing things.** Anything that weakens genetics or
+breeding (removing Animal Husbandry, making all stock bought, dropping the
+generation/yield quests) weakens the theme. Good theme-strengthening ideas if
+time allows: quest text that names the idea ("your herd is evolving"), a quest
+for breeding a named `trait`, or a readout that compares an animal to its
+parents.
+
+Other jam rules that matter: over 50% of the pack should be work made during
+and for the jam (encouraged, not required); Modrinth submissions get expedited
+review for the BAP collection — mention **Big Autumn Packjam (BAP)** when
+submitting.
+
 **Namespace: `cowpewter_bap`.** Custom recipes live in
 `kubejs/data/cowpewter_bap/recipe/`. Quests use Questlog's own `questlog:`
 namespace (IDs come from filenames), and selling bin data uses `selling_bin:`
