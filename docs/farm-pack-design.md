@@ -51,6 +51,7 @@ tools/
   fd_recipes/                   bundled FD recipe JSONs it reads
   clean_mrpack.py               strips personal/local files from an export (§5b)
   release/options.txt           options.txt shipped to players (§5b)
+  icon/make_icon.py             draws the pack icon (32x32 pixel art) -> icon.svg/png
 
 shaderpacks/
   complementary-reimagined.pw.toml   Modrinth metadata for the shipped shader (§5b)
@@ -589,6 +590,9 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
       Draft page copy: `docs/modrinth-description.md` (summary in the header
       comment). Update it when features change.
+- [ ] Modrinth project icon: `tools/icon/icon.png` (512px). The same image is the
+      instance `icon.png`, which ships in the export and becomes the Prism
+      icon on import.
 - [ ] Modrinth license: **MIT** (chosen 2026-09-14). Covers the pack's own
       scripts, quests and configs only; the description says so. All 174
       referenced projects were checked — none constrain the pack's license.
