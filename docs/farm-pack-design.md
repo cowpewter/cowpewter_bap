@@ -479,9 +479,16 @@ event.replaceInput({ mod: 'sophisticatedbackpacks' },
                    'minecraft:leather', '#c:leathers')
 ```
 
-**Vanilla is unaffected** — vanilla recipes reference `minecraft:leather`
+**Vanilla is mostly unaffected** — vanilla recipes reference `minecraft:leather`
 directly and aren't in the mod filter. That's deliberate: canvas leather armor
 reads wrong. Item frames get their own explicit recipe instead.
+
+**Exception: the bundle.** Storage should never need a culled animal, so the
+bundle (string + leather) accepts canvas too. The recipe comes from **Vanilla
+Backport** but is registered as `minecraft:bundle`, so a `{ mod: 'vanillabackport' }`
+filter misses it — `canvas_as_leather.js` targets it by ID in `RECIPE_IDS`. Add
+other one-off storage recipes there. Added 2026-09-14, **not yet verified in
+game.**
 
 **No money loop**, because canvas is only *accepted alongside* leather, never
 converted into it. Leather keeps its bin value of 20; canvas stays unpriced.
@@ -902,7 +909,7 @@ Break these and something becomes a money loop:
       the gates are loose, or never see if they're tight.
 - [ ] Put `YIELD_THRESHOLD` back to 0.85 if it was lowered for testing.
 - [ ] Verify in JEI: copper shears/bucket show as *second* recipes, backpack
-      accepts canvas, green dye from leaves exists.
+      and **bundle** accept canvas, green dye from leaves exists.
 
 ---
 

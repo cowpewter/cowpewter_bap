@@ -6,6 +6,13 @@ var MODS = [
   'sophisticatedcore'
 ]
 
+// Individual storage recipes outside those mods. Matched by recipe ID, since
+// Vanilla Backport registers its bundle as minecraft:bundle (a mod filter on
+// 'vanillabackport' would miss it). Vanilla leather armor stays leather-only.
+var RECIPE_IDS = [
+  'minecraft:bundle'
+]
+
 ServerEvents.tags('item', function (event) {
   // covers every recipe already using the convention tag
   event.add('c:leathers', 'farmersdelight:canvas')
@@ -21,6 +28,13 @@ ServerEvents.recipes(function (event) {
       '#c:leathers'
     )
   }
+  for (i = 0; i < RECIPE_IDS.length; i++) {
+    event.replaceInput(
+      { id: RECIPE_IDS[i] },
+      'minecraft:leather',
+      '#c:leathers'
+    )
+  }
   console.info('[cowpewter_bap] canvas added to c:leathers; leather swapped in: ' +
-               MODS.join(', '))
+               MODS.join(', ') + ', ' + RECIPE_IDS.join(', '))
 })
