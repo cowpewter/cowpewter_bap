@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420">
-<rect width="720" height="420" fill="#ffffff"/>
-<image href="icon.svg" x="16" y="16" width="384" height="384"/>
-<image href="icon.svg" x="430" y="16" width="192" height="192"/>
-<image href="icon.svg" x="430" y="240" width="96" height="96"/>
-<image href="icon.svg" x="546" y="264" width="48" height="48"/>
-<rect x="430" y="352" width="270" height="56" fill="#1e1f22"/>
-<image href="icon.svg" x="440" y="360" width="40" height="40"/>
-</svg>

@@ -85,7 +85,6 @@ tools/
   fd_recipes/                   bundled FD recipe JSONs it reads
   clean_mrpack.py               strips personal/local files from an export (§5b)
   release/options.txt           options.txt shipped to players (§5b)
-  icon/make_icon.py             draws the pack icon (32x32 pixel art) -> icon.svg/png
 
 shaderpacks/
   complementary-reimagined.pw.toml   Modrinth metadata for the shipped shader (§5b)
@@ -580,7 +579,7 @@ for every test world, Crash Assistant's copied jars, mixin dumps, the dev's own
 web password and the KubeJS web server auth token.
 
 The script rebuilds the pack with an **allowlist** of overrides (`config/`,
-`kubejs/`, `icon.png`) minus a deny list (web password, KubeJS token,
+`kubejs/`; `icon.png` excluded — see below) minus a deny list (web password, KubeJS token,
 `config/sounds/chat.json` whose mention keyword is the dev's username,
 per-world JEI history, `*_backup*`). It swaps in `tools/release/options.txt`,
 drops `.disabled` mods and any shader other than Reimagined from the index,
@@ -633,8 +632,9 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 **0.1.0-alpha (2026-09-14):** exported as `~/Seed & Stock.mrpack`, cleaned to
 `~/Seed & Stock-clean.mrpack` (0.3 MB, 173 downloads), imported fresh and a
 world created: 5/5 server scripts, all `[cowpewter_bap]` lines, 24 quests /
-5 chapters, 15 gamerules, no registry or data map errors, windowed, icon and
-crash-screen config correct. Uploaded to Modrinth as an Alpha version with environment **Singleplayer
+5 chapters, 15 gamerules, no registry or data map errors, windowed,
+crash-screen config correct. **That file contained the AI icon** — superseded by
+`~/Seed & Stock-noicon.mrpack` (identical except `overrides/icon.png` removed). Uploaded to Modrinth as an Alpha version with environment **Singleplayer
 only** — the pack's gameplay is server-side data, and the export marks client-only
 mods (Sodium, Iris, Xaero, shaders) as required on servers too, so a dedicated
 server install would crash. Re-tick the boxes below for each new release.
@@ -649,9 +649,13 @@ server install would crash. Re-tick the boxes below for each new release.
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
       Draft page copy: `docs/modrinth-description.md` (summary in the header
       comment). Update it when features change.
-- [x] Modrinth project icon: `tools/icon/icon.png` (512px). The same image is the
-      instance `icon.png`, which ships in the export and becomes the Prism
-      icon on import. Uploaded to Modrinth and set on the BAP instance 2026-09-14.
+- [ ] **Pack icon — must NOT be AI-generated.** The first icon (a pixel-art
+      planted sword, drawn by an AI-written script) was removed 2026-09-14 from
+      the repo, the Modrinth page, the instance `icon.png`, and the export:
+      `clean_mrpack.py` no longer ships `icon.png`. It had already shipped
+      inside the uploaded 0.1.0-alpha file, so that file must be replaced.
+      A human-made icon (drawn, commissioned, or an in-game screenshot crop)
+      can go in the instance `icon.png` once `icon.png` is re-added to `ALLOW`.
 - [ ] Modrinth license: **MIT** (chosen 2026-09-14). Covers the pack's own
       scripts, quests and configs only; the description says so. All 174
       referenced projects were checked — none constrain the pack's license.
