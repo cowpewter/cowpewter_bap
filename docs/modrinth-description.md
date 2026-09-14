@@ -33,7 +33,7 @@ Powered by **Animal Husbandry**, livestock here are more than walking drops:
 - **Care:** animals get hungry, happy, sick and pregnant. Look after them and they look after you.
 - **Bloodlines:** every birth counts a generation. Inspect an animal with a **magnifying glass** to see its stats, then decide who breeds next.
 - **Quests reward good breeding.** The Selling Bin pays for quantity, but raising a prize animal or a long bloodline is what completes quests.
-- **Truffles, cheese and more** to turn a good herd into income.
+- **Truffles, cheese and more** can turn a good herd into income.
 
 ## 🛒 The Wandering Trader
 
@@ -88,3 +88,5 @@ Made by **cowpewter** for the **BAP** packjam.
 **Shaders:** [Complementary Shaders – Reimagined](https://modrinth.com/shader/complementary-reimagined) by **EminGT**, included unmodified and off by default.
 
 Built on the work of many mod authors, especially **Animal Husbandry**, **Farmer's Delight**, **wd's Selling Bin**, **MoreJS**, **KubeJS**, **Questlog**, **In Control!**, **Waystones** and **Sophisticated Backpacks & Storage**. Full list on the Dependencies tab.
+
+*The Seed & Stock license (MIT) covers this pack's original scripts, quests and configuration. Mods, resource packs and shaders remain under their own authors' licenses.*

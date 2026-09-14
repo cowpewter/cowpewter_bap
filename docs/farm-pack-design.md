@@ -589,6 +589,11 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
       Draft page copy: `docs/modrinth-description.md` (summary in the header
       comment). Update it when features change.
+- [ ] Modrinth license: **MIT** (chosen 2026-09-14). Covers the pack's own
+      scripts, quests and configs only; the description says so. All 174
+      referenced projects were checked — none constrain the pack's license.
+      BlayTheNinth's mods (Waystones, Balm, TrashSlot, Client Tweaks) forbid
+      using their mod names in the pack title.
 - [ ] Pack name everywhere it shows. The export is still named
       `cowpewter-bap` / `0.0.1-alpha`:
       - Prism export dialog: name **Seed & Stock**, version e.g. `1.0.0`
