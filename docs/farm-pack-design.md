@@ -594,12 +594,13 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       - optional: Getting Started quest text
       - done 2026-09-14: crash screen `modpack_name = "Seed & Stock"`,
         window title `Seed & Stock: Swords to Ploughshares`
-- [ ] **Create the public issues repo `cowpewter/seed-and-stock-issues`**
+- [x] **Create the public issues repo `cowpewter/seed-and-stock-issues`**
       (exact name; Issues enabled). The main repo is private, so crash reports
       go here. Crash Assistant already points at
       `https://github.com/cowpewter/seed-and-stock-issues/issues/new` with
       GitHub wording ("Report the issue on the Seed & Stock issue tracker").
-      Set the Modrinth project's *Issues* link to the same repo.
+      Created 2026-09-14; GitHub API confirms public, `has_issues: true`.
+      - [ ] Set the Modrinth project's *Issues* link to the same repo.
       Without this, `help_link` was `CHANGE_ME`, which sends crashing players
       to the NeoForge Discord.
 - [x] Import the `.mrpack` into a fresh Prism instance and launch once. Check
