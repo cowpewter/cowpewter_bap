@@ -658,8 +658,10 @@ Break these and something becomes a money loop:
 - [x] Trader shows 5 livestock offers + 1 rare/top-tier + exactly 1 supply,
       and no errors from `wanderer_trades.js` when he spawns. Verified
       2026-09-14: 6 animals + ender pearl, clean log.
-- [ ] Open a buried treasure or Better Archeology chest and confirm no sword
-      (loot removal is the one part not seen in game).
+- [x] Sword loot removal. Verified 2026-09-14 by rolling
+      `/loot give @s loot betterarcheology:archeology/sword_loot` repeatedly
+      (a swords-only table): nothing dropped. Quick way to test any loot
+      change without finding a chest.
 - [ ] Watch quest *pacing* — 24 quests is a lot to unlock in the first hour if
       the gates are loose, or never see if they're tight.
 - [ ] Put `YIELD_THRESHOLD` back to 0.85 if it was lowered for testing.
