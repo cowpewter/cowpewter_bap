@@ -531,6 +531,23 @@ incompatible but works — without that line Minecraft silently disables it).
 Everything else falls back to Minecraft's defaults. If a resource pack is added
 or reordered, copy the two pack lines from the dev `options.txt` into it.
 
+It also fixes default keybind conflicts. Only binds that clash *in normal
+gameplay* matter — JEI's mouse/shift binds, Jade on Shift, TrashSlot on T and
+Sophisticated's `[`/`]` are menu-only or intentional.
+
+| Key | Default clash | Shipped |
+|---|---|---|
+| B | Xaero new waypoint ↔ Backpacks open backpack | Backpacks keep **B**; Xaero waypoint → **N** |
+| N | (knock-on) Xaero waypoint ↔ TreeChop settings overlay | TreeChop → **J** |
+| C | Chloride zoom ↔ Backpacks inventory interaction | Backpacks keep **C**; zoom → **Z** |
+| Z | (knock-on) zoom ↔ Xaero enlarge minimap | Xaero enlarge **unbound** (world map still on M) |
+| K | Iris toggle shaders ↔ KubeJS Kubedex | Kubedex **unbound** (dev tool); K stays shaders, as §5b tells players |
+
+C is still shared with vanilla's "save hotbar activator", which only works in
+creative. Key lines use the exact `key_<id>` names from a real `options.txt` —
+a typo is silently ignored, so copy names rather than typing them. Adding a mod
+can introduce new clashes: check Controls (Controlling highlights conflicts).
+
 ### Before exporting a release
 
 - [ ] `config/iris.properties`: `enableShaders=false`,
