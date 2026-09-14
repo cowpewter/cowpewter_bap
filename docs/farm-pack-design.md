@@ -1,7 +1,23 @@
-# Farm Pack — Design Document
+# Seed & Stock: Swords to Ploughshares — Design Document
 
 Minecraft 1.21.1, NeoForge 21.1.250. A pack about breeding farm animals and
 building an agricultural economy. No combat.
+
+Made for the **BAP** packjam (3 weeks). "BAP" is the jam, not the pack — it
+survives only in internal identifiers (namespace, instance name, repo name).
+
+### Name
+
+**Seed & Stock: Swords to Ploughshares** (short form: **Seed & Stock**).
+
+- *Seed* — crops, and the exploration that finds new seeds.
+- *Stock* — livestock, "good stock" bloodlines (genetics, generation quests),
+  and trade value (selling bin, trader).
+- *Swords to Ploughshares* — no combat, backed by a real design choice: swords
+  are removed and the knife took over their one farm job (§4).
+
+Chosen 2026-09-14. Free as a Modrinth modpack title at the time; also checked
+against Greener Pastures, Good Stock, Heirloom, Clover & Kin/Fold/Sow.
 
 **Namespace: `cowpewter_bap`.** Custom recipes live in
 `kubejs/data/cowpewter_bap/recipe/`. Quests use Questlog's own `questlog:`
@@ -571,6 +587,14 @@ can introduce new clashes: check Controls (Controlling highlights conflicts).
       `~/cowpewter-bap-clean.mrpack`. Exit code 0 and no `PROBLEMS` block.
       Read the "dropped overrides" list for anything that *should* ship.
 - [ ] Pack description credits Complementary Reimagined (EminGT) with a link.
+- [ ] Pack name everywhere it shows. The export is still named
+      `cowpewter-bap` / `0.0.1-alpha`:
+      - Prism export dialog: name **Seed & Stock**, version e.g. `1.0.0`
+      - Modrinth project title **Seed & Stock: Swords to Ploughshares**
+      - `config/crash_assistant/config.toml` `modpack_name` (currently
+        `"Minecraft"`, shown as "Oops, Minecraft crashed!")
+      - optional: `kubejs/config/client.json` `window_title` (currently empty)
+      - optional: Getting Started quest text
 - [x] Import the `.mrpack` into a fresh Prism instance and launch once. Check
       its `options.txt`: resource packs enabled, shipped binds applied, and no
       new in-game keybind clashes. Done for the 2026-09-14 alpha export: 164
