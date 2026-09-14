@@ -30,6 +30,10 @@ Minecraft 1.21.1, NeoForge 21.1.250, ~190 mods. Namespace for custom content is
 docs/
   farm-pack-design.md           this doc
 
+tools/
+  regenerate_prices.py          rebuilds Farmer's Delight bin prices (see below)
+  fd_recipes/                   bundled FD recipe JSONs it reads
+
 kubejs/server_scripts/
   gamerules.js                  15 gamerules, applies once per world (see §1)
   wanderer_trades.js            trader stock (needs MoreJS)
@@ -50,7 +54,7 @@ kubejs/data/cowpewter_bap/recipe/
   bucket_from_copper.json       3 copper ingots
 
 kubejs/data/selling_bin/data_maps/item/
-  selling_bin_value.json        126 entries (81 Farmer's Delight) — FILENAME IS THE DATA MAP ID
+  selling_bin_value.json        125 entries (80 Farmer's Delight) — FILENAME IS THE DATA MAP ID
   selling_bin_currencies.json   emerald 100, emerald_block 900 — KEEP BOTH
 
 kubejs/data/minecraft/worldgen/structure_set/
@@ -67,16 +71,15 @@ config/waystones-common.toml              chunksBetweenWildWaystones = 20, trans
 
 The other `config/incontrol/*.json` files exist but are empty arrays.
 
-Outside the instance, `~/Documents/BAP/` holds `cowpewter-bap-files.zip`,
-which bundles `regenerate_prices.py`, `fd_recipes/` and a README (plus an
-older copy of this doc — the one in `docs/` is authoritative).
+`~/Documents/BAP/cowpewter-bap-files.zip` is an older bundle of all of the
+above. Everything in it now lives in the repo; the copies in the zip are stale.
 
 ### Version control
 
 Git repo at `minecraft/` (branch `main`), pushed to
 `git@github.com:cowpewter/cowpewter_bap.git`. The Deck authenticates with
 `~/.ssh/id_ed25519` (no passphrase). `.gitignore` ignores
-everything except `docs/`, `kubejs/` and `config/`. Also excluded:
+everything except `docs/`, `tools/`, `kubejs/` and `config/`. Also excluded:
 `config/resourceful-config-web.json` (holds a generated web-editor password)
 and mod-written `*_backup1`-style files. Not tracked: mods, saves, logs.
 
@@ -104,11 +107,24 @@ registered slot type` (Curios), `modid:example` in a dimension data map.
 
 ### Regenerating Farmer's Delight prices
 
-`regenerate_prices.py` with bundled `fd_recipes/` (both inside
-`~/Documents/BAP/cowpewter-bap-files.zip` — extract first). Change `MULTIPLIER` (line 12),
-re-run. **It writes `selling_bin_value_farmersdelight.json`** — merge that file's
-`values` into `selling_bin_value.json` and delete it. A data map file's *name* is
-its registered ID, and only `selling_bin_value` is registered.
+From `minecraft/`:
+
+```bash
+python3 tools/regenerate_prices.py --dry-run   # show what would change
+python3 tools/regenerate_prices.py             # write it
+```
+
+Change `MULTIPLIER` at the top of the script to rescale. Recipes are bundled in
+`tools/fd_recipes/`. The script writes **directly into
+`selling_bin_value.json`**: generated items are updated in place (their
+`processors` kept), every other entry is left alone, and anything in
+`NEVER_PRICE` (straw, canvas, tree bark) is removed. It prints each add, change
+and removal, and doesn't touch the file when nothing changed. Review with
+`git diff` before committing.
+
+Older versions wrote a separate `selling_bin_value_farmersdelight.json` that had
+to be merged by hand — the game ignores that filename (see "Things that bit
+us"). Fixed 2026-09-14.
 
 ### State
 
@@ -230,7 +246,7 @@ Buying a sniffer (7–9 emerald blocks) unlocks torchflowers and pitcher plants 
 value(dish) = (sum of cheapest legal ingredients / servings) * 1.5
 ```
 
-Computed from the mod's **actual recipe JSONs**, not from memory. 81 Farmer's
+Computed from the mod's **actual recipe JSONs**, not from memory. 80 Farmer's
 Delight entries in the shipped `selling_bin_value.json`.
 
 **Cheapest legal, not typical.** Many recipes accept a category — "any
@@ -606,7 +622,11 @@ Break these and something becomes a money loop:
 - **Green dye and leaves stay unpriced**, or 4 leaves → 1 dye becomes a loop.
 - **Straw is unpriced** (removed) and **canvas must stay unpriced**. Straw comes
   from cutting grass, which is infinite. Never add a `canvas -> leather` recipe
-  while leather is worth 20.
+  while leather is worth 20. Both are in the price script's `NEVER_PRICE`, which
+  strips them from the bin on every run — the old script still emitted straw
+  at 2, so regenerating would have silently reopened the loop.
+- **Tree bark is unpriced** (removed 2026-09-14). A log-stripping byproduct,
+  not farm produce. Also in `NEVER_PRICE`.
 - **String ≤ 6 in the bin** (currently unpriced). 1 wool (12, priced via `#minecraft:wool`) → 2 string.
 - **Compression is never worth more than its parts.** Crates, bags, bales.
 - **Currency map needs ≥ 2 entries.** A single-entry
@@ -710,7 +730,13 @@ waxing game-wide. No crash, nothing in the log until a world loaded.
 
 **A data map file's name IS its ID.** `selling_bin_value_farmersdelight.json` was
 silently ignored — only `selling_bin_value` is registered. Merging happens when
-datapacks share a path, not by adding filenames.
+datapacks share a path, not by adding filenames. The price script now writes to
+`selling_bin_value.json` directly so this can't recur.
+
+**Generators undo hand edits.** Straw was removed from the bin by hand, but the
+price script still produced it — the next regeneration would have put it back.
+Anything removed for balance reasons belongs in the generator's exclusion list,
+not just the output file.
 
 **Missing from JEI ≠ broken in game.** A recipe absent from JEI failed to *parse*.
 Present but not working means the inputs or tool don't match. Different causes.

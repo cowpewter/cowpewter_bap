@@ -316,10 +316,6 @@
       "base_value": 24,
       "processors": []
     },
-    "farmersdelight:tree_bark": {
-      "base_value": 3,
-      "processors": []
-    },
     "farmersdelight:vegetable_noodles": {
       "base_value": 48,
       "processors": []
