@@ -148,6 +148,7 @@
     // So just check the owner on any new baby animals
     EntityEvents.spawned(event => {
         var entity = event.getEntity();
+        if (!entity) return;
 
         // No owner, natural spawn, not bred
         if (!entity.owner) return;

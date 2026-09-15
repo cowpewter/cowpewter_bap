@@ -38,5 +38,5 @@
     }
     console.info('[cowpewter_bap] canvas added to c:leathers; leather swapped in: ' +
                 MODS.join(', ') + ', ' + RECIPE_IDS.join(', '))
-  })
+  });
 })();
