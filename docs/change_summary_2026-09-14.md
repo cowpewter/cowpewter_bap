@@ -26,10 +26,12 @@ deleted:    config/improved_village_placement.json
 
 7. Added Yung's Better Mineshafts. Already had Yung's API, and mineshafts are probably the only structure left that has much interest/use, so make em cooler.
 
-8. Replaced Xaero Icon with Icon Fresh. The former wasn't working and by its own page, if you are using Fresh Animations, you should use Icon Fresh. Then I had to fuss with resource pack versions in general, as a few were not in a recognizable format and downgrading to a previous version fixed it. Note: For icons to show on minimap, press tab!
+8. Replaced Xaero Icon with Icon Fresh. By its own page, if you are using Fresh Animations, you should use Icon Fresh. Then I had to fuss with resource pack versions in general, as a few were not in a recognizable format and downgrading to a previous version fixed it. Note: For icons to show on minimap, press tab!
 
 # Morning Plans
 
-Add functionality to Bell to summon Wandering Trader, once per MC day maximum. Maybe turn off natural spawning if he is summonable, OR turn the spawn rate way down so a second trader is a rare treat. 
+1. Ask Claude to audit remaining config files against modlist
 
-Quests omg
+2. Add functionality to Bell to summon Wandering Trader, once per MC day maximum. Maybe turn off natural spawning if he is summonable, OR turn the spawn rate way down so a second trader is a rare treat. 
+
+3. Quests omg
