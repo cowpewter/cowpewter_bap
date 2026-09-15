@@ -10,34 +10,36 @@
 //
 // Rhino-safe style: var only, indexed loops, no arrows.
 
-var SWORDS = [
-  'minecraft:wooden_sword',
-  'minecraft:stone_sword',
-  'minecraft:iron_sword',
-  'minecraft:golden_sword',
-  'minecraft:diamond_sword',
-  'minecraft:netherite_sword'
-]
-
-ServerEvents.recipes(function (event) {
-  var i
-  for (i = 0; i < SWORDS.length; i++) {
-    event.remove({ output: SWORDS[i] })
-  }
-
-  // The only recipe in the pack that consumes a sword.
-  event.replaceInput(
-    { id: 'sophisticatedbackpacks:tool_swapper_upgrade' },
+(function () {
+  var SWORDS = [
     'minecraft:wooden_sword',
-    '#c:tools/knife'
-  )
+    'minecraft:stone_sword',
+    'minecraft:iron_sword',
+    'minecraft:golden_sword',
+    'minecraft:diamond_sword',
+    'minecraft:netherite_sword'
+  ]
 
-  console.info('[cowpewter_bap] removed ' + SWORDS.length +
-               ' sword recipes; tool swapper takes a knife')
-})
+  ServerEvents.recipes(function (event) {
+    var i
+    for (i = 0; i < SWORDS.length; i++) {
+      event.remove({ output: SWORDS[i] })
+    }
 
-// Chest, archaeology and mob-equipment loot, vanilla and modded alike.
-LootJS.modifiers(function (event) {
-  event.addTableModifier(/.*/).removeLoot('#minecraft:swords')
-  console.info('[cowpewter_bap] swords removed from all loot tables')
-})
+    // The only recipe in the pack that consumes a sword.
+    event.replaceInput(
+      { id: 'sophisticatedbackpacks:tool_swapper_upgrade' },
+      'minecraft:wooden_sword',
+      '#c:tools/knife'
+    )
+
+    console.info('[cowpewter_bap] removed ' + SWORDS.length +
+                ' sword recipes; tool swapper takes a knife')
+  })
+
+  // Chest, archaeology and mob-equipment loot, vanilla and modded alike.
+  LootJS.modifiers(function (event) {
+    event.addTableModifier(/.*/).removeLoot('#minecraft:swords')
+    console.info('[cowpewter_bap] swords removed from all loot tables')
+  })
+})();
