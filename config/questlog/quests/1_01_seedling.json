@@ -1,0 +1,24 @@
+{
+  "title": "Seedling",
+  "description": "Every farm has to start somewhere. Obtain your first seeds or plantable root vegetable. You can either break grass to find wheat seeds, or find patches of vegetables growing in the wild.",
+  "icon": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "sort_order": 1,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "#c:seeds",
+      "required_amount": 1,
+      "name": "Find something you can plant"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:field"
+}

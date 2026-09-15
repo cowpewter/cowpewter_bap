@@ -1,0 +1,27 @@
+{
+  "title": "Introduction",
+  "description": "Welcome to a new land, a peaceful land. A land of rolling green pastures, deep forests, and flower-filled meadows. A land of possibility, for the right sort of person. A land where the swords were beaten to ploughshares so long ago that no one even remembers that there were ever swords to begin with.",
+  "icon": {
+    "item": "minecraft:wheat"
+  },
+  "sort_order": 1,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:read"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:item",
+      "item": "minecraft:bread",
+      "count": 4,
+      "auto_claim": true
+    },
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:main"
+}

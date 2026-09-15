@@ -1,0 +1,9 @@
+{
+  "name": "The Field",
+  "icon": {
+    "item": "minecraft:wheat"
+  },
+  "order": 2,
+  "default_chapter": false,
+  "hidden": false
+}

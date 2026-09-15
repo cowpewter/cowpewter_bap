@@ -1,0 +1,36 @@
+{
+  "title": "Compost",
+  "description": "The soil here is fertile enough, but you know you can improve it.\nCraft Organic Compost from dirt, tree bark, and straw. Tree bark can be obtained by stripping logs on the Cutting Board, and straw can be obtained from cutting tall grass with a Knife. Then place it outdoors to mature into Rich Soil. Sunlight, nearby water, and mushrooms all accelerate the process.",
+  "icon": {
+    "item": "farmersdelight:organic_compost"
+  },
+  "sort_order": 4,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:organic_compost",
+      "required_amount": 1,
+      "name": "Craft organic compost"
+    },
+    {
+      "type": "questlog:block_place",
+      "block": "farmersdelight:organic_compost",
+      "required_amount": 1,
+      "name": "Place your new compost down to mature"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:rich_soil",
+      "required_amount": 1,
+      "name": "Harvest your newly improved soil"
+    },
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:field"
+}

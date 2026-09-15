@@ -1,0 +1,41 @@
+{
+  "title": "Copper",
+  "description": "Copper has a couple important early uses in this pack, as unlike in Vanilla, it can be used to craft both buckets and shears, two vital pieces of farm equipment.",
+  "icon": {
+    "item": "minecraft:bucket"
+  },
+  "sort_order": 4,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:0_03_stone_tools"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:raw_copper",
+      "required_amount": 5,
+      "name": "Mine least 5 copper"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:bucket",
+      "required_amount": 1,
+      "name": "Craft a bucket"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:shears",
+      "required_amount": 1,
+      "name": "Craft a pair of shears"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:main"
+}

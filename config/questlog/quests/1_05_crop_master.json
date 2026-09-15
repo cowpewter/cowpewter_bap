@@ -1,0 +1,90 @@
+{
+  "title": "Crop Master",
+  "description": "Obtain 1 of every crop",
+  "icon": {
+    "item": "farmersdelight:cabbage"
+  },
+  "sort_order": 5,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:wheat",
+      "required_amount": 1,
+      "name": "Find or grow Wheat"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:beetroot",
+      "required_amount": 1,
+      "name": "Find or grow Beetroots"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:carrot",
+      "required_amount": 1,
+      "name": "Find or grow Carrots"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:potato",
+      "required_amount": 1,
+      "name": "Find or grow Potatoes"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:pumpkin",
+      "required_amount": 1,
+      "name": "Find or grow a Pumpkin"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:melon_slice",
+      "required_amount": 1,
+      "name": "Find or grow Melons"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:sugar_cane",
+      "required_amount": 1,
+      "name": "Find or grow Sugar Cane"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:cocoa_beans",
+      "required_amount": 1,
+      "name": "Find or grow Chocolate"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:tomato",
+      "required_amount": 1,
+      "name": "Find or grow Tomatoes"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:cabbage",
+      "required_amount": 1,
+      "name": "Find or grow Cabbage"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:onion",
+      "required_amount": 1,
+      "name": "Find or grow Onions"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:rice_panicle",
+      "required_amount": 1,
+      "name": "Find or grow Rice"
+    },
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:field"
+}

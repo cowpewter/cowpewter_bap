@@ -1,0 +1,9 @@
+{
+  "name": "Completionism",
+  "icon": {
+    "item": "minecraft:nether_star"
+  },
+  "order": 7,
+  "default_chapter": false,
+  "hidden": false
+}

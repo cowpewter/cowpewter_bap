@@ -1,9 +1,9 @@
 {
-  "name": "The Herd",
+  "name": "The Barn",
   "icon": {
     "item": "minecraft:cow_spawn_egg"
   },
-  "order": 2,
+  "order": 3,
   "default_chapter": false,
   "hidden": false
 }

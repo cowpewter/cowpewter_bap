@@ -1,0 +1,27 @@
+{
+  "title": "Sprout",
+  "description": "Now that you have something to plant, it's time to start your farm. Prepare the land with a hoe, and right-click your seeds on the tilled land to plant.",
+  "icon": {
+    "item": "minecraft:tall_grass"
+  },
+  "sort_order": 2,
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "quest": "questlog:1_01_seedling"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:unobtainable",
+      "name": "Plant any crop"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:field"
+}

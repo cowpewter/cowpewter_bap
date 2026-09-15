@@ -3,7 +3,7 @@
   "icon": {
     "item": "minecraft:emerald"
   },
-  "order": 3,
+  "order": 5,
   "default_chapter": false,
   "hidden": false
 }
