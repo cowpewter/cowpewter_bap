@@ -1,0 +1,54 @@
+{
+  "title": "Love & Care",
+  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty!\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's genetics.",
+  "icon": {
+    "item": "animalhusbandry:brush"
+  },
+  "sort_order": 3,
+  "requirements": ["questlog:2_01_taming"],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "animalhusbandry:brush",
+      "required_amount": 1,
+      "name": "Craft a Grooming Brush"
+    },
+    {
+      "type": "questlog:block_place",
+      "block": "animalhusbandry:brushing_post",
+      "required_amount": 1,
+      "name": "Craft and place a Brushing Post"
+    },
+    {
+      "type": "questlog:block_place",
+      "block": "animalhusbandry:feeding_trough",
+      "required_amount": 1,
+      "name": "Craft and place a Feeding Trough"
+    },
+    {
+      "type": "questlog:block_place",
+      "block": "animalhusbandry:chicken_nest",
+      "required_amount": 1,
+      "name": "Craft and place a Chicken Nest"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "animalhusbandry:magnifying_glass",
+      "required_amount": 1,
+      "name": "Craft a Farm Magnifying Glass"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "animalhusbandry:farm_ledger",
+      "required_amount": 1,
+      "name": "Craft a Farm Ledger"
+    },
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:barn"
+}

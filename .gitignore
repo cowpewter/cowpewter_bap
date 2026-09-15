@@ -23,3 +23,6 @@ __pycache__/
 
 # Mod-written backups
 *_backup[0-9]*
+
+# Editor cruft
+*.kate-swp

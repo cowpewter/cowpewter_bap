@@ -24,7 +24,9 @@
   var GEN_QUEST = 'questlog:07_generations'
   var GEN_THRESHOLD = 5        // generation counter
 
-  var SHOW_STATS = true        // report genetics in chat on inspect
+  // This is what the ledger is for
+  // Only used for debugging
+  var SHOW_STATS = false        // report genetics in chat on inspect
 
   var TRACKED = [
     'minecraft:cow', 'minecraft:sheep', 'minecraft:pig', 'minecraft:chicken',
