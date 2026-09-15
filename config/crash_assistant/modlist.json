@@ -389,14 +389,6 @@
     "curseForgeHash": 2110013428,
     "modrinthHash": "93f479691d5a88775d90e9fa19e814b7301a363b"
   },
-  "fallingtrees-neoforge-1.21.1-0.14.0.jar": {
-    "jarName": "fallingtrees-neoforge-1.21.1-0.14.0.jar",
-    "modId": "fallingtrees",
-    "name": "Panda\u0027s Falling Trees",
-    "version": "0.14.0",
-    "curseForgeHash": 81483540,
-    "modrinthHash": "070260f182d10bdc23de5e8e9297bec0231e2bec"
-  },
   "FarmersDelight-1.21.1-1.3.4.jar": {
     "jarName": "FarmersDelight-1.21.1-1.3.4.jar",
     "modId": "farmersdelight",
@@ -1121,6 +1113,14 @@
     "version": "2.4.4",
     "curseForgeHash": 16338630,
     "modrinthHash": "29211cd4cb8402188700a1ff0514267a13cd897e"
+  },
+  "switchtool-0.3.1-alfa.3.jar": {
+    "jarName": "switchtool-0.3.1-alfa.3.jar",
+    "modId": "switchtool",
+    "name": "Switch Tool",
+    "version": "0.3.1-alfa.3",
+    "curseForgeHash": 4191280421,
+    "modrinthHash": "723fa07d3228bf6b5af28c655daf442a3d2e87be"
   },
   "TerraBlender-neoforge-1.21.1-4.1.0.8.jar": {
     "jarName": "TerraBlender-neoforge-1.21.1-4.1.0.8.jar",

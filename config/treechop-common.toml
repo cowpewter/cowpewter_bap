@@ -37,7 +37,7 @@
 	maxLeavesBlocks = 1024
 	#What to do with leaves blocks when a tree is felled
 	#Allowed Values: IGNORE, BREAK, DECAY
-	breakOrDecayLeaves = "DECAY"
+	breakOrDecayLeaves = "IGNORE"
 	#Who to credit for breaking tree blocks (logs and leaves), which can change item drops, trigger enchantment effects, etc.
 	#Use with caution: may cause unexpected interactions with other mods
 	#Allowed Values: NONE, PLAYER_NOT_TOOL, PLAYER_AND_TOOL
