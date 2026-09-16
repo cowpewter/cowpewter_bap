@@ -82,7 +82,8 @@ docs/
 
 tools/
   regenerate_prices.py          rebuilds Farmer's Delight bin prices (see below)
-  fd_recipes/                   bundled FD recipe JSONs it reads
+  extract_fd_recipes.py         pulls FD recipe JSONs out of the jar
+  fd_recipes/                   its output (gitignored)
   clean_mrpack.py               strips personal/local files from an export (§5b)
   release/options.txt           options.txt shipped to players (§5b)
 
@@ -171,8 +172,9 @@ python3 tools/regenerate_prices.py --dry-run   # show what would change
 python3 tools/regenerate_prices.py             # write it
 ```
 
-Change `MULTIPLIER` at the top of the script to rescale. Recipes are bundled in
-`tools/fd_recipes/`. The script writes **directly into
+Change `MULTIPLIER` at the top of the script to rescale. Recipes are extracted
+fresh from the FD jar into `tools/fd_recipes/` (gitignored) on every run, via
+`tools/extract_fd_recipes.py`. The script writes **directly into
 `selling_bin_value.json`**: generated items are updated in place (their
 `processors` kept), every other entry is left alone, and anything in
 `NEVER_PRICE` (straw, canvas, tree bark) is removed. It prints each add, change

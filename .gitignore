@@ -5,6 +5,8 @@
 !/docs/
 !/tools/
 __pycache__/
+# Extracted from the FD jar by tools/extract_fd_recipes.py
+/tools/fd_recipes/
 !/kubejs/
 !/config/
 

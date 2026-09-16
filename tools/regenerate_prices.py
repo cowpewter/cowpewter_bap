@@ -19,11 +19,13 @@ Usage:  python3 tools/regenerate_prices.py [--dry-run]
 """
 import json, glob, os, collections, sys
 
+import extract_fd_recipes
+
 MULTIPLIER = 1.5
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-# bundled recipes sit next to this script; no download needed
-RD = os.path.join(HERE, "fd_recipes")
+# re-extracted from the FD jar on every run, so an FD update is picked up
+RD = extract_fd_recipes.OUT
 OUT = os.path.join(HERE, "..", "kubejs", "data", "selling_bin", "data_maps",
                    "item", "selling_bin_value.json")
 
@@ -115,6 +117,8 @@ def price(ing):
         if "item" in ing: return BASE.get(ing["item"], 0)
         if "tag" in ing:  return BASE.get(TAG.get(ing["tag"], ""), 0)
     return 0
+
+extract_fd_recipes.extract(quiet=True)
 
 recipes = {}   # result_id -> (total_input_fn, yield)
 
