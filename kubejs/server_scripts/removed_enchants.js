@@ -87,18 +87,21 @@
     }
   }
 
+  function hasRemoved(stack) {
+    // stored_enchantments for books, enchantments for everything else
+    var it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator()
+    while (it.hasNext()) {
+      if (isRemoved(it.next())) return true
+    }
+    return false
+  }
+
   // Swaps removed enchantments on stack in place. Returns true if the stack
   // is a book left with no enchantments at all (only possible when every
   // replacement was null or conflicted with something already on it).
   function swapEnchantments(stack, registryAccess) {
     var isBook = stack.id === 'minecraft:enchanted_book'
-
-    var it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator()
-    var hit = false
-    while (it.hasNext()) {
-      if (isRemoved(it.next())) { hit = true; break }
-    }
-    if (!hit) return false
+    if (!hasRemoved(stack)) return false
 
     var left = EnchantmentHelper.updateEnchantments(stack, function (m) {
       // collect before removing; keySet is live
@@ -154,11 +157,17 @@
     }
   })
 
+  // event.item is a snapshot copy (vanilla hands slot listeners a copy) and
+  // event.slot is a menu slot index, not an inventory index. So the event is
+  // only a trigger: fix the real stacks by scanning the inventory.
   PlayerEvents.inventoryChanged(function (event) {
-    var stack = event.item
-    if (!stack || stack.isEmpty()) return
-    if (swapEnchantments(stack, event.player.server.registryAccess())) {
-      event.player.inventory.setItem(event.slot, Item.of('minecraft:book', stack.count))
+    if (!event.item || event.item.isEmpty() || !hasRemoved(event.item)) return
+    var inv = event.player.inventory
+    var ra = event.player.server.registryAccess()
+    for (var i = 0; i < inv.getContainerSize(); i++) {
+      var stack = inv.getItem(i)
+      if (stack.isEmpty()) continue
+      if (swapEnchantments(stack, ra)) inv.setItem(i, Item.of('minecraft:book', stack.count))
     }
   })
 })();
