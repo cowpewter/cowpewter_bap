@@ -17,7 +17,7 @@
     'minecraft:iron_sword',
     'minecraft:golden_sword',
     'minecraft:diamond_sword',
-    'minecraft:netherite_sword'
+    'minecraft:netherite_sword',
   ]
 
   ServerEvents.recipes(function (event) {

@@ -778,6 +778,14 @@
     "curseForgeHash": 3606849978,
     "modrinthHash": "1fe7f8b4176e86507cc8ed5460b6acdd3dac5529"
   },
+  "monolib-neoforge-1.21.1-4.1.0.jar": {
+    "jarName": "monolib-neoforge-1.21.1-4.1.0.jar",
+    "modId": "monolib",
+    "name": "MonoLib",
+    "version": "4.1.0",
+    "curseForgeHash": 2022116693,
+    "modrinthHash": "1d67964c61012110d47364140df14a5dfb8eabf3"
+  },
   "moonlight-1.21.1-3.6.4-neoforge.jar": {
     "jarName": "moonlight-1.21.1-3.6.4-neoforge.jar",
     "modId": "moonlight",
@@ -785,6 +793,14 @@
     "version": "1.21.1-3.6.4",
     "curseForgeHash": 3553104162,
     "modrinthHash": "04a9656a7085dcc751ac58ff0e7faadee5c2def9"
+  },
+  "more_useful_copper-merged-1.21.1-3.0.0.jar": {
+    "jarName": "more_useful_copper-merged-1.21.1-3.0.0.jar",
+    "modId": "more_useful_copper",
+    "name": "More Useful Copper",
+    "version": "3.0.0",
+    "curseForgeHash": 2687306583,
+    "modrinthHash": "d03a67d391a8456060a386fa5e67c639f611567c"
   },
   "moreconcrete-neoforge-1.6.0-1.21.1.jar": {
     "jarName": "moreconcrete-neoforge-1.6.0-1.21.1.jar",
@@ -1113,14 +1129,6 @@
     "version": "2.4.4",
     "curseForgeHash": 16338630,
     "modrinthHash": "29211cd4cb8402188700a1ff0514267a13cd897e"
-  },
-  "switchtool-0.3.1-alfa.3.jar": {
-    "jarName": "switchtool-0.3.1-alfa.3.jar",
-    "modId": "switchtool",
-    "name": "Switch Tool",
-    "version": "0.3.1-alfa.3",
-    "curseForgeHash": 4191280421,
-    "modrinthHash": "723fa07d3228bf6b5af28c655daf442a3d2e87be"
   },
   "TerraBlender-neoforge-1.21.1-4.1.0.8.jar": {
     "jarName": "TerraBlender-neoforge-1.21.1-4.1.0.8.jar",

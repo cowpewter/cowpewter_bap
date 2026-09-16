@@ -14,12 +14,12 @@
     'minecraft:bundle'
   ]
 
-  ServerEvents.tags('item', function (event) {
+  ServerEvents.tags('item', event => {
     // covers every recipe already using the convention tag
     event.add('c:leathers', 'farmersdelight:canvas')
   })
 
-  ServerEvents.recipes(function (event) {
+  ServerEvents.recipes(event => {
     // covers the stragglers that hardcode the item
     var i
     for (i = 0; i < MODS.length; i++) {
@@ -37,6 +37,6 @@
       )
     }
     console.info('[cowpewter_bap] canvas added to c:leathers; leather swapped in: ' +
-                MODS.join(', ') + ', ' + RECIPE_IDS.join(', '))
+      MODS.join(', ') + ', ' + RECIPE_IDS.join(', '))
   });
 })();
