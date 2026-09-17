@@ -13,6 +13,13 @@
     'cowpewter_bap:coin_500',
   ];
 
+  // Make coins tag
+  ServerEvents.tags('item', event => {
+    COIN_IDS.forEach(id => {
+      event.add('cowpewter_bap:coins', id);
+    });
+  });
+
   // Ensure player has coin pouch in curio slot on login
   PlayerEvents.loggedIn(event => {
     const player = event.player;
@@ -21,6 +28,15 @@
     if (!stackData.stack && stackData.curios) {
       stackData.curios.setEquippedCurio('coin_pouch', 0, Item.of('cowpewter_bap:coin_pouch'));
     }
+    // Cleanup in case player disco'd
+    delete OPEN_POUCHES[player.username];
+  });
+
+  PlayerEvents.loggedOut(event => {
+    const player = event.player;
+    if (!player) return;
+    // Cleanup in case player disco'd
+    delete OPEN_POUCHES[player.username];
   });
 
   // Open GUI on keybind
@@ -40,6 +56,54 @@
 
     player.closeContainer();
   });
+
+  // Pick up coins automagically
+  const coinPickupHandler = (event) => {
+    // Dont pick up so fast it doesn't hit the ground
+    if (event.itemEntity.hasPickUpDelay()) return;
+
+    const player = event.player;
+    if (!player) return;
+
+    // Player has the Coin Pouch GUI open, add to bag
+    const currentPouch = OPEN_POUCHES[player.username] || null;
+    if (currentPouch) {
+      addToContainer(event, currentPouch);
+      return;
+    }
+
+    const pouchStack = getPouchStack(player);
+    if (!pouchStack.stack) return; // no pouch allow default pickup
+
+    const container = getLinkedContainerFromPouch(player, pouchStack.stack);
+    addToContainer(event, container);
+  };
+
+  COIN_IDS.forEach(id => {
+    ItemEvents.canPickUp(id, coinPickupHandler);
+  });
+
+  const addToContainer = (event, container) => {
+    const origCount = event.item.getCount();
+    const remainders = container.addItem(event.item);
+    const remainderCnt = remainders.getCount();
+    const numInserted = origCount - remainderCnt;
+
+    // Nothing inserted, bag full, fallback to vanilla pickup
+    if (!numInserted) {
+      return;
+    }
+
+    if (remainders.isEmpty()) {
+      // All inserted
+      event.itemEntity.discard();
+      event.cancel();
+    } else {
+      // Some inserted
+      event.itemEntity.setItem(remainders);
+      event.cancel();
+    }
+  };
 
   const getPouchStack = (player) => {
     const curiosInv = CuriosApi.getCuriosInventory(player);
@@ -66,9 +130,7 @@
     };
   };
 
-  const openPouch = (player, pouch) => {
-    if (!player || !pouch) return;
-
+  const getLinkedContainerFromPouch = (player, pouch) => {
     // Need to create an array of POUCH_SLOTS ItemStack.EMPTY
     // As subclassing SimpleContainer means we can't use the int constructor
     const tempArr = [];
@@ -97,9 +159,26 @@
       // When the inv contents change, copy content back to pouch
       const newContent = ItemContainerContents.fromItems(tempInv.getItems());
       pouch.set(DataComponents.CONTAINER, newContent);
-      console.info('[cowpewter_bap] pouch content saved');
     });
 
+    return tempInv;
+  };
+
+  // Store open pouch GUIs for pickup
+  const OPEN_POUCHES = {};
+
+  const openPouch = (player, pouch) => {
+    if (!player || !pouch) return;
+
+    const tempInv = getLinkedContainerFromPouch(player, pouch);
+    OPEN_POUCHES[player.username] = tempInv;
     player.openInventoryGUI(tempInv, Text.of('Coin Pouch'));
   };
+
+  PlayerEvents.inventoryClosed('kubejs:menu', event => {
+    if (!event.player) return;
+    delete OPEN_POUCHES[event.player.username];
+  });
+
+
 })();
