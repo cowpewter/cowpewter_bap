@@ -20,8 +20,8 @@
 (function () {
   const CLEAR_VANILLA = true;   // false = keep vanilla's saplings/dyes/etc alongside
 
-  const COIN_100 = 'wallet:coin_100';
-  const COIN_500 = 'wallet:coin_500';
+  const COIN_100 = 'cowpewter_bap:coin_100';
+  const COIN_500 = 'cowpewter_bap:coin_500';
 
   const getRequestFromPrice = entry => {
     const min = entry[1];
