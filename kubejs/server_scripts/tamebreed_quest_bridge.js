@@ -150,16 +150,17 @@
     var entity = event.getEntity();
     if (!entity) return;
 
-    // No owner, natural spawn, not bred
-    if (!entity.owner) return;
-
-    // This is an adult not baby
-    if (entity.properties.age >= 0) return;
-
     // Not an animal we count for this quest
     if (ELIGIBLE_ENTITIES.indexOf(entity.id) === -1) {
       return;
     }
+    // This is an adult not baby
+    if (!entity.baby) return;
+    // No owner, natural spawn, not bred
+    if (!entity.owner) return;
+
+    var owner = entity.owner;
+    console.info('owner=' + entity.owner + ' type=' + typeof entity.owner);
 
     // Fire breed quest and update count
     completeQuest(owner.server, ANY_QUEST_BREED, owner.username);
