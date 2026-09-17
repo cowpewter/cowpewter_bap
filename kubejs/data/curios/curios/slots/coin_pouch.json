@@ -1,0 +1,6 @@
+  {
+    "drop_rule": "ALWAYS_KEEP",
+    "order": 170,
+    "icon": "curios:slot/empty_belt_slot",
+    "validators": ["curios:tag"]
+  }

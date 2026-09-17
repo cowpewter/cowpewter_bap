@@ -1026,14 +1026,6 @@
     "curseForgeHash": 2093242437,
     "modrinthHash": "5b8a0b43a474c066371b2e16f9bfb88622552a74"
   },
-  "selling_bin-1.6-NEOFORGE-1.21.1.jar": {
-    "jarName": "selling_bin-1.6-NEOFORGE-1.21.1.jar",
-    "modId": "selling_bin",
-    "name": "wd\u0027s Selling Bin",
-    "version": "1.6-NEOFORGE-1.21.1",
-    "curseForgeHash": 407580048,
-    "modrinthHash": "6c67b55385cb029e77b96144a0ed530896450c79"
-  },
   "shut_up_gl_error-neoforge-2.0.0+1.21.1.jar": {
     "jarName": "shut_up_gl_error-neoforge-2.0.0+1.21.1.jar",
     "modId": "shut_up_gl_error",
