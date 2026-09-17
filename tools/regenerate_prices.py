@@ -28,8 +28,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # re-extracted from the FD jar on every run, so an FD update is picked up
 RD = extract_fd_recipes.OUT
 OUT = os.path.join(HERE, "prices.json")
-# generated KubeJS script the shipping bin reads at runtime
-SCRIPT_OUT = os.path.join(HERE, "..", "kubejs", "server_scripts",
+# generated KubeJS script the shipping bin reads at runtime. Startup, not
+# server: `global` is readable everywhere but only assignable in startup
+# scripts, and this way client scripts can read prices too.
+SCRIPT_OUT = os.path.join(HERE, "..", "kubejs", "startup_scripts",
                           "generated_prices.js")
 
 # Kept out of the bin; removed from the file if present. See balance
