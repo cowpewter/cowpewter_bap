@@ -18,12 +18,12 @@
     'minecraft:golden_sword',
     'minecraft:diamond_sword',
     'minecraft:netherite_sword',
-  ]
+  ];
 
   ServerEvents.recipes(function (event) {
-    var i
+    var i;
     for (i = 0; i < SWORDS.length; i++) {
-      event.remove({ output: SWORDS[i] })
+      event.remove({ output: SWORDS[i] });
     }
 
     // The only recipe in the pack that consumes a sword.
@@ -31,15 +31,17 @@
       { id: 'sophisticatedbackpacks:tool_swapper_upgrade' },
       'minecraft:wooden_sword',
       '#c:tools/knife'
-    )
+    );
 
+    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] removed ' + SWORDS.length +
-                ' sword recipes; tool swapper takes a knife')
-  })
+                ' sword recipes; tool swapper takes a knife');
+  });
 
   // Chest, archaeology and mob-equipment loot, vanilla and modded alike.
   LootJS.modifiers(function (event) {
-    event.addTableModifier(/.*/).removeLoot('#minecraft:swords')
-    console.info('[cowpewter_bap] swords removed from all loot tables')
-  })
+    event.addTableModifier(/.*/).removeLoot('#minecraft:swords');
+    // eslint-disable-next-line no-console
+    console.info('[cowpewter_bap] swords removed from all loot tables');
+  });
 })();

@@ -4,11 +4,11 @@
   var PLANTING_QUEST = 'questlog:1_02_sprout';
 
   BlockEvents.placed(function (event) {
-      if (!event.player) return;
-      if (!event.block.hasTag(CROP_TAG)) return;
+    if (!event.player) return;
+    if (!event.block.hasTag(CROP_TAG)) return;
 
-      event.server.runCommandSilent(
-        'questlog progress complete ' + PLANTING_QUEST + ' ' + event.player.username
-      );
+    event.server.runCommandSilent(
+      'questlog progress complete ' + PLANTING_QUEST + ' ' + event.player.username
+    );
   });
 })();

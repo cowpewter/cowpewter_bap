@@ -27,25 +27,26 @@
     'minecraft:wind_burst',
     'minecraft:binding_curse',
     'minecraft:vanishing_curse',
-  ]
+  ];
 
-  var EnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper')
+  var EnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper');
 
   RecipeViewerEvents.removeEntries('item', function (event) {
-    var hidden = 0
+    var hidden = 0;
     // Every book is the same item; only its stored enchantment differs, so
     // this needs a predicate rather than an item ID.
     event.remove(function (stack) {
-      if (stack.id !== 'minecraft:enchanted_book') return false
-      var it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator()
+      if (stack.id !== 'minecraft:enchanted_book') return false;
+      var it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator();
       while (it.hasNext()) {
         if (REMOVED.indexOf(String(it.next().getRegisteredName())) >= 0) {
-          hidden++
-          return true
+          hidden++;
+          return true;
         }
       }
-      return false
-    })
-    console.info('[cowpewter_bap] hid ' + hidden + ' enchanted books from JEI')
-  })
+      return false;
+    });
+    // eslint-disable-next-line no-console
+    console.info('[cowpewter_bap] hid ' + hidden + ' enchanted books from JEI');
+  });
 })();

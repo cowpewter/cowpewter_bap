@@ -3,5 +3,5 @@
 // server_scripts/no_swords.js.
 
 RecipeViewerEvents.removeEntries('item', function (event) {
-  event.remove('#minecraft:swords')
-})
+  event.remove('#minecraft:swords');
+});

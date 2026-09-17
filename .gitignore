@@ -1,7 +1,10 @@
 # Track only the pack's authored content: docs/, tools/, kubejs/ and config/.
 # Everything else in minecraft/ (mods, saves, logs, caches) is ignored.
 /*
+!/.eslintrc.json
 !/.gitignore
+!/package.json
+!/package-lock.json
 !/docs/
 !/tools/
 __pycache__/

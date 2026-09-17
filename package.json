@@ -1,0 +1,24 @@
+{
+  "name": "cowpewter_bap",
+  "version": "0.2.0",
+  "description": "A relaxed, combat-free Minecraft modpack about farming and animal breeding",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cowpewter/cowpewter_bap.git"
+  },
+  "author": "Cade Richard <cade@caderichard.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cowpewter/seed-and-stock-issues"
+  },
+  "homepage": "https://modrinth.com/modpack/seed-and-stock"
+}
