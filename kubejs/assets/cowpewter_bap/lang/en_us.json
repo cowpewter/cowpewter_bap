@@ -1,4 +1,5 @@
 {
   "key.categories.cowpewter_bap": "Seed & Stock",
-  "key.kubejs.cowpewter_bap.open_pouch": "Open Coin Pouch"
+  "key.kubejs.cowpewter_bap.open_pouch": "Open Coin Pouch",
+  "curios.identifier.coin_pouch": "Pouch"
 }
