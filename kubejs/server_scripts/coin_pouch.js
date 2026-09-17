@@ -12,6 +12,14 @@
     'cowpewter_bap:coin_100',
     'cowpewter_bap:coin_500',
   ];
+  const COIN_LADDER = [
+    { from: 'cowpewter_bap:coin_1',   to: 'cowpewter_bap:coin_10',  ratio: 10 },
+    { from: 'cowpewter_bap:coin_10',  to: 'cowpewter_bap:coin_100', ratio: 10 },
+    { from: 'cowpewter_bap:coin_100', to: 'cowpewter_bap:coin_500', ratio: 5 },
+  ];
+  const KEEP_PER_DENOM = 64;
+  // Coins stack to 64, see economy.js
+  const MAX_COIN_STACK = 64;
 
   // Make coins tag
   ServerEvents.tags('item', event => {
@@ -20,11 +28,18 @@
     });
   });
 
+  // Make coin breakdown recipes
+  ServerEvents.recipes(event => {
+    event.shapeless(Item.of('cowpewter_bap:coin_1', 10), ['cowpewter_bap:coin_10']);
+    event.shapeless(Item.of('cowpewter_bap:coin_10', 10), ['cowpewter_bap:coin_100']);
+    event.shapeless(Item.of('cowpewter_bap:coin_100', 5), ['cowpewter_bap:coin_500']);
+  });
+
   // Ensure player has coin pouch in curio slot on login
   PlayerEvents.loggedIn(event => {
     const player = event.player;
     if (!player) return;
-    const stackData = getPouchStack(player, true);
+    const stackData = getPouchSlotStack(player, true);
     if (!stackData.stack && stackData.curios) {
       stackData.curios.setEquippedCurio('coin_pouch', 0, Item.of('cowpewter_bap:coin_pouch'));
     }
@@ -43,7 +58,7 @@
   NetworkEvents.dataReceived('cowpewter_bap:open_pouch', event => {
     const player = event.player;
     if (!player) return;
-    const pouch = getPouchStack(player);
+    const pouch = getPouchSlotStack(player);
     if (!pouch.stack) return;
 
     openPouch(player, pouch.stack);
@@ -56,6 +71,85 @@
 
     player.closeContainer();
   });
+
+  const getDenominationCount = (container, denomId) => {
+    var numSlots = container.getContainerSize();
+    var count = 0;
+    for (var i = 0; i < numSlots; i++) {
+      var stack = container.getItem(i);
+      if (String(stack.id) === denomId) {
+        count += stack.count;
+      }
+    }
+    return count;
+  };
+
+  const condenseContainer = (container) => {
+    var count, batches, added;
+    var converted = false;
+    COIN_LADDER.forEach(rung => {
+      count = getDenominationCount(container, rung.from);
+      batches = Math.floor((count - KEEP_PER_DENOM) / rung.ratio);
+      if (batches <= 0) return;
+
+      var left = batches;
+      added = 0;
+      while (left > 0) {
+        var chunk = Math.min(left, MAX_COIN_STACK);
+        var remainder = container.addItem(Item.of(rung.to, chunk));
+        var accepted = chunk - remainder.count;
+        added += accepted;
+        if (accepted < chunk) break;   // pouch is full, stop trying
+        left -= chunk;
+      }
+      if (added <= 0) return;
+      removeDenomination(container, rung.from, added * rung.ratio);
+      converted = true;
+    });
+
+    // Only worth tidying if something actually moved
+    if (converted) compactContainer(container);
+  };
+
+  // Condensing leaves coins scattered over part-full stacks, so pull each
+  // denomination out and put it back as whole stacks. Cosmetic only.
+  const compactContainer = (container) => {
+    COIN_IDS.forEach(id => {
+      var total = getDenominationCount(container, id);
+      if (total <= 0) return;
+
+      removeDenomination(container, id, total);
+
+      var left = total;
+      while (left > 0) {
+        var chunk = Math.min(left, MAX_COIN_STACK);
+        var remainder = container.addItem(Item.of(id, chunk));
+        if (!remainder.isEmpty()) {
+          // Can't happen: we just freed at least this much room
+          console.warn('[cowpewter_bap] compaction lost ' + remainder.count + ' ' + id);
+          return;
+        }
+        left -= chunk;
+      }
+    });
+  };
+
+  const removeDenomination = (container, denomId, amount) => {
+    var numSlots = container.getContainerSize();
+    var left = amount;
+    var stack, removed;
+    for (var i = 0; i < numSlots; i++) {
+      stack = container.getItem(i);
+      if (String(stack.id) === denomId) {
+        removed = container.removeItem(i, Math.min(left, stack.count));
+        left -= removed.count;
+        if (left == 0) {
+          break;
+        }
+      }
+    }
+    return amount - left;
+  };
 
   // Pick up coins automagically
   const coinPickupHandler = (event) => {
@@ -72,7 +166,7 @@
       return;
     }
 
-    const pouchStack = getPouchStack(player);
+    const pouchStack = getPouchSlotStack(player);
     if (!pouchStack.stack) return; // no pouch allow default pickup
 
     const container = getLinkedContainerFromPouch(player, pouchStack.stack);
@@ -85,14 +179,25 @@
 
   const addToContainer = (event, container) => {
     const origCount = event.item.getCount();
-    const remainders = container.addItem(event.item);
-    const remainderCnt = remainders.getCount();
-    const numInserted = origCount - remainderCnt;
+    var remainders = container.addItem(event.item);
+    var remainderCnt = remainders.getCount();
+    var numInserted = origCount - remainderCnt;
 
     // Nothing inserted, bag full, fallback to vanilla pickup
     if (!numInserted) {
-      return;
+      // Condense and try again
+      condenseContainer(container);
+      remainders = container.addItem(event.item);
+      remainderCnt = remainders.getCount();
+      numInserted = origCount - remainderCnt;
+      if (!numInserted) {
+        // Bag still full
+        return;
+      }
     }
+
+    // Post-add condense - do before event.cancel because it throws
+    condenseContainer(container);
 
     if (remainders.isEmpty()) {
       // All inserted
@@ -105,7 +210,7 @@
     }
   };
 
-  const getPouchStack = (player, debug = false) => {
+  const getPouchSlotStack = (player, debug = false) => {
     const curiosInv = CuriosApi.getCuriosInventory(player);
     if (!curiosInv.isPresent()) {
       console.warn('[cowpewter_bap] no curios found');
@@ -179,8 +284,10 @@
 
   PlayerEvents.inventoryClosed('kubejs:menu', event => {
     if (!event.player) return;
+    const container = OPEN_POUCHES[event.player.username];
+    if (container) {
+      condenseContainer(container);
+    }
     delete OPEN_POUCHES[event.player.username];
   });
-
-
 })();
