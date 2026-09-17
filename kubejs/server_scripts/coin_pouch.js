@@ -1,4 +1,4 @@
-(function () {
+const BAP_POUCH = (function () {
   const CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi');
   const SimpleContainer = Java.loadClass('net.minecraft.world.SimpleContainer');
   const DataComponents = Java.loadClass('net.minecraft.core.component.DataComponents');
@@ -290,4 +290,12 @@
     }
     delete OPEN_POUCHES[event.player.username];
   });
+
+  // useful other places
+  return {
+    COIN_IDS: COIN_IDS,
+    getPouchSlotStack: getPouchSlotStack,
+    condenseContainer: condenseContainer,
+    getLinkedContainerFromPouch: getLinkedContainerFromPouch,
+  };
 })();
