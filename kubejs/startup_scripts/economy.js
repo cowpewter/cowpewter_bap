@@ -56,6 +56,6 @@
       .register('cowpewter_bap.open_pouch')
       .defaultKey('KEY_P')
       .inGame()
-      .category('Seed & Stock');
+      .category('key.categories.cowpewter_bap');
   });
 })();
