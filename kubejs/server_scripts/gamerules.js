@@ -55,7 +55,6 @@
     }
 
     data.putBoolean('packGamerulesApplied', true);
-    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] Applied ' + count + ' default gamerules');
   });
 })();

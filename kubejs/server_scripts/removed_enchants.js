@@ -140,7 +140,6 @@
       }
       n++;
     }
-    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] removed ' + n + ' enchantments from ' + SOURCE_TAGS.join(', '));
   });
 
@@ -151,10 +150,8 @@
       var to = REPLACEMENTS[id];
       if (to === null) continue;
       if (REPLACEMENTS.hasOwnProperty(to)) {
-        // eslint-disable-next-line no-console
         console.error('[cowpewter_bap] ' + id + ' is replaced by ' + to + ', which is also removed');
       } else if (lookup(ra, to) === null) {
-        // eslint-disable-next-line no-console
         console.error('[cowpewter_bap] ' + id + ' is replaced by unknown enchantment ' + to);
       }
     }

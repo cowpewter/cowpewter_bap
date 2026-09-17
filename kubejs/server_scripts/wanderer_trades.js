@@ -108,7 +108,6 @@
     add(1, UNCOMMON_LIVESTOCK);
     add(2, RARE_LIVESTOCK);
 
-    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] Registered wanderer livestock trades');
   });
 

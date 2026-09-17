@@ -24,7 +24,7 @@
   PlayerEvents.loggedIn(event => {
     const player = event.player;
     if (!player) return;
-    const stackData = getPouchStack(player);
+    const stackData = getPouchStack(player, true);
     if (!stackData.stack && stackData.curios) {
       stackData.curios.setEquippedCurio('coin_pouch', 0, Item.of('cowpewter_bap:coin_pouch'));
     }
@@ -105,25 +105,24 @@
     }
   };
 
-  const getPouchStack = (player) => {
+  const getPouchStack = (player, debug = false) => {
     const curiosInv = CuriosApi.getCuriosInventory(player);
     if (!curiosInv.isPresent()) {
-      // eslint-disable-next-line no-console
       console.warn('[cowpewter_bap] no curios found');
       return { stack: null, curios: null };
     }
     const curios = curiosInv.get();
     const slotHandler = curios.getStacksHandler('coin_pouch');
     if (!slotHandler.isPresent()) {
-      // eslint-disable-next-line no-console
       console.warn('[cowpewter_bap] no pouch slot found');
       return { stack: null, curios: curios };
     }
     const slot = slotHandler.get();
     const stack = slot.getStacks().getStackInSlot(0);
     if (stack.isEmpty()) {
-      // eslint-disable-next-line no-console
-      console.info('[cowpewter_bap] no pouch found in slot');
+      if (debug) {
+        console.info('[cowpewter_bap] no pouch found in slot');
+      }
       return { stack: null, curios: curios };
     }
 
@@ -156,7 +155,6 @@
     tempInv.addListener(() => {
       if (pouch.isEmpty()) {
         player.closeContainer();
-        // eslint-disable-next-line no-console
         console.warn('[cowpewter_bap] pouch moved');
         return;
       }

@@ -33,7 +33,6 @@
       '#c:tools/knife'
     );
 
-    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] removed ' + SWORDS.length +
                 ' sword recipes; tool swapper takes a knife');
   });
@@ -41,7 +40,6 @@
   // Chest, archaeology and mob-equipment loot, vanilla and modded alike.
   LootJS.modifiers(function (event) {
     event.addTableModifier(/.*/).removeLoot('#minecraft:swords');
-    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] swords removed from all loot tables');
   });
 })();

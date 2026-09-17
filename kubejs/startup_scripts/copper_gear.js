@@ -125,7 +125,6 @@
       } catch (e) {
         if (!reported) {
           reported = true;
-          // eslint-disable-next-line no-console
           console.error('[cowpewter_bap] copper_gear.js ' + name + ' failed, further errors hidden: ' + e);
         }
       }

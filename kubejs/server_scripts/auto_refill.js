@@ -130,7 +130,6 @@
       player.playNotifySound(swapSound, 'players', SWAP_SOUND_VOLUME, pitch);
     } catch (err) {
       swapSoundBroken = true;
-      // eslint-disable-next-line no-console
       console.warn('[cowpewter_bap] auto_refill: swap sound disabled (' + err + ')');
     }
   }

@@ -46,7 +46,6 @@
       }
       return false;
     });
-    // eslint-disable-next-line no-console
     console.info('[cowpewter_bap] hid ' + hidden + ' enchanted books from JEI');
   });
 })();

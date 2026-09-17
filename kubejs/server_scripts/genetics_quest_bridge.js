@@ -84,7 +84,6 @@
     if (yieldVal >= YIELD_THRESHOLD) {
       event.server.runCommandSilent(
         'questlog progress complete ' + YIELD_QUEST + ' ' + player.username);
-      // eslint-disable-next-line no-console
       console.info('[cowpewter_bap] ' + player.username +
                   ' qualified for yield — producYield ' + yieldVal);
     }
@@ -92,7 +91,6 @@
     if (parseInt(g.generation) >= GEN_THRESHOLD) {
       event.server.runCommandSilent(
         'questlog progress complete ' + GEN_QUEST + ' ' + player.username);
-      // eslint-disable-next-line no-console
       console.info('[cowpewter_bap] ' + player.username +
                   ' qualified for bloodline — generation ' + g.generation);
     }
