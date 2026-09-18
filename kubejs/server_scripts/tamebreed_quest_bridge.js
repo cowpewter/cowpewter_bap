@@ -25,7 +25,7 @@
 
   var ENTITY_MULTI_QUESTS = {
     'minecraft:cow': {
-      'herdSizeQuest': 'questlog:',
+      'herdSizeQuest': '',
       'herdSizeQuantity': 20,
       'everOwnedQuest': '',
       'everOwnedQuantity': 50,
@@ -51,6 +51,10 @@
   };
 
   function completeQuest(server, questId, username) {
+    // Quests in ENTITY_MULTI_QUESTS aren't written yet; skip rather than
+    // running a malformed command every time a threshold is crossed.
+    if (!questId) return;
+
     server.runCommandSilent(
       `questlog progress complete ${questId} ${username}`
     );
@@ -78,7 +82,7 @@
     var everOwnedKey = getEverOwnedEntityKey(entityId);
     var currentEverOwned = pData.getInt(everOwnedKey) || 0;
     currentEverOwned++;
-    pData.setInt(key, currentEverOwned);
+    pData.setInt(everOwnedKey, currentEverOwned);
 
     // Fire quest completion triggers
     if (!questData) return;
@@ -99,84 +103,97 @@
     pData.setInt(key, newCount);
   }
 
-  var pendingInteraction = {};
+  // Livestock has no vanilla owner, so we stamp one when a player feeds an
+  // animal. Babies inherit it in startup_scripts/breeding_owner.js, which must
+  // use this same key.
+  var OWNER_KEY = 'bapOwner';
 
+  function getOwnerId(entity) {
+    return String(entity.persistentData.getString(OWNER_KEY) || '');
+  }
+
+  // Null when the owner is offline: their herd counts live in player data, so
+  // there is nothing to update until they log back in.
+  function getOwner(entity) {
+    var ownerId = getOwnerId(entity);
+    if (!ownerId) return null;
+    return entity.server.getPlayer(ownerId);
+  }
+
+  // Feeding an animal claims it. Taming is ours, not vanilla's, so the quest
+  // fires here rather than waiting to see a tame flag appear.
   ItemEvents.entityInteracted(event => {
     var entity = event.target;
     var player = event.player;
-    var item = event.item && event.item.id;
+    // Java strings don't match JS strings with ===, so normalise before any
+    // indexOf or key lookup
+    var item = event.item && String(event.item.id);
 
     if (!entity || !player || !item) {
       return;
     }
 
+    var entityId = String(entity.type);
+
     // Not tameable
-    if (ELIGIBLE_ENTITIES.indexOf(entity.id) === -1) {
+    if (ELIGIBLE_ENTITIES.indexOf(entityId) === -1) {
       return;
     }
 
-    // this animal is already tamed
-    if (entity.owner) return;
+    // Already claimed, by this player or anyone else
+    if (getOwnerId(entity)) return;
 
     // Not a taming food
-    const eligibleItems = TAMING_FOODS[entity.id] || [];
+    const eligibleItems = TAMING_FOODS[entityId] || [];
     if (eligibleItems.indexOf(item) === -1) {
       return;
     }
 
-    pendingInteraction[event.player.username] = {
-      expires: event.server.tick + 10,
-      entity: entity,
-    };
+    entity.persistentData.putString(OWNER_KEY, String(player.uuid));
 
-    server.scheduleInTicks(10, () => {
-      // Paranoia in case of logouts
-      if (!player || !entity) {
-        return;
-      }
-      // Check if we own it now
-      if (entity.owner && entity.owner.username === player.username) {
-        // Fire tame quest
-        completeQuest(player.server, ANY_QUEST_TAME, player.username);
-        delete pendingInteraction[player.username];
-      }
-    });
+    completeQuest(player.server, ANY_QUEST_TAME, player.username);
+    incrementHerd(player, entityId);
   });
 
-  // Manual food breeding is disabled in this pack
-  // Animals will breed on their own if they are happy
-  // So just check the owner on any new baby animals
+  // Manual food breeding is disabled in this pack; animals breed on their own
+  // when happy. The baby is already stamped with its parent's owner by the
+  // time it spawns, so an owned baby means the player's herd grew.
   EntityEvents.spawned(event => {
     var entity = event.getEntity();
     if (!entity) return;
 
+    var entityId = String(entity.type);
+
     // Not an animal we count for this quest
-    if (ELIGIBLE_ENTITIES.indexOf(entity.id) === -1) {
+    if (ELIGIBLE_ENTITIES.indexOf(entityId) === -1) {
       return;
     }
     // This is an adult not baby
     if (!entity.baby) return;
-    // No owner, natural spawn, not bred
-    if (!entity.owner) return;
 
-    var owner = entity.owner;
-    console.info('owner=' + entity.owner + ' type=' + typeof entity.owner);
+    // Unowned parents, so nobody gets the credit
+    var owner = getOwner(entity);
+    if (!owner) return;
 
     // Fire breed quest and update count
     completeQuest(owner.server, ANY_QUEST_BREED, owner.username);
-    incrementHerd(owner, entity.id);
+    incrementHerd(owner, entityId);
   });
 
   EntityEvents.death(event => {
     var entity = event.getEntity();
-    // No owner, dont care
-    if (!entity.owner) return;
+    if (!entity) return;
+
+    var entityId = String(entity.type);
 
     // Not an animal we track head count
-    if (ELIGIBLE_ENTITIES.indexOf(entity.id) === -1) {
+    if (ELIGIBLE_ENTITIES.indexOf(entityId) === -1) {
       return;
     }
 
-    decrementHerd(owner, entity.id);
+    var owner = getOwner(entity);
+    if (!owner) return;
+
+    decrementHerd(owner, entityId);
   });
 })();
