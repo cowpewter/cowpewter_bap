@@ -10,6 +10,10 @@
 
 5. Stripped out Sophisticated Storage. It's just overkill for this pack. Left backpacks/sorting
 
+6. Ugh questing
+
+7. Updated Right-Click Harvest config to reward XP from crops
+
 ## Todo
 
 Wow I think all that's left is Quests and re-writing the mod page description

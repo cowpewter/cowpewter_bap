@@ -46,7 +46,7 @@
 
     // Record every click, including bone-meal clicks.
     pendingHarvest[event.player.username] = {
-      expires: event.server.tick + 10,
+      expires: event.server.tickCount + 10,
       items: items
     };
   });
@@ -59,7 +59,7 @@
 
     if (!pending) return;
 
-    if (event.player.server.tick > pending.expires) {
+    if (event.player.server.tickCount > pending.expires) {
       delete pendingHarvest[username];
       return;
     }
