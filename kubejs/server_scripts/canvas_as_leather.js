@@ -3,7 +3,6 @@
 (function () {
   var MODS = [
     'sophisticatedbackpacks',
-    'sophisticatedstorage',
     'sophisticatedcore'
   ];
 

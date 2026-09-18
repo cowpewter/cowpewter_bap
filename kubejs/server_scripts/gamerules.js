@@ -19,7 +19,7 @@
     // attempts. Deep Dark / ancient cities. IMPORTANT.
     doInsomnia: false,          // phantoms, triggered by sleep timer
     doPatrolSpawning: false,    // pillager patrols (overworld)
-    doTraderSpawning: true,     // wandering traders — emerald sink, only source of rare stock. Keep true.
+    doTraderSpawning: true,     // wandering traders — only source of rare stock. Keep true.
     disableRaids: true,         // raids, triggered by Bad Omen
 
     // --- Hunger loop: keep intact, this is the point of Normal difficulty ---

@@ -26,6 +26,9 @@ __pycache__/
 # Per-world JEI lookup history (named after local test worlds)
 /config/jei/world/
 
+# config backup
+/**/*.bak
+
 # Mod-written backups
 *_backup[0-9]*
 
