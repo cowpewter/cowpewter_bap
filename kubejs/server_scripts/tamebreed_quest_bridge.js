@@ -21,7 +21,7 @@
   };
 
   var ANY_QUEST_TAME = 'questlog:2_01_taming';
-  var ANY_QUEST_BREED = 'questlog:2_02_breeding';
+  var ANY_QUEST_BREED = 'questlog:2_03_breeding';
 
   var ENTITY_MULTI_QUESTS = {
     'minecraft:cow': {

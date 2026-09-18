@@ -4,7 +4,7 @@
   "icon": {
     "item": "animalhusbandry:brush"
   },
-  "sort_order": 3,
+  "sort_order": 4,
   "requirements": ["questlog:2_01_taming"],
   "objectives": [
     {

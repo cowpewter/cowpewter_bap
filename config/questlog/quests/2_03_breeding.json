@@ -4,8 +4,8 @@
   "icon": {
     "item": "minecraft:sheep_spawn_egg"
   },
-  "sort_order": 2,
-  "requirements": [],
+  "sort_order": 3,
+  "requirements": ["questlog:2_01_taming"],
   "objectives": [
     {
       "type": "questlog:unobtainable",

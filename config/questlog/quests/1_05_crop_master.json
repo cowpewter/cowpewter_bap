@@ -78,7 +78,7 @@
       "item": "farmersdelight:rice_panicle",
       "required_amount": 1,
       "name": "Find or grow Rice"
-    },
+    }
   ],
   "rewards": [
     {
