@@ -1,4 +1,33 @@
-# Completionism
+# Quest Chain
+
+## Main
+
+How to - getting started
+
+## Field
+
+How to - basic farming
+
+## Barn
+
+How to - basic animal care
+
+## Kitchen
+
+How to - cooking/farmer's delight
+
+## Market
+
+How to - dealing with Shipping Bin and Trader
+
+## Storage
+
+How to - backpacks/storage
+
+
+
+
+## Completionism
 
 ## Domesticate everything tameable
 
