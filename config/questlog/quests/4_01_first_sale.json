@@ -1,5 +1,5 @@
 {
-  "title": "The Selling Bin",
+  "title": "The Shipping Bin",
   "description": "",
   "icon": {
     "item": "cowpewter_bap:coin_100"
@@ -9,12 +9,13 @@
   "objectives": [
     {
       "type": "questlog:block_place",
-      "block": "cowpewter_bap:selling_bin",
+      "block": "cowpewter_bap:shipping_bin",
       "required_amount": 1,
-      "name": "Craft and place a Selling Bin"
+      "name": "Craft and place a Shipping Bin"
     },
     {
-      "type": "questlog:unobtainable",
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:quest/first_sale",
       "name": "Sell your first item"
     }
   ],

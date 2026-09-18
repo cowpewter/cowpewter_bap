@@ -32,7 +32,7 @@ Nature doesn't pick the winners on this farm. You do.
 
 > **Farm** → **Sell** → **Buy livestock** → **Breed** → **Farm more**
 
-- **Everything you earn comes from the farm.** Drop produce into the **Selling Bin** and it pays out in emeralds. Raw crops keep you going, animal products pay better, and cooked meals are where the real money is.
+- **Everything you earn comes from the farm.** Drop produce into the **Shipping Bin** and it pays out in emeralds. Raw crops keep you going, animal products pay better, and cooked meals are where the real money is.
 - **Round up wild animals, then buy the rest.** Cows, sheep, pigs and chickens roam as usual. The **Wandering Trader** sells what the wild doesn't: animals from far-off biomes, rare breeds, and the exact animal you've been waiting for. Every visit brings a different selection.
 - **Breed for better stock.** Every animal carries genes. Pair them carefully and each generation can outdo the last.
 
@@ -43,7 +43,7 @@ Powered by **Animal Husbandry**, livestock here are more than walking drops:
 - **Genetics:** yield, fertility, growth rate and constitution are inherited and vary from animal to animal. Some animals are born with special traits.
 - **Care:** animals get hungry, happy, sick and pregnant. Look after them and they look after you.
 - **Bloodlines:** every birth counts a generation. Inspect an animal with a **magnifying glass** to see its stats, then decide who breeds next.
-- **Quests reward good breeding.** The Selling Bin pays for quantity, but raising a prize animal or a long bloodline is what completes quests.
+- **Quests reward good breeding.** The Shipping Bin pays for quantity, but raising a prize animal or a long bloodline is what completes quests.
 - **Truffles, cheese and more** can turn a good herd into income.
 
 ## 🛒 The Wandering Trader
@@ -59,7 +59,7 @@ He also carries one hard-to-find supply each visit: a waystone, ender pearls, bl
 
 ## 🍲 Farm to table
 
-**Farmer's Delight** adds cutting boards, cooking pots, rich soil and dozens of meals. Every dish's price is worked out from its real recipe, so a cooked meal is worth more than the ingredients that went into it. **Shift-hover** any item to see what the Selling Bin pays for it.
+**Farmer's Delight** adds cutting boards, cooking pots, rich soil and dozens of meals. Every dish's price is worked out from its real recipe, so a cooked meal is worth more than the ingredients that went into it. **Shift-hover** any item to see what the Shipping Bin pays for it.
 
 ## 🕊️ Swords to Ploughshares
 
@@ -73,7 +73,7 @@ He also carries one hard-to-find supply each visit: a waystone, ender pearls, bl
 
 - **New crop seeds are out in the world.** Explore to find them.
 - **Waystones** generate in the wild. Leashed animals travel with you, so your waystone network doubles as livestock transport.
-- **Sophisticated Backpacks & Storage**, with upgrades that feed you while you work and deposit straight into the Selling Bin.
+- **Sophisticated Backpacks**, with upgrades that feed you while you work and deposit straight into the Shipping Bin.
 - **You always start somewhere green:** plains, meadows, forests or cherry groves, with grass and wood to get going.
 
 ## 📜 Guided start
@@ -98,6 +98,6 @@ Made by **cowpewter** for the **BAP** packjam.
 
 **Shaders:** [Complementary Shaders – Reimagined](https://modrinth.com/shader/complementary-reimagined) by **EminGT**, included unmodified and off by default.
 
-Built on the work of many mod authors, especially **Animal Husbandry**, **Farmer's Delight**, **wd's Selling Bin**, **MoreJS**, **KubeJS**, **Questlog**, **In Control!**, **Waystones** and **Sophisticated Backpacks & Storage**. Full list on the Dependencies tab.
+Built on the work of many mod authors, especially **Animal Husbandry**, **Farmer's Delight**, **MoreJS**, **KubeJS**, **Questlog**, **In Control!**, **Waystones** and **Sophisticated Backpacks**. Full list on the Dependencies tab.
 
 *The Seed & Stock license (MIT) covers this pack's original scripts, quests and configuration. Mods, resource packs and shaders remain under their own authors' licenses.*

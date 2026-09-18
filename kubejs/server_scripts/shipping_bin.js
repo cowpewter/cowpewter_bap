@@ -87,6 +87,10 @@
 
     // Completionism: tick one objective per distinct item actually sold.
     grantShipAdvancements(event.player, shipped);
+    // Market chapter: the "sell your first item" objective. Hand-written, so it
+    // lives under advancement/quest/ -- generate_ship_quests.py wipes
+    // advancement/ship/ on every run.
+    grantAdvancement(event.player, FIRST_SALE_ADVANCEMENT);
 
     // Notify player of sale
     event.player.setStatusMessage(Text.of('Sold for $' + total));
@@ -115,14 +119,20 @@
   // Re-granting one a player already holds is a vanilla no-op, so shipping the
   // same item twice needs no guard. Runs on the server command source, which is
   // permission 4; the player's own source is their op level and would fail.
+  const FIRST_SALE_ADVANCEMENT = 'cowpewter_bap:quest/first_sale';
+
+  const grantAdvancement = (player, adv) => {
+    player.server.runCommandSilent(
+      'advancement grant ' + player.username + ' only ' + adv
+    );
+  };
+
   const grantShipAdvancements = (player, shipped) => {
     var id;
     for (id in shipped) {
       var adv = global.BAP_SHIP_ADVANCEMENTS[id];
       if (!adv) continue;
-      player.server.runCommandSilent(
-        'advancement grant ' + player.username + ' only ' + adv
-      );
+      grantAdvancement(player, adv);
     }
   };
 

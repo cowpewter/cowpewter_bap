@@ -16,6 +16,8 @@
 
 8. Had Claude update generators to also generate the Completionism ship quests, cause yeah we aren't writing 140 ship quests by hand.
 
+9. And now we can do individual objective completion with custom advancements!
+
 ## Todo
 
 Wow I think all that's left is Quests and re-writing the mod page description
