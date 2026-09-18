@@ -80,9 +80,10 @@
     // automation (Sophisticated upgrades, sticky pistons, cardboard boxes), not
     // combat — so they're consumable components, priced below livestock and with
     // generous uses since players need them in batches.
+    // but you really dont need many ghast tears i think one at a time is fine.
     ['minecraft:ender_pearl',   1200, 1800, 4],
     ['minecraft:blaze_rod',     1400, 2000, 4],
-    ['minecraft:ghast_tear',    1800, 2600, 3],
+    ['minecraft:ghast_tear',    1800, 2600, 1],
   ];
 
   MoreJS.wandererTrades(event => {
