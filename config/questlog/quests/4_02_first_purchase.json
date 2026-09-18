@@ -1,0 +1,23 @@
+{
+  "title": "The Wandering Trader",
+  "description": "",
+  "icon": {
+    "item": "cowpewter_bap:coin_500"
+  },
+  "sort_order": 5,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "minecraft:adventure/trade",
+      "name": "Buy something from the Wandering Trader"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:market"
+}

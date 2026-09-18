@@ -1,0 +1,28 @@
+{
+  "title": "The Selling Bin",
+  "description": "",
+  "icon": {
+    "item": "cowpewter_bap:coin_100"
+  },
+  "sort_order": 5,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:block_place",
+      "block": "cowpewter_bap:selling_bin",
+      "required_amount": 1,
+      "name": "Craft and place a Selling Bin"
+    },
+    {
+      "type": "questlog:unobtainable",
+      "name": "Sell your first item"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:market"
+}

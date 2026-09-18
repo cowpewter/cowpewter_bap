@@ -42,7 +42,7 @@
       "item": "animalhusbandry:farm_ledger",
       "required_amount": 1,
       "name": "Craft a Farm Ledger"
-    },
+    }
   ],
   "rewards": [
     {
