@@ -1,0 +1,158 @@
+{
+  "title": "The Cooking Pot",
+  "description": "Ship one of every item in this group.\n\n28 in total.",
+  "icon": {
+    "item": "farmersdelight:cooking_pot"
+  },
+  "sort_order": 10,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/apple_cider",
+      "name": "Apple Cider"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/baked_cod_stew",
+      "name": "Baked Cod Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/beef_stew",
+      "name": "Beef Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/beetroot_soup",
+      "name": "Beetroot Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/bone_broth",
+      "name": "Bone Broth"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cabbage_rolls",
+      "name": "Cabbage Rolls"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/chicken_soup",
+      "name": "Chicken Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_rice",
+      "name": "Cooked Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/dog_food",
+      "name": "Dog Food"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/dumplings",
+      "name": "Dumplings"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/fish_stew",
+      "name": "Fish Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/fried_rice",
+      "name": "Fried Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/glow_berry_custard",
+      "name": "Glow Berry Custard"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/hot_cocoa",
+      "name": "Hot Cocoa"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/mushroom_rice",
+      "name": "Mushroom Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/mushroom_stew",
+      "name": "Mushroom Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/noodle_soup",
+      "name": "Noodle Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/onion_soup",
+      "name": "Onion Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pasta_with_meatballs",
+      "name": "Pasta With Meatballs"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pasta_with_mutton_chop",
+      "name": "Pasta With Mutton Chop"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pumpkin_soup",
+      "name": "Pumpkin Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/rabbit_stew",
+      "name": "Rabbit Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/ratatouille",
+      "name": "Ratatouille"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/squid_ink_pasta",
+      "name": "Squid Ink Pasta"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/stuffed_pumpkin_block",
+      "name": "Stuffed Pumpkin"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/tomato_sauce",
+      "name": "Tomato Sauce"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/vegetable_noodles",
+      "name": "Vegetable Noodles"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/vegetable_soup",
+      "name": "Vegetable Soup"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 140
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

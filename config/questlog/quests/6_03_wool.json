@@ -1,0 +1,98 @@
+{
+  "title": "Wool",
+  "description": "Ship one of every item in this group.\n\n16 in total.",
+  "icon": {
+    "item": "minecraft:white_wool"
+  },
+  "sort_order": 3,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/black_wool",
+      "name": "Black Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/blue_wool",
+      "name": "Blue Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/brown_wool",
+      "name": "Brown Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cyan_wool",
+      "name": "Cyan Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/gray_wool",
+      "name": "Gray Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/green_wool",
+      "name": "Green Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/light_blue_wool",
+      "name": "Light Blue Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/light_gray_wool",
+      "name": "Light Gray Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/lime_wool",
+      "name": "Lime Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/magenta_wool",
+      "name": "Magenta Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/orange_wool",
+      "name": "Orange Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/pink_wool",
+      "name": "Pink Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/purple_wool",
+      "name": "Purple Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/red_wool",
+      "name": "Red Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/white_wool",
+      "name": "White Wool"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/yellow_wool",
+      "name": "Yellow Wool"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 80
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

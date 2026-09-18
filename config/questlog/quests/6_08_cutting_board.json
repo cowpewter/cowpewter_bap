@@ -1,0 +1,98 @@
+{
+  "title": "The Cutting Board",
+  "description": "Ship one of every item in this group.\n\n16 in total.",
+  "icon": {
+    "item": "farmersdelight:cutting_board"
+  },
+  "sort_order": 8,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/bacon",
+      "name": "Bacon"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cabbage_leaf",
+      "name": "Cabbage Leaf"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/chicken_cuts",
+      "name": "Chicken Cuts"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cod_slice",
+      "name": "Cod Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_chicken_cuts",
+      "name": "Cooked Chicken Cuts"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_cod_slice",
+      "name": "Cooked Cod Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_mutton_chops",
+      "name": "Cooked Mutton Chops"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_salmon_slice",
+      "name": "Cooked Salmon Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/minced_beef",
+      "name": "Minced Beef"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/mutton_chops",
+      "name": "Mutton Chops"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/onion",
+      "name": "Onion"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pumpkin_slice",
+      "name": "Pumpkin Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/raw_pasta",
+      "name": "Raw Pasta"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/rice",
+      "name": "Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/salmon_slice",
+      "name": "Salmon Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/tomato",
+      "name": "Tomato"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 80
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

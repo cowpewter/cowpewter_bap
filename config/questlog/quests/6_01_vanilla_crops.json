@@ -1,0 +1,98 @@
+{
+  "title": "Vanilla Crops",
+  "description": "Ship one of every item in this group.\n\n16 in total.",
+  "icon": {
+    "item": "minecraft:wheat"
+  },
+  "sort_order": 1,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/apple",
+      "name": "Apple"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/beetroot",
+      "name": "Beetroot"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/brown_mushroom",
+      "name": "Brown Mushroom"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/carrot",
+      "name": "Carrot"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cocoa_beans",
+      "name": "Cocoa Beans"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/glow_berries",
+      "name": "Glow Berries"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/melon_slice",
+      "name": "Melon Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/pitcher_plant",
+      "name": "Pitcher Plant"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/potato",
+      "name": "Potato"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/pumpkin",
+      "name": "Pumpkin"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/red_mushroom",
+      "name": "Red Mushroom"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/sugar_cane",
+      "name": "Sugar Cane"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/sweet_berries",
+      "name": "Sweet Berries"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/torchflower",
+      "name": "Torchflower"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/animalhusbandry/truffle",
+      "name": "Truffle"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/wheat",
+      "name": "Wheat"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 80
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

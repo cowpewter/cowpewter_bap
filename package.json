@@ -9,7 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "generate": "npm run generate:prices && npm run generate:ship-quests",
+    "generate:prices": "python3 tools/regenerate_prices.py",
+    "generate:ship-quests": "python3 tools/generate_ship_quests.py",
+    "generate:recipes": "python3 tools/extract_fd_recipes.py"
   },
   "repository": {
     "type": "git",
