@@ -169,11 +169,12 @@
     // Check stats and fire genetics advancements
     var genetics = getGenetics(entity);
     var growthRate = parseFloat(genetics.growthRate);
-    var yield = parseFloat(genetics.producYield);
+    // NB: `yield` is reserved in Rhino -- naming it that fails to parse.
+    var producYield = parseFloat(genetics.producYield);
     var fertility = parseFloat(genetics.fertility);
     var constitution = parseFloat(genetics.constitution);
     var generation = parseInt(genetics.generation);
-    var statArray = [growthRate, yield, fertility, constitution];
+    var statArray = [growthRate, producYield, fertility, constitution];
 
     if (generation >= PEDIGREE_MIN_GENERATION) {
       grantAdvancement(owner.server, ADV_PEDIGREE, owner.username);

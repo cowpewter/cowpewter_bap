@@ -1,4 +1,9 @@
 {
-  "entities": ["minecraft:player"],
-  "slots": ["coin_pouch"]
+  "entities": [
+    "minecraft:player"
+  ],
+  "slots": [
+    "coin_pouch",
+    "glider"
+  ]
 }
