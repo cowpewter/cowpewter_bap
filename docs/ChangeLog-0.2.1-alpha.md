@@ -1,0 +1,24 @@
+# Changelog v0.2.0-alpha to v0.2.1-alpha
+
+## Removed
+
+## Added
+
+* Carry On
+* Better than Mending
+
+## Changes
+
+Installed Carry On, since cardboard boxes and cages are gone with Caged and Boxed and storage is vanilla.
+
+Installed Better Than Mending, so players can heal any tool with Mending (which CAN roll on the enchanting table) any time.
+
+Removed More Useful Copper Wax Scraper and Spray Bottle. Don't really need them and the scraper recipe conflicts with flint knife.
+
+Added #cowpewter_bap:rices tag so both Rice and Rice Panicle count for rice acquisition quest
+
+Cleaned up Shipping Bin list and price calculations. Intermediary ingredients like dough, raw pasta, chopped raw meats, etc and non-edible items like bowls, sticks, and compost/rich soil are no longer shippable. Added missing raw and cooked chevon from Animal Husbandry.
+
+Resolved duplicate recipe - Fried Egg - Farmer's Delight vs Animal Husbandry.
+
+Re-worked Completionism quest chapter, quest objectives should make more sense with their chapter titles now.
