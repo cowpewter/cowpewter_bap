@@ -3,7 +3,7 @@
   "icon": {
     "item": "minecraft:wheat"
   },
-  "order": 2,
+  "order": 1,
   "default_chapter": false,
   "hidden": false
 }

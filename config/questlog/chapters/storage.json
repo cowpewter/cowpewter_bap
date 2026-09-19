@@ -3,7 +3,7 @@
   "icon": {
     "item": "sophisticatedbackpacks:backpack"
   },
-  "order": 6,
+  "order": 5,
   "default_chapter": false,
   "hidden": false
 }

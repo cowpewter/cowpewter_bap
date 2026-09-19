@@ -3,7 +3,7 @@
   "icon": {
     "item": "minecraft:wheat_seeds"
   },
-  "order": 1,
+  "order": 0,
   "default_chapter": true,
   "hidden": false
 }

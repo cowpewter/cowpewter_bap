@@ -35,7 +35,7 @@ LOOKUP_JS = os.path.join(ROOT, "kubejs", "startup_scripts",
 
 NAMESPACE = "cowpewter_bap"
 CHAPTER = "questlog:completionism"
-QUEST_PREFIX = "6"          # completionism is chapter order 7; files run one below
+QUEST_PREFIX = "6"          # matches the completionism chapter's `order`
 
 # Categories in chapter order. `auto` entries are filled from recipe data;
 # everything else is listed explicitly. Moving an item is a one-line edit.
