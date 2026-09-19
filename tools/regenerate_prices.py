@@ -39,12 +39,9 @@ SCRIPT_OUT = os.path.join(HERE, "..", "kubejs", "startup_scripts",
 NEVER_PRICE = {
     "farmersdelight:straw",      # grass -> straw is infinite; money loop
     "farmersdelight:canvas",     # made from straw; same loop
-    "farmersdelight:tree_bark",  # log-stripping byproduct, not farm produce
-    "farmersdelight:rice_panicle", # too unprocessed to sell as produce
-    "farmersdelight:organic_compost", # seriously?
-    "farmersdelight:rich_soil",  # for planting not selling!
     "animalhusbandry:fried_egg", # dupe of FD recipe
     "farmersdelight:dog_food",   # utility item
+    "farmersdelight:rice_panicle", # too unprocessed to sell as produce
     # intermediate ingredients
     "farmersdelight:pie_crust",
     "farmersdelight:tomato_sauce",
@@ -57,13 +54,29 @@ NEVER_PRICE = {
     "farmersdelight:mutton_chops",
     "farmersdelight:cod_slice",
     "farmersdelight:salmon_slice",
+    "minecraft:sugar",
+    "minecraft:dried_kelp",
+    "minecraft:ink_sac",
+    "minecraft:kelp",
+    # Not even food
     "minecraft:stick",
     "minecraft:bowl",
-    "minecraft:sugar",
+    "minecraft:bone",
+    "minecraft:bone_meal",
+    "minecraft:glow_lichen",
+    "minecraft:hanging_roots",
+    "minecraft:rotten_flesh",
+    "farmersdelight:tree_bark",
+    "farmersdelight:organic_compost",
+    "farmersdelight:rich_soil",
 }
 
+# Base item prices that everything else get's calc'd from
+# DO include ingredients you can't ship, as the base price is needed to calc recipes
+# To exclude from shipping bin use NEVER_PRICE above
 BASE = {
     # vanilla, mirroring the original farm economy file
+    "#minecraft:wool": 12,
     "minecraft:wheat":8,"minecraft:potato":6,"minecraft:carrot":6,"minecraft:beetroot":8,
     "minecraft:melon_slice":3,"minecraft:pumpkin":20,"minecraft:sweet_berries":6,
     "minecraft:glow_berries":14,"minecraft:cocoa_beans":10,"minecraft:apple":12,
@@ -75,15 +88,21 @@ BASE = {
     "minecraft:dried_kelp":4,"minecraft:ink_sac":6,"minecraft:hanging_roots":3,
     "minecraft:glow_lichen":4,"minecraft:bowl":2,"minecraft:stick":1,
     "minecraft:honey_bottle":35,"minecraft:golden_carrot":160,"minecraft:kelp":2,
+    "minecraft:feather": 6, "minecraft:cookie": 15, "minecraft:glow_lichen": 4,
+    "minecraft:honeycomb": 25, "minecraft:leather": 20, "minecraft:pitcher_plant": 90,
+    "minecraft:rabbit_foot": 70, "minecraft:rabbit_hide": 10, "minecraft:torchflower": 90,
+
     # FD crops / basics
     "farmersdelight:cabbage":8,"farmersdelight:tomato":8,"farmersdelight:onion":8,
     "farmersdelight:rice_panicle":6, "farmersdelight:straw":2,
     "farmersdelight:tree_bark":3,"farmersdelight:milk_bottle":14,
     "farmersdelight:pie_crust":30, "farmersdelight:organic_compost":8,
     "farmersdelight:rich_soil":4,
+    # Animal Husbandry
+    "animalhusbandry:truffle": 35, "animal_husbandry:raw_chevon": 16,
 }
 
-SMELT_MULTIPLIER = 1.2
+SMELT_MULTIPLIER = 1.5
 
 # cutting-board / smelting derivatives
 BASE["minecraft:cooked_beef"]           = BASE["minecraft:beef"]*SMELT_MULTIPLIER
@@ -93,6 +112,9 @@ BASE["minecraft:cooked_mutton"]         = BASE["minecraft:mutton"]*SMELT_MULTIPL
 BASE["minecraft:cooked_porkchop"]       = BASE["minecraft:porkchop"]*SMELT_MULTIPLIER
 BASE["minecraft:cooked_rabbit"]         = BASE["minecraft:rabbit"]*SMELT_MULTIPLIER
 BASE["minecraft:cooked_salmon"]         = BASE["minecraft:salmon"]*SMELT_MULTIPLIER
+BASE["minecraft:hay_block"]             = BASE["minecraft:wheat"]*9
+BASE["minecraft:dried_kelp"]            = BASE["minecraft:kelp"]*SMELT_MULTIPLIER
+BASE["minecraft:dried_kelp_block"]      = BASE["minecraft:dried_kelp"]*9
 BASE["farmersdelight:rice"]             = BASE["farmersdelight:rice_panicle"]
 BASE["farmersdelight:pumpkin_slice"]    = BASE["minecraft:pumpkin"]/4
 BASE["farmersdelight:cabbage_leaf"]     = BASE["farmersdelight:cabbage"]/2
@@ -113,6 +135,7 @@ BASE["farmersdelight:cooked_cod_slice"] = BASE["farmersdelight:cod_slice"]*SMELT
 BASE["farmersdelight:salmon_slice"]     = BASE["minecraft:salmon"]/2
 BASE["farmersdelight:cooked_salmon_slice"]=BASE["farmersdelight:salmon_slice"]*SMELT_MULTIPLIER
 BASE["farmersdelight:fried_egg"]        = BASE["minecraft:egg"]*SMELT_MULTIPLIER
+BASE["animal_husbandry:cooked_chevon"]  = BASE["animal_husbandry:raw_chevon"]*SMELT_MULTIPLIER
 
 TAG = {
  "c:crops/wheat":"minecraft:wheat","c:crops/potato":"minecraft:potato",
@@ -207,7 +230,7 @@ for k,v in out.items(): print(f"{k:46} {v:7.1f}")
 def number(v):
     return int(v) if float(v).is_integer() else round(float(v),1)
 
-generated = dict({}); generated.update(out)
+generated = dict(BASE); generated.update(out)
 generated = {k: number(v) for k,v in generated.items()
              if v and v > 0 and k not in NEVER_PRICE}
 
