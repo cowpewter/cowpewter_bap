@@ -8,4 +8,7 @@
 
 4. Okay so instead of that, first I refactored everything that used `player.username` as a lookup key to `player.uuid`
 
+5. Then I actually tackled the breeding questline. The quests themselves still have some placeholder text because wow i can't word right now. But they should theoretically work.
+
+6. Um... I'm running out of things to fiddle before I need to playtest again. I need to fix the missing texture on Shipping Bin at min I guess before making a new build?
 
