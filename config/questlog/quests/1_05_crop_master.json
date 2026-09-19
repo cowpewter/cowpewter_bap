@@ -75,7 +75,7 @@
     },
     {
       "type": "questlog:item_obtain",
-      "item": ["#cowpewter_bap:rices"],
+      "item": "#cowpewter_bap:rices",
       "required_amount": 1,
       "name": "Find or grow Rice"
     }
