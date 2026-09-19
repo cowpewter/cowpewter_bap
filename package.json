@@ -13,7 +13,8 @@
     "generate": "npm run generate:prices && npm run generate:ship-quests",
     "generate:prices": "python3 tools/regenerate_prices.py",
     "generate:ship-quests": "python3 tools/generate_ship_quests.py",
-    "generate:recipes": "python3 tools/extract_fd_recipes.py"
+    "generate:recipes": "python3 tools/extract_fd_recipes.py",
+    "clean-mrpack": "python3 tools/clean_mrpack.py"
   },
   "repository": {
     "type": "git",

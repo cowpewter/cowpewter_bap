@@ -12,3 +12,5 @@
 
 6. Um... I'm running out of things to fiddle before I need to playtest again. I need to fix the missing texture on Shipping Bin at min I guess before making a new build?
 
+7. Okay time to make 0.2.0-alpha and playtest it on the Deck
+

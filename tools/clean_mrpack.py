@@ -34,6 +34,8 @@ DENY = [
     "config/sounds/chat.json",             # mention keyword = dev's username
     "config/jei/world/*",                  # per-world JEI lookup history
     "*_backup[0-9]*",                      # mod-written config backups
+    "config/xaeropatreon.txt",             # Xaero supporter key; empty today,
+                                           # but ships silently once it isn't
 ]
 
 # Only these shader packs may be referenced (license: see docs §5b).

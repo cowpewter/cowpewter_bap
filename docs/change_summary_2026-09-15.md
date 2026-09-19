@@ -26,8 +26,3 @@ I don't like getting paid in fractional emeralds. I think players will find it c
 6. Installed More Useful Copper and disabled like half of it, but it comes with its own copper ~~bucket and~~ shears with their own texture, which is nicely immersive compared to current state. Also NERFED copper ore.
 
 7. Worked with Claude to fix bugs in the auto-refill
-
-
-
-
-
