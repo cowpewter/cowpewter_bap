@@ -11,7 +11,7 @@
       "type": "questlog:item_obtain",
       "item": "#c:seeds",
       "required_amount": 1,
-      "name": "Find something you can plant"
+      "name": "Find something you can grow"
     }
   ],
   "rewards": [

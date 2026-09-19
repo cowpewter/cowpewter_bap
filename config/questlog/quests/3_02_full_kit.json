@@ -1,0 +1,48 @@
+{
+  "title": "Professional Kitchen",
+  "description": "To cook more complex meals, you're going to need a fully kitted out kitchen. Craft the following to create your dream kitchen:",
+  "icon": {
+    "item": "farmersdelight:stove"
+  },
+  "sort_order": 2,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:cutting_board",
+      "required_amount": 1,
+      "name": "Craft a Cutting Board"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:stove",
+      "required_amount": 1,
+      "name": "Craft a Stove"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:cooking_pot",
+      "required_amount": 1,
+      "name": "Craft a Cooking Pot"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:bowl",
+      "required_amount": 8,
+      "name": "Craft some Bowls"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "minecraft:glass_bottle",
+      "required_amount": 6,
+      "name": "Craft some Glass Bottles"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:kitchen"
+}

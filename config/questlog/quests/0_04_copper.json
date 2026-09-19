@@ -1,6 +1,6 @@
 {
   "title": "Copper",
-  "description": "Copper has a couple important early uses in this pack, as unlike in Vanilla, it can be used to craft both buckets and shears, two vital pieces of farm equipment. You can also use it to craft a Bell, which can be used to summon a Wandering Trader.",
+  "description": "Copper has a few important early uses in this pack, as unlike in Vanilla, it can be used to craft both Buckets and Shears, two vital pieces of farm equipment. You can also use it to craft a Bell, which can be used to summon a Wandering Trader.",
   "icon": {
     "item": "minecraft:bucket"
   },
@@ -17,19 +17,19 @@
       "type": "questlog:item_obtain",
       "item": "minecraft:raw_copper",
       "required_amount": 8,
-      "name": "Mine least 8 copper"
+      "name": "Mine least 8 Raw Copper"
     },
     {
       "type": "questlog:item_obtain",
       "item": "minecraft:bucket",
       "required_amount": 1,
-      "name": "Craft a bucket"
+      "name": "Craft a Bucket"
     },
     {
       "type": "questlog:item_obtain",
       "item": "more_useful_copper:copper_shears",
       "required_amount": 1,
-      "name": "Craft a pair of shears"
+      "name": "Craft a pair of Shears"
     },
     {
       "type": "questlog:block_place",

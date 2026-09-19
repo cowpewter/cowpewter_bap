@@ -1,0 +1,30 @@
+{
+  "title": "Food To-Go",
+  "description": "Need to cook out on the road? Try a Skillet. You can either place the Skillet over a Campfire, and place up a full stack of raw food on it at once, or you can hold the raw food in your offhand, and use the Skillet near a source of heat. Unlike Furnaces and Smokers, Skillets do not consume fuel to cook.",
+  "icon": {
+    "item": "farmersdelight:skillet"
+  },
+  "sort_order": 1,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:block_place",
+      "block": "minecraft:campfire",
+      "required_amount": 1,
+      "name": "Craft and place a Campfire"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:skillet",
+      "required_amount": 1,
+      "name": "Craft a Skillet"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:kitchen"
+}

@@ -1,6 +1,6 @@
 {
   "title": "Stone Tools",
-  "description": "Wooden tools won't take you very far. Luckily you're pretty handy. Craft a full set of stone tools. Remember, there are no swords here, but there is a handy knife, made from flint and a stick. Flint can be randomly obtained by breaking gravel, or by placing gravel on a Cutting Board and using a shovel on it.",
+  "description": "Wooden tools won't take you very far. Luckily you're pretty handy. Craft a full set of stone tools. Remember, there are no swords here, but there is a knife, made from flint and a stick. Flint can be randomly obtained by breaking gravel, or by placing gravel on a Cutting Board and using a Shovel on it.",
   "icon": {
     "item": "minecraft:stone_hoe"
   },

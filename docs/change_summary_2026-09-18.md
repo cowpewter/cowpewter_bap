@@ -18,6 +18,8 @@
 
 9. And now we can do individual objective completion with custom advancements!
 
+10. Then after work, I did some cleanup (make chapter indices match their quests) and had Claude convert all questlog:unobtainable objectives to custom advancement style.
+
 ## Todo
 
 Wow I think all that's left is Quests and re-writing the mod page description

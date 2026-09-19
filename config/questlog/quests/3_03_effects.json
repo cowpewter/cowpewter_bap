@@ -1,0 +1,30 @@
+{
+  "title": "Comfort & Nourishment",
+  "description": "With your new kitchen, you can now cook both Meals and Feasts. Meals will provide Comfort when eaten, providing a short period of natural health regen. Feasts, which, like Vanilla Cake, must be placed before eating, provide Nourishment. Nourishment prevents the loss of Saturation through actions like running and jumping.",
+  "icon": {
+    "item": "farmersdelight:beef_stew"
+  },
+  "sort_order": 3,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:effect_added",
+      "effect": "farmersdelight:comfort",
+      "required_amount": 1,
+      "name": "Receive Comfort"
+    },
+    {
+      "type": "questlog:effect_added",
+      "effect": "farmersdelight:nourishment",
+      "required_amount": 1,
+      "name": "Receive Nourishment"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:kitchen"
+}

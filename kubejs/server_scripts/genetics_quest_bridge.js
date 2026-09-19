@@ -16,7 +16,7 @@
 
 (function () {
   // Item that triggers an inspection. Empty string = any item.
-  var INSPECT_ITEM = 'animalhusbandry:magnifying_glass';
+  var INSPECT_ITEM = 'animalhusbandry:farm_ledger';
 
   var YIELD_QUEST = 'questlog:06_prize_animal';
   var YIELD_THRESHOLD = 0.85;   // producYield counting as "exceptional" (0.0-1.0)
