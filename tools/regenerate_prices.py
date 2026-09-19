@@ -40,10 +40,30 @@ NEVER_PRICE = {
     "farmersdelight:straw",      # grass -> straw is infinite; money loop
     "farmersdelight:canvas",     # made from straw; same loop
     "farmersdelight:tree_bark",  # log-stripping byproduct, not farm produce
+    "farmersdelight:rice_panicle", # too unprocessed to sell as produce
+    "farmersdelight:organic_compost", # seriously?
+    "farmersdelight:rich_soil",  # for planting not selling!
+    "animalhusbandry:fried_egg", # dupe of FD recipe
+    "farmersdelight:dog_food",   # utility item
+    # intermediate ingredients
+    "farmersdelight:pie_crust",
+    "farmersdelight:tomato_sauce",
+    "farmersdelight:wheat_dough",
+    "farmersdelight:raw_pasta",
+    "farmersdelight:minced_beef",
+    "farmersdelight:chicken_cuts",
+    "farmersdelight:bacon",
+    "farmersdelight:ham",
+    "farmersdelight:mutton_chops",
+    "farmersdelight:cod_slice",
+    "farmersdelight:salmon_slice",
+    "minecraft:stick",
+    "minecraft:bowl",
+    "minecraft:sugar",
 }
 
 BASE = {
-    # vanilla, mirroring the existing farm economy file
+    # vanilla, mirroring the original farm economy file
     "minecraft:wheat":8,"minecraft:potato":6,"minecraft:carrot":6,"minecraft:beetroot":8,
     "minecraft:melon_slice":3,"minecraft:pumpkin":20,"minecraft:sweet_berries":6,
     "minecraft:glow_berries":14,"minecraft:cocoa_beans":10,"minecraft:apple":12,
@@ -55,34 +75,44 @@ BASE = {
     "minecraft:dried_kelp":4,"minecraft:ink_sac":6,"minecraft:hanging_roots":3,
     "minecraft:glow_lichen":4,"minecraft:bowl":2,"minecraft:stick":1,
     "minecraft:honey_bottle":35,"minecraft:golden_carrot":160,"minecraft:kelp":2,
-    "minecraft:cooked_beef":20,"minecraft:cooked_porkchop":20,"minecraft:cooked_mutton":18,
-    "minecraft:cooked_chicken":18,"minecraft:cooked_rabbit":20,"minecraft:cooked_cod":16,
-    "minecraft:cooked_salmon":18,
     # FD crops / basics
     "farmersdelight:cabbage":8,"farmersdelight:tomato":8,"farmersdelight:onion":8,
-    "farmersdelight:rice_panicle":6,"farmersdelight:rice":6,"farmersdelight:pumpkin_slice":5,
-    "farmersdelight:straw":2,"farmersdelight:tree_bark":3,"farmersdelight:milk_bottle":14,
-    "farmersdelight:cabbage_leaf":4,"farmersdelight:pie_crust":30,
-    "farmersdelight:organic_compost":8,"farmersdelight:rich_soil":4,
+    "farmersdelight:rice_panicle":6, "farmersdelight:straw":2,
+    "farmersdelight:tree_bark":3,"farmersdelight:milk_bottle":14,
+    "farmersdelight:pie_crust":30, "farmersdelight:organic_compost":8,
+    "farmersdelight:rich_soil":4,
 }
+
+SMELT_MULTIPLIER = 1.2
+
 # cutting-board / smelting derivatives
+BASE["minecraft:cooked_beef"]           = BASE["minecraft:beef"]*SMELT_MULTIPLIER
+BASE["minecraft:cooked_cod"]            = BASE["minecraft:cod"]*SMELT_MULTIPLIER
+BASE["minecraft:cooked_chicken"]        = BASE["minecraft:chicken"]*SMELT_MULTIPLIER
+BASE["minecraft:cooked_mutton"]         = BASE["minecraft:mutton"]*SMELT_MULTIPLIER
+BASE["minecraft:cooked_porkchop"]       = BASE["minecraft:porkchop"]*SMELT_MULTIPLIER
+BASE["minecraft:cooked_rabbit"]         = BASE["minecraft:rabbit"]*SMELT_MULTIPLIER
+BASE["minecraft:cooked_salmon"]         = BASE["minecraft:salmon"]*SMELT_MULTIPLIER
+BASE["farmersdelight:rice"]             = BASE["farmersdelight:rice_panicle"]
+BASE["farmersdelight:pumpkin_slice"]    = BASE["minecraft:pumpkin"]/4
+BASE["farmersdelight:cabbage_leaf"]     = BASE["farmersdelight:cabbage"]/2
 BASE["farmersdelight:wheat_dough"]      = BASE["minecraft:wheat"]
 BASE["farmersdelight:raw_pasta"]        = BASE["farmersdelight:wheat_dough"]
 BASE["farmersdelight:minced_beef"]      = BASE["minecraft:beef"]/2
-BASE["farmersdelight:beef_patty"]       = BASE["farmersdelight:minced_beef"]*1.2
+BASE["farmersdelight:beef_patty"]       = BASE["farmersdelight:minced_beef"]*SMELT_MULTIPLIER
 BASE["farmersdelight:chicken_cuts"]     = BASE["minecraft:chicken"]/2
-BASE["farmersdelight:cooked_chicken_cuts"]= BASE["farmersdelight:chicken_cuts"]*1.2
+BASE["farmersdelight:cooked_chicken_cuts"]= BASE["farmersdelight:chicken_cuts"]*SMELT_MULTIPLIER
 BASE["farmersdelight:bacon"]            = BASE["minecraft:porkchop"]/2
-BASE["farmersdelight:cooked_bacon"]     = BASE["farmersdelight:bacon"]*1.2
+BASE["farmersdelight:cooked_bacon"]     = BASE["farmersdelight:bacon"]*SMELT_MULTIPLIER
 BASE["farmersdelight:ham"]              = BASE["minecraft:porkchop"]
-BASE["farmersdelight:smoked_ham"]       = BASE["farmersdelight:ham"]*1.2
+BASE["farmersdelight:smoked_ham"]       = BASE["farmersdelight:ham"]*SMELT_MULTIPLIER
 BASE["farmersdelight:mutton_chops"]     = BASE["minecraft:mutton"]/2
-BASE["farmersdelight:cooked_mutton_chops"]=BASE["farmersdelight:mutton_chops"]*1.2
+BASE["farmersdelight:cooked_mutton_chops"]=BASE["farmersdelight:mutton_chops"]*SMELT_MULTIPLIER
 BASE["farmersdelight:cod_slice"]        = BASE["minecraft:cod"]/2
-BASE["farmersdelight:cooked_cod_slice"] = BASE["farmersdelight:cod_slice"]*1.2
+BASE["farmersdelight:cooked_cod_slice"] = BASE["farmersdelight:cod_slice"]*SMELT_MULTIPLIER
 BASE["farmersdelight:salmon_slice"]     = BASE["minecraft:salmon"]/2
-BASE["farmersdelight:cooked_salmon_slice"]=BASE["farmersdelight:salmon_slice"]*1.2
-BASE["farmersdelight:fried_egg"]        = BASE["minecraft:egg"]*1.2
+BASE["farmersdelight:cooked_salmon_slice"]=BASE["farmersdelight:salmon_slice"]*SMELT_MULTIPLIER
+BASE["farmersdelight:fried_egg"]        = BASE["minecraft:egg"]*SMELT_MULTIPLIER
 
 TAG = {
  "c:crops/wheat":"minecraft:wheat","c:crops/potato":"minecraft:potato",
@@ -177,24 +207,7 @@ for k,v in out.items(): print(f"{k:46} {v:7.1f}")
 def number(v):
     return int(v) if float(v).is_integer() else round(float(v),1)
 
-# Not recipe outputs (or protected base values) but still sold.
-# Straw and tree bark are deliberately absent — see NEVER_PRICE.
-EXTRA = {
-  "farmersdelight:cabbage":8,"farmersdelight:tomato":8,"farmersdelight:onion":8,
-  "farmersdelight:rice":6,"farmersdelight:rice_panicle":6,
-  "farmersdelight:cabbage_leaf":4,"farmersdelight:pumpkin_slice":5,
-  "farmersdelight:wheat_dough":8,"farmersdelight:raw_pasta":8,
-  "farmersdelight:minced_beef":7,"farmersdelight:beef_patty":8.4,
-  "farmersdelight:chicken_cuts":6,"farmersdelight:cooked_chicken_cuts":7.2,
-  "farmersdelight:bacon":7,"farmersdelight:cooked_bacon":8.4,
-  "farmersdelight:ham":14,"farmersdelight:smoked_ham":16.8,
-  "farmersdelight:mutton_chops":6,"farmersdelight:cooked_mutton_chops":7.2,
-  "farmersdelight:cod_slice":5,"farmersdelight:cooked_cod_slice":6,
-  "farmersdelight:salmon_slice":6,"farmersdelight:cooked_salmon_slice":7.2,
-  "farmersdelight:fried_egg":12,"farmersdelight:milk_bottle":14,
-  "farmersdelight:pie_crust":30,"farmersdelight:organic_compost":8,
-}
-generated = dict(EXTRA); generated.update(out)
+generated = dict({}); generated.update(out)
 generated = {k: number(v) for k,v in generated.items()
              if v and v > 0 and k not in NEVER_PRICE}
 
