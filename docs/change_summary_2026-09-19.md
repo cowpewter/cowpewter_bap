@@ -34,6 +34,8 @@ Oofta. So it both went amazingly well in that most of it really does work exactl
 
 8. Fixed Completionism quest generation - specifically what chapters everything slots into, must be explicit now
 
+9. Added #cowpewter_bap:plantable tag so that root veg count for Seedling quest
 
+10. 
 
 

@@ -9,7 +9,7 @@
   "objectives": [
     {
       "type": "questlog:item_obtain",
-      "item": "#c:seeds",
+      "item": "#cowpewter_bap:plantable",
       "required_amount": 1,
       "name": "Find something you can grow"
     }

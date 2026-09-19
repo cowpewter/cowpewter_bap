@@ -22,3 +22,7 @@ Cleaned up Shipping Bin list and price calculations. Intermediary ingredients li
 Resolved duplicate recipe - Fried Egg - Farmer's Delight vs Animal Husbandry.
 
 Re-worked Completionism quest chapter, quest objectives should make more sense with their chapter titles now.
+
+Added #cowpewter_bap:plantable tag so that root veg count for Seedling quest
+
+
