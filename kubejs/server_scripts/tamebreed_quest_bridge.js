@@ -4,12 +4,14 @@
     'minecraft:sheep',
     'minecraft:pig',
     'minecraft:chicken',
+    'minecraft:goat',
   ];
 
   var TAMING_FOODS = {
     'minecraft:cow': ['minecraft:wheat'],
     'minecraft:sheep': ['minecraft:wheat'],
     'minecraft:pig': ['minecraft:carrot'],
+    'minecraft:goat': ['minecraft:wheat'],
     'minecraft:chicken': [
       'minecraft:wheat_seeds',
       'minecraft:pumpkin_seeds',
@@ -17,54 +19,26 @@
       'minecraft:beetroot_seeds',
       'farmersdelight:cabbage_seeds',
       'farmersdelight:tomato_seeds',
-    ]
+    ],
   };
 
   // Granted unconditionally; a questlog:advancement objective decides what (if
   // anything) watches them, so this bridge no longer needs to know quest ids.
   var ADV_TAME = 'cowpewter_bap:quest/tame_animal';
   var ADV_BREED = 'cowpewter_bap:quest/breed_animal';
+  var ADV_HERDSIZE = 'cowpewter_bap:quest/herd';
+  var ADV_PEDIGREE = 'cowpewter_bap:quest/pedigree';
+  var ADV_SUPERIOR = 'cowpewter_bap:quest/superior_genes';
+  var ADV_BEAST = 'cowpewter_bap:quest/ultimate_beast';
 
-  var ENTITY_MULTI_QUESTS = {
-    'minecraft:cow': {
-      'herdSizeQuest': '',
-      'herdSizeQuantity': 20,
-      'everOwnedQuest': '',
-      'everOwnedQuantity': 50,
-    },
-    'minecraft:sheep': {
-      'herdSizeQuest': '',
-      'herdSizeQuantity': 20,
-      'everOwnedQuest': '',
-      'everOwnedQuantity': 50,
-    },
-    'minecraft:pig': {
-      'herdSizeQuest': '',
-      'herdSizeQuantity': 20,
-      'everOwnedQuest': '',
-      'everOwnedQuantity': 50,
-    },
-    'minecraft:chicken': {
-      'herdSizeQuest': '',
-      'herdSizeQuantity': 20,
-      'everOwnedQuest': '',
-      'everOwnedQuantity': 50,
-    }
-  };
+  var HERD_COMPLETE_SIZE = 25;
+  var PEDIGREE_MIN_GENERATION = 10;
+  var SUPERIOR_STAT_MIN = 0.9;
+  var BEAST_STAT_MIN = 0.95;
 
   function grantAdvancement(server, adv, username) {
     server.runCommandSilent(
       'advancement grant ' + username + ' only ' + adv
-    );
-  }
-
-  function completeQuest(server, questId, username) {
-    // Quests in ENTITY_MULTI_QUESTS aren't written yet; skip rather than
-    // running a malformed command every time a threshold is crossed.
-    if (!questId) return;
-
-    server.runCommandSilent(
-      `questlog progress complete ${questId} ${username}`
     );
   }
 
@@ -78,7 +52,6 @@
 
   function incrementHerd(player, entityId) {
     var pData = player.persistentData;
-    var questData = ENTITY_MULTI_QUESTS[entityId];
 
     // Current Herd Size
     var herdSizeKey = getHerdSizeEntityKey(entityId);
@@ -93,13 +66,10 @@
     pData.setInt(everOwnedKey, currentEverOwned);
 
     // Fire quest completion triggers
-    if (!questData) return;
-    if (currentHerdSize >= questData.herdSizeQuantity) {
-      completeQuest(player.server, questData.herdSizeQuest, player.username);
+    if (currentHerdSize >= HERD_COMPLETE_SIZE) {
+      grantAdvancement(player.server, ADV_HERDSIZE, player.username);
     }
-    if (currentEverOwned >= questData.everOwnedQuantity) {
-      completeQuest(player.server, questData.everOwnedQuest, player.username);
-    }
+    // @todo everOwned - do I even want this as a quest
   }
 
   function decrementHerd(player, entityId) {
@@ -109,6 +79,15 @@
     var currentCount = pData.getInt(key) || 0;
     var newCount = Math.max(0, currentCount - 1);
     pData.setInt(key, newCount);
+  }
+
+  function getGenetics(entity) {
+    var nbt = null;
+    try { nbt = entity.nbt; } catch (e) { return null; }
+    if (!nbt) return null;
+    var att = nbt['neoforge:attachments'];
+    if (!att) return null;
+    return att['animalhusbandry:genetics'] || null;
   }
 
   // Livestock has no vanilla owner, so we stamp one when a player feeds an
@@ -186,6 +165,29 @@
     // Fire breed quest and update count
     grantAdvancement(owner.server, ADV_BREED, owner.username);
     incrementHerd(owner, entityId);
+
+    // Check stats and fire genetics advancements
+    var genetics = getGenetics(entity);
+    var growthRate = parseFloat(genetics.growthRate);
+    var yield = parseFloat(genetics.producYield);
+    var fertility = parseFloat(genetics.fertility);
+    var constitution = parseFloat(genetics.constitution);
+    var generation = parseInt(genetics.generation);
+    var statArray = [growthRate, yield, fertility, constitution];
+
+    if (generation >= PEDIGREE_MIN_GENERATION) {
+      grantAdvancement(owner.server, ADV_PEDIGREE, owner.username);
+    }
+
+    // One stat above min
+    if (statArray.some(stat => stat >= SUPERIOR_STAT_MIN)) {
+      grantAdvancement(owner.server, ADV_SUPERIOR, owner.username);
+    }
+
+    // All stats above min
+    if (statArray.every(stat => stat >= BEAST_STAT_MIN)) {
+      grantAdvancement(owner.server, ADV_BEAST, owner.username);
+    }
   });
 
   EntityEvents.death(event => {

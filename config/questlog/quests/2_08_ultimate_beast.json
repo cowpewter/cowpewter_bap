@@ -1,0 +1,25 @@
+{
+  "title": "Ultimate Beast",
+  "description": "[@todo description]",
+  "icon": {
+    "item": "minecraft:goat_spawn_egg"
+  },
+  "sort_order": 8,
+  "requirements": [
+    "questlog:2_03_breeding"
+  ],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:quest/ultimate_beast",
+      "name": "Breed an animal with all max stats"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:barn"
+}
