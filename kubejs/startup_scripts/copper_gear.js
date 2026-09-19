@@ -167,14 +167,14 @@
   // event after hurtEnemy, so remember the fire state when the attack starts,
   // swallow the fire damage that lands in the next couple of ticks, and put
   // the fire back out.
-  var shovelHits = {};   // username -> { fireBefore, untilTick }
+  var shovelHits = {};   // uuid -> { fireBefore, untilTick }
   var SHOVEL_WINDOW_TICKS = 2;
 
   NativeEvents.onEvent(AttackEntityEvent, guarded('shovel attack', function (event) {
     var player = event.getEntity();
     if (player.level.isClientSide()) return;
     if (String(player.getMainHandItem().id) !== MOD + 'copper_shovel') return;
-    shovelHits[player.username] = {
+    shovelHits[player.uuid] = {
       fireBefore: player.getRemainingFireTicks(),
       untilTick: player.tickCount + SHOVEL_WINDOW_TICKS,
     };
@@ -185,7 +185,7 @@
     if (String(event.getSource().getType()) !== 'onFire') return;
     var entity = event.getEntity();
     if (!entity.isPlayer() || entity.level.isClientSide()) return;
-    var hit = shovelHits[entity.username];
+    var hit = shovelHits[entity.uuid];
     if (!hit || entity.tickCount > hit.untilTick) return;
     event.setCanceled(true);
     entity.setRemainingFireTicks(hit.fireBefore);
@@ -193,9 +193,9 @@
 
   NativeEvents.onEvent(PlayerTickPost, guarded('shovel tick', function (event) {
     var player = event.getEntity();
-    var hit = shovelHits[player.username];
+    var hit = shovelHits[player.uuid];
     if (!hit || player.level.isClientSide()) return;
     if (player.getRemainingFireTicks() > hit.fireBefore) player.setRemainingFireTicks(hit.fireBefore);
-    if (player.tickCount > hit.untilTick) delete shovelHits[player.username];
+    if (player.tickCount > hit.untilTick) delete shovelHits[player.uuid];
   }));
 })();

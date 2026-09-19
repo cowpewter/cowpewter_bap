@@ -44,14 +44,14 @@ const BAP_POUCH = (function () {
       stackData.curios.setEquippedCurio('coin_pouch', 0, Item.of('cowpewter_bap:coin_pouch'));
     }
     // Cleanup in case player disco'd
-    delete OPEN_POUCHES[player.username];
+    delete OPEN_POUCHES[player.uuid];
   });
 
   PlayerEvents.loggedOut(event => {
     const player = event.player;
     if (!player) return;
     // Cleanup in case player disco'd
-    delete OPEN_POUCHES[player.username];
+    delete OPEN_POUCHES[player.uuid];
   });
 
   // Open GUI on keybind
@@ -160,7 +160,7 @@ const BAP_POUCH = (function () {
     if (!player) return;
 
     // Player has the Coin Pouch GUI open, add to bag
-    const currentPouch = OPEN_POUCHES[player.username] || null;
+    const currentPouch = OPEN_POUCHES[player.uuid] || null;
     if (currentPouch) {
       addToContainer(event, currentPouch);
       return;
@@ -278,17 +278,17 @@ const BAP_POUCH = (function () {
     if (!player || !pouch) return;
 
     const tempInv = getLinkedContainerFromPouch(player, pouch);
-    OPEN_POUCHES[player.username] = tempInv;
+    OPEN_POUCHES[player.uuid] = tempInv;
     player.openInventoryGUI(tempInv, Text.of('Coin Pouch'));
   };
 
   PlayerEvents.inventoryClosed('kubejs:menu', event => {
     if (!event.player) return;
-    const container = OPEN_POUCHES[event.player.username];
+    const container = OPEN_POUCHES[event.player.uuid];
     if (container) {
       condenseContainer(container);
     }
-    delete OPEN_POUCHES[event.player.username];
+    delete OPEN_POUCHES[event.player.uuid];
   });
 
   // useful other places

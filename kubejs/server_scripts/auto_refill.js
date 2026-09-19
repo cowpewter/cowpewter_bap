@@ -48,7 +48,6 @@
     'minecraft:axes',
     'minecraft:shovels',
     'minecraft:hoes',
-    'minecraft:swords',
     'c:tools/knife',
     'c:tools/shear'
   ];
@@ -108,7 +107,7 @@
   // Arm the blackout and forget what was held, so nothing rushes back into the
   // slot now OR when the blackout lapses.
   function suppress(player) {
-    var key = player.username;
+    var key = player.uuid;
     suppressTicks[key] = SUPPRESS_TICKS;
     delete lastHeld[key];
   }
@@ -273,7 +272,7 @@
     var player = event.player;
     var inv = player.inventory;
     var sel = player.selectedSlot;
-    var key = player.username;
+    var key = player.uuid;
     var held = inv.getStackInSlot(sel);
     var prev = lastHeld[key];
     var src, count, fresh, worn;
@@ -433,7 +432,7 @@
   });
 
   PlayerEvents.loggedOut(function (event) {
-    var key = event.player.username;
+    var key = event.player.uuid;
     delete lastHeld[key];
     delete suppressTicks[key];
     delete screenOpen[key];

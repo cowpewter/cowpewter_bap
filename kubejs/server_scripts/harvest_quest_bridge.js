@@ -45,7 +45,7 @@
     if (!items) return;
 
     // Record every click, including bone-meal clicks.
-    pendingHarvest[event.player.username] = {
+    pendingHarvest[event.player.uuid] = {
       expires: event.server.tickCount + 10,
       items: items
     };
@@ -54,19 +54,19 @@
   PlayerEvents.inventoryChanged(event => {
     if (!event.player || !event.item) return;
 
-    const username = event.player.username;
-    const pending = pendingHarvest[username];
+    const uuid = event.player.uuid;
+    const pending = pendingHarvest[uuid];
 
     if (!pending) return;
 
     if (event.player.server.tickCount > pending.expires) {
-      delete pendingHarvest[username];
+      delete pendingHarvest[uuid];
       return;
     }
 
     if (!pending.items.includes(event.item.id)) return;
 
-    delete pendingHarvest[username];
+    delete pendingHarvest[uuid];
 
     grantHarvested(event.player.server, username);
   });
