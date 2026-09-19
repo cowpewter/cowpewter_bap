@@ -1,0 +1,93 @@
+{
+  "title": "Meals",
+  "description": "Ship one of every item in this group.\n\n15 in total.",
+  "icon": {
+    "item": "farmersdelight:skillet"
+  },
+  "sort_order": 10,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/apple_cider",
+      "name": "Apple Cider"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/bacon_and_eggs",
+      "name": "Bacon And Eggs"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/barbecue_stick",
+      "name": "Barbecue Stick"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cabbage_rolls",
+      "name": "Cabbage Rolls"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_rice",
+      "name": "Cooked Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/dumplings",
+      "name": "Dumplings"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/fried_rice",
+      "name": "Fried Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/mushroom_rice",
+      "name": "Mushroom Rice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pasta_with_meatballs",
+      "name": "Pasta With Meatballs"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pasta_with_mutton_chop",
+      "name": "Pasta With Mutton Chop"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/ratatouille",
+      "name": "Ratatouille"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/squid_ink_pasta",
+      "name": "Squid Ink Pasta"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/steak_and_potatoes",
+      "name": "Steak And Potatoes"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/stuffed_potato",
+      "name": "Stuffed Potato"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/vegetable_noodles",
+      "name": "Vegetable Noodles"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 75
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

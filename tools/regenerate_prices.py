@@ -42,6 +42,7 @@ NEVER_PRICE = {
     "animalhusbandry:fried_egg", # dupe of FD recipe
     "farmersdelight:dog_food",   # utility item
     "farmersdelight:rice_panicle", # too unprocessed to sell as produce
+    "farmersdelight:cabbage_leaf", # sell the whole cabbage jeez
     # intermediate ingredients
     "farmersdelight:pie_crust",
     "farmersdelight:tomato_sauce",
@@ -54,6 +55,7 @@ NEVER_PRICE = {
     "farmersdelight:mutton_chops",
     "farmersdelight:cod_slice",
     "farmersdelight:salmon_slice",
+    "farmersdelight:pumpkin_slice",
     "minecraft:sugar",
     "minecraft:dried_kelp",
     "minecraft:ink_sac",
@@ -91,6 +93,7 @@ BASE = {
     "minecraft:feather": 6, "minecraft:cookie": 15, "minecraft:glow_lichen": 4,
     "minecraft:honeycomb": 25, "minecraft:leather": 20, "minecraft:pitcher_plant": 90,
     "minecraft:rabbit_foot": 70, "minecraft:rabbit_hide": 10, "minecraft:torchflower": 90,
+    "minecraft:glistening_melon_slice": 160,
 
     # FD crops / basics
     "farmersdelight:cabbage":8,"farmersdelight:tomato":8,"farmersdelight:onion":8,

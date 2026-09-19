@@ -1,6 +1,6 @@
 {
   "title": "Raw Meat & Fish",
-  "description": "Ship one of every item in this group.\n\n5 in total.",
+  "description": "Ship one of every item in this group.\n\n8 in total.",
   "icon": {
     "item": "minecraft:beef"
   },
@@ -19,6 +19,11 @@
     },
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cod",
+      "name": "Cod"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/mutton",
       "name": "Mutton"
     },
@@ -31,12 +36,22 @@
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/rabbit",
       "name": "Rabbit"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/animal_husbandry/raw_chevon",
+      "name": "Raw Chevon"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/salmon",
+      "name": "Salmon"
     }
   ],
   "rewards": [
     {
       "type": "questlog:experience",
-      "experience": 25
+      "experience": 40
     }
   ],
   "chapter": "questlog:completionism"

@@ -15,7 +15,6 @@
   const NON_CROP_TAGGED = [
     'farmersdelight:tomatoes',
     'farmersdelight:rice',
-    'farmersdelight:rice_panicles',
   ];
 
   const pendingHarvest = {};

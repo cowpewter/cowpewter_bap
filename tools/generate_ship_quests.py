@@ -40,66 +40,107 @@ QUEST_PREFIX = "6"          # matches the completionism chapter's `order`
 # Categories in chapter order. `auto` entries are filled from recipe data;
 # everything else is listed explicitly. Moving an item is a one-line edit.
 CATEGORIES = [
-    ("vanilla_crops", "Vanilla Crops", "minecraft:wheat", [
+    ("crops", "Crops", "minecraft:wheat", [
         "minecraft:wheat", "minecraft:potato", "minecraft:carrot",
         "minecraft:beetroot", "minecraft:pumpkin", "minecraft:melon_slice",
         "minecraft:sweet_berries", "minecraft:glow_berries",
-        "minecraft:cocoa_beans", "minecraft:apple", "minecraft:sugar_cane",
+        "minecraft:cocoa_beans", "minecraft:apple",
         "minecraft:brown_mushroom", "minecraft:red_mushroom",
         "minecraft:torchflower", "minecraft:pitcher_plant",
+        "minecraft:hay_block", "minecraft:dried_kelp_block",
+        "farmersdelight:cabbage", "farmersdelight:rice",
+        "farmersdelight:tomato", "farmersdelight:onion",
         "animalhusbandry:truffle",
     ]),
     ("animal_products", "Animal Products", "minecraft:egg", [
-        "minecraft:egg", "minecraft:milk_bucket", "minecraft:leather",
-        "minecraft:feather", "minecraft:honeycomb", "minecraft:honey_bottle",
-        "minecraft:rabbit_hide", "minecraft:rabbit_foot",
+        "minecraft:egg", "minecraft:milk_bucket", "farmersdelight:milk_bottle",
+        "minecraft:leather", "minecraft:feather", "minecraft:honeycomb",
+        "minecraft:honey_bottle", "minecraft:rabbit_hide", "minecraft:rabbit_foot",
     ]),
-    ("wool", "Wool", "minecraft:white_wool", "auto:wool"),
+    ("wool", "A Woolen Rainbow", "minecraft:white_wool", "auto:wool"),
     ("raw_meat", "Raw Meat & Fish", "minecraft:beef", [
         "minecraft:beef", "minecraft:porkchop", "minecraft:mutton",
-        "minecraft:chicken", "minecraft:rabbit",
+        "minecraft:chicken", "minecraft:rabbit", "animal_husbandry:raw_chevon",
+        "minecraft:cod", "minecraft:salmon",
     ]),
     ("cooked_meat", "Cooked Meat & Fish", "minecraft:cooked_beef", [
         "minecraft:cooked_beef", "minecraft:cooked_porkchop",
         "minecraft:cooked_mutton", "minecraft:cooked_chicken",
-        "minecraft:cooked_rabbit",
+        "minecraft:cooked_rabbit", "animal_husbandry:cooked_chevon",
+        "minecraft:cooked_cod",
+        "minecraft:cooked_salmon", "farmersdelight:beef_patty",
+        "farmersdelight:cooked_bacon",
+        "farmersdelight:smoked_ham", "farmersdelight:fried_egg",
+        "farmersdelight:roasted_mutton_chops", "farmersdelight:grilled_salmon",
+        "farmersdelight:cooked_chicken_cuts",
+        "farmersdelight:cooked_cod_slice",
+        "farmersdelight:cooked_mutton_chops",
+        "farmersdelight:cooked_salmon_slice",
     ]),
-    ("vanilla_kitchen", "Vanilla Recipes", "minecraft:bread", [
+    ("salads", "Salads and Veg", "farmersdelight:mixed_salad", [
+        "farmersdelight:fruit_salad",
+        "farmersdelight:mixed_salad",
+        "farmersdelight:nether_salad",
+    ]),
+    ("soups", "Soups & Stews", "minecraft:mushroom_stew", [
+        "minecraft:beetroot_soup", "farmersdelight:vegetable_soup",
+        "farmersdelight:pumpkin_soup", "farmersdelight:onion_soup",
+        "farmersdelight:noodle_soup", "farmersdelight:chicken_soup",
+        "minecraft:rabbit_stew", "minecraft:mushroom_stew",
+        "farmersdelight:fish_stew", "farmersdelight:beef_stew",
+        "farmersdelight:baked_cod_stew", "farmersdelight:bone_broth",
+    ]),
+    ("sandwiches", "Sandwiches & Wraps", "farmersdelight:chicken_sandwich", [
+        "farmersdelight:bacon_sandwich",
+        "farmersdelight:chicken_sandwich",
+        "farmersdelight:egg_sandwich",
+        "farmersdelight:hamburger",
+        "farmersdelight:mutton_wrap",
+    ]),
+    ("sushi", "Sushi", "farmersdelight:salmon_roll", [
+        "farmersdelight:cod_roll", 
+        "farmersdelight:kelp_roll",
+        "farmersdelight:salmon_roll",
+    ]),
+    ("meals", "Meals", "farmersdelight:skillet", [
+        "farmersdelight:bacon_and_eggs",
+        "farmersdelight:barbecue_stick",
+        "farmersdelight:steak_and_potatoes",
+        "farmersdelight:stuffed_potato",
+        "farmersdelight:cooked_rice",
+        "farmersdelight:apple_cider",
+        "farmersdelight:cabbage_rolls",
+        "farmersdelight:dumplings",
+        "farmersdelight:fried_rice",
+        "farmersdelight:mushroom_rice",
+        "farmersdelight:pasta_with_meatballs",
+        "farmersdelight:pasta_with_mutton_chop",
+        "farmersdelight:ratatouille",
+        "farmersdelight:squid_ink_pasta",
+        "farmersdelight:vegetable_noodles",
+    ]),
+    ("baking", "Baking & Sweets", "minecraft:bread", [
         "minecraft:bread", "minecraft:cake", "minecraft:cookie",
-        "minecraft:pumpkin_pie", "minecraft:golden_carrot", "minecraft:sugar",
-        "minecraft:hay_block",
-    ]),
-    ("fd_farm", "Farmer's Delight Crops", "farmersdelight:cabbage", [
-        "farmersdelight:cabbage", "farmersdelight:rice_panicle",
-        "farmersdelight:milk_bottle", "farmersdelight:organic_compost",
-        "farmersdelight:pie_crust", "farmersdelight:wheat_dough",
-    ]),
-    ("cutting_board", "The Cutting Board", "farmersdelight:cutting_board",
-     "auto:cutting"),
-    ("fd_butchery", "Smoked & Grilled", "farmersdelight:ham", [
-        "farmersdelight:beef_patty", "farmersdelight:cooked_bacon",
-        "farmersdelight:ham", "farmersdelight:smoked_ham",
-        "farmersdelight:fried_egg", "farmersdelight:roasted_mutton_chops",
-        "farmersdelight:grilled_salmon",
-    ]),
-    ("cooking_pot", "The Cooking Pot", "farmersdelight:cooking_pot",
-     "auto:cooking"),
-    ("fd_meals", "Farmer's Delight Meals", "farmersdelight:hamburger", [
-        "farmersdelight:apple_pie", "farmersdelight:bacon_and_eggs",
-        "farmersdelight:bacon_sandwich", "farmersdelight:barbecue_stick",
-        "farmersdelight:chicken_sandwich", "farmersdelight:chocolate_pie",
-        "farmersdelight:cod_roll", "farmersdelight:egg_sandwich",
-        "farmersdelight:fruit_salad", "farmersdelight:gleaming_salad_block",
-        "farmersdelight:hamburger", "farmersdelight:honey_cookie",
-        "farmersdelight:honey_glazed_ham_block", "farmersdelight:kelp_roll",
-        "farmersdelight:melon_popsicle", "farmersdelight:mixed_salad",
-        "farmersdelight:mutton_wrap", "farmersdelight:nether_salad",
-        "farmersdelight:rice_roll_medley_block",
-        "farmersdelight:roast_chicken_block", "farmersdelight:salmon_roll",
-        "farmersdelight:shepherds_pie_block",
-        "farmersdelight:steak_and_potatoes", "farmersdelight:stuffed_potato",
+        "minecraft:pumpkin_pie", "farmersdelight:apple_pie",
         "farmersdelight:sweet_berry_cheesecake",
         "farmersdelight:sweet_berry_cookie",
+        "farmersdelight:honey_cookie",
+        "farmersdelight:chocolate_pie",
+        "farmersdelight:melon_popsicle",
+        "farmersdelight:glow_berry_custard",
+        "farmersdelight:hot_cocoa",
+    ]),
+    ("feasts", "Feasts", "farmersdelight:cooking_pot", [
+        "farmersdelight:roast_chicken_block",
+        "farmersdelight:shepherds_pie_block",
+        "farmersdelight:stuffed_pumpkin_block",
+        "farmersdelight:honey_glazed_ham_block",
+        "farmersdelight:rice_roll_medley_block",
+    ]),
+    ("golden", "So Shiny", "minecraft:golden_carrot", [
+        "minecraft:golden_carrot",
+        "farmersdelight:gleaming_salad_block",
+        "minecraft:glistening_melon_slice"
     ]),
 ]
 
@@ -160,7 +201,7 @@ def resolve(items):
     # vanilla soups land here too. Cutting output is NOT namespace-safe: raw
     # carrots and mushrooms are cutting results, so that rule is FD-only.
     cooking = recipe_results("cooking")
-    cutting = recipe_results("cutting")
+    # cutting = recipe_results("cutting")
 
     explicit = {}
     for key, _, _, members in CATEGORIES:
@@ -178,11 +219,8 @@ def resolve(items):
             buckets[explicit[item]].append(item)
         elif path.endswith("_wool"):
             buckets["wool"].append(item)
-        elif item in cooking:
-            buckets["cooking_pot"].append(item)
-        elif ns == "farmersdelight" and item in cutting:
-            buckets["cutting_board"].append(item)
         else:
+            # throw err; make us be explicit
             unplaced.append(item)
 
     if unplaced:

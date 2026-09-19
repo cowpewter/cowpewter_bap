@@ -1,0 +1,43 @@
+{
+  "title": "Feasts",
+  "description": "Ship one of every item in this group.\n\n5 in total.",
+  "icon": {
+    "item": "farmersdelight:cooking_pot"
+  },
+  "sort_order": 12,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/honey_glazed_ham_block",
+      "name": "Honey Glazed Ham"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/rice_roll_medley_block",
+      "name": "Rice Roll Medley"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/roast_chicken_block",
+      "name": "Roast Chicken"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/shepherds_pie_block",
+      "name": "Shepherd's Pie"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/stuffed_pumpkin_block",
+      "name": "Stuffed Pumpkin"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 25
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

@@ -1,6 +1,6 @@
 {
   "title": "Cooked Meat & Fish",
-  "description": "Ship one of every item in this group.\n\n5 in total.",
+  "description": "Ship one of every item in this group.\n\n18 in total.",
   "icon": {
     "item": "minecraft:cooked_beef"
   },
@@ -9,8 +9,23 @@
   "objectives": [
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/beef_patty",
+      "name": "Beef Patty"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_bacon",
+      "name": "Cooked Bacon"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/cooked_beef",
       "name": "Cooked Beef"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/animal_husbandry/cooked_chevon",
+      "name": "Cooked Chevon"
     },
     {
       "type": "questlog:advancement",
@@ -19,8 +34,28 @@
     },
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_chicken_cuts",
+      "name": "Cooked Chicken Cuts"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cooked_cod",
+      "name": "Cooked Cod"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_cod_slice",
+      "name": "Cooked Cod Slice"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/cooked_mutton",
       "name": "Cooked Mutton"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_mutton_chops",
+      "name": "Cooked Mutton Chops"
     },
     {
       "type": "questlog:advancement",
@@ -31,12 +66,42 @@
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/cooked_rabbit",
       "name": "Cooked Rabbit"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cooked_salmon",
+      "name": "Cooked Salmon"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cooked_salmon_slice",
+      "name": "Cooked Salmon Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/fried_egg",
+      "name": "Fried Egg"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/grilled_salmon",
+      "name": "Grilled Salmon"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/roasted_mutton_chops",
+      "name": "Roasted Mutton Chops"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/smoked_ham",
+      "name": "Smoked Ham"
     }
   ],
   "rewards": [
     {
       "type": "questlog:experience",
-      "experience": 25
+      "experience": 90
     }
   ],
   "chapter": "questlog:completionism"

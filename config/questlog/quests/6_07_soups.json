@@ -1,0 +1,78 @@
+{
+  "title": "Soups & Stews",
+  "description": "Ship one of every item in this group.\n\n12 in total.",
+  "icon": {
+    "item": "minecraft:mushroom_stew"
+  },
+  "sort_order": 7,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/baked_cod_stew",
+      "name": "Baked Cod Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/beef_stew",
+      "name": "Beef Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/beetroot_soup",
+      "name": "Beetroot Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/bone_broth",
+      "name": "Bone Broth"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/chicken_soup",
+      "name": "Chicken Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/fish_stew",
+      "name": "Fish Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/mushroom_stew",
+      "name": "Mushroom Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/noodle_soup",
+      "name": "Noodle Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/onion_soup",
+      "name": "Onion Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/pumpkin_soup",
+      "name": "Pumpkin Soup"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/rabbit_stew",
+      "name": "Rabbit Stew"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/vegetable_soup",
+      "name": "Vegetable Soup"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 60
+    }
+  ],
+  "chapter": "questlog:completionism"
+}

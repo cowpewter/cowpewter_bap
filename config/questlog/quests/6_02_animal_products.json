@@ -1,6 +1,6 @@
 {
   "title": "Animal Products",
-  "description": "Ship one of every item in this group.\n\n8 in total.",
+  "description": "Ship one of every item in this group.\n\n9 in total.",
   "icon": {
     "item": "minecraft:egg"
   },
@@ -34,6 +34,11 @@
     },
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/milk_bottle",
+      "name": "Milk Bottle"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/milk_bucket",
       "name": "Milk Bucket"
     },
@@ -51,7 +56,7 @@
   "rewards": [
     {
       "type": "questlog:experience",
-      "experience": 40
+      "experience": 45
     }
   ],
   "chapter": "questlog:completionism"

@@ -1,6 +1,6 @@
 {
-  "title": "Vanilla Crops",
-  "description": "Ship one of every item in this group.\n\n16 in total.",
+  "title": "Crops",
+  "description": "Ship one of every item in this group.\n\n21 in total.",
   "icon": {
     "item": "minecraft:wheat"
   },
@@ -24,6 +24,11 @@
     },
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/cabbage",
+      "name": "Cabbage"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/carrot",
       "name": "Carrot"
     },
@@ -34,13 +39,28 @@
     },
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/dried_kelp_block",
+      "name": "Dried Kelp Block"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/glow_berries",
       "name": "Glow Berries"
     },
     {
       "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/hay_block",
+      "name": "Hay Bale"
+    },
+    {
+      "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/melon_slice",
       "name": "Melon Slice"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/onion",
+      "name": "Onion"
     },
     {
       "type": "questlog:advancement",
@@ -64,13 +84,18 @@
     },
     {
       "type": "questlog:advancement",
-      "advancement": "cowpewter_bap:ship/minecraft/sugar_cane",
-      "name": "Sugar Cane"
+      "advancement": "cowpewter_bap:ship/farmersdelight/rice",
+      "name": "Rice"
     },
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:ship/minecraft/sweet_berries",
       "name": "Sweet Berries"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/tomato",
+      "name": "Tomato"
     },
     {
       "type": "questlog:advancement",
@@ -91,7 +116,7 @@
   "rewards": [
     {
       "type": "questlog:experience",
-      "experience": 80
+      "experience": 105
     }
   ],
   "chapter": "questlog:completionism"

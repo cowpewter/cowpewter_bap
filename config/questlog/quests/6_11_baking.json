@@ -1,0 +1,78 @@
+{
+  "title": "Baking & Sweets",
+  "description": "Ship one of every item in this group.\n\n12 in total.",
+  "icon": {
+    "item": "minecraft:bread"
+  },
+  "sort_order": 11,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/apple_pie",
+      "name": "Apple Pie"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/bread",
+      "name": "Bread"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cake",
+      "name": "Cake"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/chocolate_pie",
+      "name": "Chocolate Pie"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/cookie",
+      "name": "Cookie"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/glow_berry_custard",
+      "name": "Glow Berry Custard"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/honey_cookie",
+      "name": "Honey Cookie"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/hot_cocoa",
+      "name": "Hot Cocoa"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/melon_popsicle",
+      "name": "Melon Popsicle"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/minecraft/pumpkin_pie",
+      "name": "Pumpkin Pie"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/sweet_berry_cheesecake",
+      "name": "Sweet Berry Cheesecake"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:ship/farmersdelight/sweet_berry_cookie",
+      "name": "Sweet Berry Cookie"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 60
+    }
+  ],
+  "chapter": "questlog:completionism"
+}
