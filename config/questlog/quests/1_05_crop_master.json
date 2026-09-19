@@ -75,7 +75,7 @@
     },
     {
       "type": "questlog:item_obtain",
-      "item": "farmersdelight:rice_panicle",
+      "item": ["#cowpewter_bap:rices"],
       "required_amount": 1,
       "name": "Find or grow Rice"
     }
