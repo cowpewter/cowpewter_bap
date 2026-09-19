@@ -33,6 +33,8 @@
     `${MOD_ID}:moisture_compass`,
     `${MOD_ID}:sparkstone_relay`,
     `${MOD_ID}:sparkstone_torch`,
+    `${MOD_ID}:spray_bottle`,
+    `${MOD_ID}:wax_scraper`,
     // sparkstone_wall_torch is block-only too, same deal as above
   ];
 
