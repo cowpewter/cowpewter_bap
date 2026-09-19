@@ -101,6 +101,14 @@
     "curseForgeHash": 3834293058,
     "modrinthHash": "c6528c9760ecfd2987484aabe54c3d26e931e3a7"
   },
+  "BetterThanMending-2.2.0.jar": {
+    "jarName": "BetterThanMending-2.2.0.jar",
+    "modId": "betterthanmending",
+    "name": "BetterThanMending",
+    "version": "2.2.0",
+    "curseForgeHash": 2782321948,
+    "modrinthHash": "868135dde3fc2f33150870de4a0f1831b74b755a"
+  },
   "BetterThirdPerson-neoforge-1.9.0.jar": {
     "jarName": "BetterThirdPerson-neoforge-1.9.0.jar",
     "modId": "betterthirdperson",
@@ -156,6 +164,14 @@
     "version": "0.1",
     "curseForgeHash": 607051400,
     "modrinthHash": "cdb94994b796a4247a01205e87f3d7d8dd971d00"
+  },
+  "carryon-neoforge-1.21.1-2.2.6.13.jar": {
+    "jarName": "carryon-neoforge-1.21.1-2.2.6.13.jar",
+    "modId": "carryon",
+    "name": "Carry On",
+    "version": "2.2.6",
+    "curseForgeHash": 2141538795,
+    "modrinthHash": "2ceb0d9284525b6cb2a214c88cf6511cab91f601"
   },
   "cherishedworlds-neoforge-10.1.1+1.21.1.jar": {
     "jarName": "cherishedworlds-neoforge-10.1.1+1.21.1.jar",
