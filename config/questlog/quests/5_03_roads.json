@@ -1,0 +1,29 @@
+{
+  "title": "Country Roads",
+  "description": "Long distance travel in this pack is handled by Via Romana. [@todo explain this mod better]",
+  "icon": {
+    "item": "via_romana:charting_map"
+  },
+  "sort_order": 3,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "via_romana:charting_map",
+      "required_amount": 1,
+      "name": "Craft a Charting Map"
+    },
+    {
+      "type": "questlog:advancement",
+      "advancement": "via_romana:story/a_strand_type_game",
+      "name": "Chart a Road"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:storage"
+}

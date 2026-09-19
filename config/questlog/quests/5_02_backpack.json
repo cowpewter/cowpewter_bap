@@ -1,0 +1,36 @@
+{
+  "title": "Bigger Pockets",
+  "description": "Are you constantly running back to your farm to drop things off? Try some of these personal storage options.\n\nAnd don't worry, you needn't kill any of your livestock to do it. Both Bundles and Backpacks can be crafted from Canvas instead of Leather. Cut grass with a Knife to obtain Straw, then craft 4 Straw into Canvas.\n\nIf you're struggling to find String, not only can the Knife cut down Cobwebs, but 2 String can be obtained by cutting Wool on a Cutting Board with Shears.",
+  "icon": {
+    "item": "minecraft:bundle"
+  },
+  "sort_order": 2,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "farmersdelight:canvas",
+      "required_amount": 1,
+      "name": "Craft Canvas from Straw"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "#minecraft:bundles",
+      "required_amount": 1,
+      "name": "Craft a Bundle"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "sophisticatedbackpacks:backpack",
+      "required_amount": 1,
+      "name": "Craft a Backpack"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:storage"
+}

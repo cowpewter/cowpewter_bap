@@ -1,0 +1,24 @@
+{
+  "title": "Sleep on the Go",
+  "description": "Doing some exploring, but don't enjoy stumbling around in the dark? Craft a Sleeping Bag to sleep anywhere without changing your spawn point.",
+  "icon": {
+    "item": "comforts:sleeping_bag_white"
+  },
+  "sort_order": 1,
+  "requirements": [],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "item": "#comforts:sleeping_bags",
+      "required_amount": 1,
+      "name": "Craft a Sleeping Bag"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "experience": 10
+    }
+  ],
+  "chapter": "questlog:storage"
+}
