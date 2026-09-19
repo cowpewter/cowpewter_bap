@@ -8,7 +8,8 @@
   "requirements": [],
   "objectives": [
     {
-      "type": "questlog:unobtainable",
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:quest/tame_animal",
       "name": "Domesticate a Barnyard Animal"
     }
   ],

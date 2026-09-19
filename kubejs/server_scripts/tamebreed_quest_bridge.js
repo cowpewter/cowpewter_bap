@@ -20,8 +20,10 @@
     ]
   };
 
-  var ANY_QUEST_TAME = 'questlog:2_01_taming';
-  var ANY_QUEST_BREED = 'questlog:2_03_breeding';
+  // Granted unconditionally; a questlog:advancement objective decides what (if
+  // anything) watches them, so this bridge no longer needs to know quest ids.
+  var ADV_TAME = 'cowpewter_bap:quest/tame_animal';
+  var ADV_BREED = 'cowpewter_bap:quest/breed_animal';
 
   var ENTITY_MULTI_QUESTS = {
     'minecraft:cow': {
@@ -49,6 +51,12 @@
       'everOwnedQuantity': 50,
     }
   };
+
+  function grantAdvancement(server, adv, username) {
+    server.runCommandSilent(
+      'advancement grant ' + username + ' only ' + adv
+    );
+  }
 
   function completeQuest(server, questId, username) {
     // Quests in ENTITY_MULTI_QUESTS aren't written yet; skip rather than
@@ -151,7 +159,7 @@
 
     entity.persistentData.putString(OWNER_KEY, String(player.uuid));
 
-    completeQuest(player.server, ANY_QUEST_TAME, player.username);
+    grantAdvancement(player.server, ADV_TAME, player.username);
     incrementHerd(player, entityId);
   });
 
@@ -176,7 +184,7 @@
     if (!owner) return;
 
     // Fire breed quest and update count
-    completeQuest(owner.server, ANY_QUEST_BREED, owner.username);
+    grantAdvancement(owner.server, ADV_BREED, owner.username);
     incrementHerd(owner, entityId);
   });
 

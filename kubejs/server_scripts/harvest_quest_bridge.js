@@ -1,6 +1,6 @@
 (function () {
   const CROP_TAG = 'minecraft:crops';
-  const HARVEST_QUEST = 'questlog:1_03_harvester';
+  const HARVEST_ADVANCEMENT = 'cowpewter_bap:quest/harvest_crop';
 
   const HARVEST_ITEMS = {
     'minecraft:wheat': ['minecraft:wheat'],
@@ -20,9 +20,9 @@
 
   const pendingHarvest = {};
 
-  function completeQuest(server, username) {
+  function grantHarvested(server, username) {
     server.runCommandSilent(
-      `questlog progress complete ${HARVEST_QUEST} ${username}`
+      `advancement grant ${username} only ${HARVEST_ADVANCEMENT}`
     );
   }
 
@@ -68,6 +68,6 @@
 
     delete pendingHarvest[username];
 
-    completeQuest(event.player.server, username);
+    grantHarvested(event.player.server, username);
   });
 })();

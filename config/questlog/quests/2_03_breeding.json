@@ -5,10 +5,13 @@
     "item": "minecraft:sheep_spawn_egg"
   },
   "sort_order": 3,
-  "requirements": ["questlog:2_01_taming"],
+  "requirements": [
+    "questlog:2_01_taming"
+  ],
   "objectives": [
     {
-      "type": "questlog:unobtainable",
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:quest/breed_animal",
       "name": "Breed a Baby Animal"
     }
   ],

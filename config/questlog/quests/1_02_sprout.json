@@ -13,7 +13,8 @@
   ],
   "objectives": [
     {
-      "type": "questlog:unobtainable",
+      "type": "questlog:advancement",
+      "advancement": "cowpewter_bap:quest/plant_crop",
       "name": "Plant any crop"
     }
   ],
