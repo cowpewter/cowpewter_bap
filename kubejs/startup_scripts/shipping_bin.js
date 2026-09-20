@@ -2,7 +2,15 @@
   StartupEvents.registry('block', event => {
     event.create('cowpewter_bap:shipping_bin')
       .displayName('Shipping Bin')
-      .texture('cowpewter_bap:block/shipping_bin')
+      .textures({
+        particle: 'cowpewter_bap:block/shipping_bin',
+        down: 'cowpewter_bap:block/shipping_bin_bottom',
+        up: 'cowpewter_bap:block/shipping_bin_top',
+        north: 'cowpewter_bap:block/shipping_bin',
+        south: 'cowpewter_bap:block/shipping_bin',
+        east: 'cowpewter_bap:block/shipping_bin',
+        west: 'cowpewter_bap:block/shipping_bin',
+      })
       .woodSoundType()
       .hardness(2.5)
       .resistance(3)
