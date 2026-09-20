@@ -23,11 +23,5 @@
       "name": "Salmon Roll"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 15
-    }
-  ],
   "chapter": "questlog:completionism"
 }

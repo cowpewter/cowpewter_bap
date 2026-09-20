@@ -1,8 +1,8 @@
 {
   "title": "Basic Domestication",
-  "description": "To domesticate an animal, you simply need to walk up and feed it its favorite food. Animals love food.\n\nCows and Sheep enjoy Wheat. Pigs like Carrot and Beetroot. Chickens love any type of seeds.\n\nDomesticate a Cow, Sheep, Pig, or Chicken to start your barnyard collection.",
+  "description": "To domesticate an animal, you simply need to walk up and feed it its favorite food. Animals love food.\n\nCows, Sheep, and Goats enjoy Wheat. Pigs like Carrot and Beetroot. Chickens love any type of seeds.\n\nDomesticate a Cow, Sheep, Pig, Goat, or Chicken to start your barnyard collection.",
   "icon": {
-    "item": "minecraft:cow_spawn_egg"
+    "item": "minecraft:chicken_spawn_egg"
   },
   "sort_order": 1,
   "requirements": [],
@@ -11,12 +11,6 @@
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/tame_animal",
       "name": "Domesticate a Barnyard Animal"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:barn"

@@ -1,10 +1,10 @@
 {
   "title": "Stone Tools",
-  "description": "Wooden tools won't take you very far. Luckily you're pretty handy. Craft a full set of stone tools. Remember, there are no swords here, but there is a knife, made from flint and a stick. Flint can be randomly obtained by breaking gravel, or by placing gravel on a Cutting Board and using a Shovel on it.",
+  "description": "Wooden tools won't take you very far. Luckily you're pretty handy. Craft a full set of stone tools. Remember, there are no swords here, but there is a Knife, made from Flint and a Stick. To find Flint, break Gravel with a Shovel, either on the ground or a Cutting Board.",
   "icon": {
     "item": "minecraft:stone_hoe"
   },
-  "sort_order": 3,
+  "sort_order": 4,
   "requirements": [],
   "objectives": [
     {
@@ -36,12 +36,6 @@
       "item": "farmersdelight:flint_knife",
       "required_amount": 1,
       "name": "Craft a flint knife"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:main"

@@ -53,11 +53,5 @@
       "name": "Rabbit Hide"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 45
-    }
-  ],
   "chapter": "questlog:completionism"
 }

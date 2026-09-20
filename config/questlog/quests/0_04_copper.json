@@ -1,17 +1,11 @@
 {
   "title": "Copper",
-  "description": "Copper has a few important early uses in this pack, as unlike in Vanilla, it can be used to craft both Buckets and Shears, two vital pieces of farm equipment. You can also use it to craft a Bell, which can be used to summon a Wandering Trader.",
+  "description": "In this pack, Copper Ore only drops 1 Raw Copper per block (unless you have Fortune). All of your basic tools can be crafted with Copper. Copper tools have the same mining level as Stone, but the mining speed of Iron, and a durability in between the two. You can also craft Shears and Buckets from Copper, two vital pieces of farm equipment. This pack also adds the Copper Bell, which can be rung to summon a Wandering Trader once per day.",
   "icon": {
-    "item": "minecraft:bucket"
+    "item": "minecraft:copper_ingot"
   },
-  "sort_order": 4,
-  "requirements": [
-    {
-      "type": "questlog:item_obtain",
-      "item": "minecraft:stone_pickaxe",
-      "required_amount": 1
-    }
-  ],
+  "sort_order": 5,
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:item_obtain",
@@ -36,12 +30,6 @@
       "block": "more_useful_copper:copper_bell",
       "required_amount": 1,
       "name": "Craft and place a Copper Bell"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:main"

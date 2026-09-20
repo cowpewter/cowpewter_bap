@@ -113,11 +113,5 @@
       "name": "Wheat"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 105
-    }
-  ],
   "chapter": "questlog:completionism"
 }

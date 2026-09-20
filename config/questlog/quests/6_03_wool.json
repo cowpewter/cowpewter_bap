@@ -88,11 +88,5 @@
       "name": "Yellow Wool"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 80
-    }
-  ],
   "chapter": "questlog:completionism"
 }

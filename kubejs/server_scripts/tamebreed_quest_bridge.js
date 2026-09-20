@@ -33,8 +33,8 @@
 
   var HERD_COMPLETE_SIZE = 25;
   var PEDIGREE_MIN_GENERATION = 10;
-  var SUPERIOR_STAT_MIN = 0.9;
-  var BEAST_STAT_MIN = 0.95;
+  var SUPERIOR_STAT_MIN = 0.95;
+  var BEAST_STAT_MIN = 0.99;
 
   function grantAdvancement(server, adv, username) {
     server.runCommandSilent(

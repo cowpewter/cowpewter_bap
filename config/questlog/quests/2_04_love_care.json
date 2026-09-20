@@ -1,11 +1,11 @@
 {
   "title": "Love & Care",
-  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty!\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's genetics.",
+  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty!\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's genetics.\n\nAnd don't forget to give your favorites a name! Not only are Name Tags craftable in this pack, but they do not require an Anvil to use. Simply right-click the air while holding a Name Tag to set the name.",
   "icon": {
     "item": "animalhusbandry:brush"
   },
-  "sort_order": 4,
-  "requirements": ["questlog:2_01_taming"],
+  "sort_order": 3,
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:item_obtain",
@@ -42,12 +42,12 @@
       "item": "animalhusbandry:farm_ledger",
       "required_amount": 1,
       "name": "Craft a Farm Ledger"
-    }
-  ],
-  "rewards": [
+    },
     {
-      "type": "questlog:experience",
-      "experience": 10
+      "type": "questlog:item_obtain",
+      "item": "minecraft:name_tag",
+      "required_amount": 1,
+      "name": "Craft a Name Tag"
     }
   ],
   "chapter": "questlog:barn"

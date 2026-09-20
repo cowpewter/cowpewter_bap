@@ -1,27 +1,16 @@
 {
   "title": "Harvester",
-  "description": "Don't destroy your crops! Once they're fully grown, just right-click with a hoe or empty hand to harvest and automatically replant the next crop.",
+  "description": "Don't destroy your planted crops! Once they've fully grown, just right-click with a Hoe or empty hand to both harvest your crop and automatically replant the seeds.",
   "icon": {
     "item": "farmersdelight:tomato"
   },
   "sort_order": 2,
-  "requirements": [
-    {
-      "type": "questlog:quest_complete",
-      "quest": "questlog:1_02_sprout"
-    }
-  ],
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/harvest_crop",
       "name": "Right-click to harvest any crop"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:field"

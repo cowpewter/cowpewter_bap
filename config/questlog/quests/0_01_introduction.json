@@ -1,8 +1,8 @@
 {
   "title": "Introduction",
-  "description": "Welcome to a new land, a peaceful land. A land of rolling green pastures, deep forests, and flower-filled meadows. A land of possibility, for the right sort of person. A land where the swords were beaten to ploughshares so long ago that no one can even remember that there were ever swords.",
+  "description": "Welcome to a new land, a peaceful land. A land of rolling green pastures, deep forests, and flower-filled meadows. A land of possibility. A land where the swords were beaten to ploughshares so long ago that no one can even remember that there were ever swords at all.\n\nWelcome to Seed & Stock.\n\nHow to Use this Book:\n\nWhile this book does provide quests, they are primarly focused on introducing you to this pack's basic mechanics. Everything is optional, and no Quest provides any reward beyond the satisfaction of completing it.",
   "icon": {
-    "item": "minecraft:wheat"
+    "item": "minecraft:grass_block"
   },
   "sort_order": 1,
   "requirements": [],

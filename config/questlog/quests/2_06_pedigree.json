@@ -1,24 +1,16 @@
 {
   "title": "Pedigree",
-  "description": "[@todo description]",
+  "description": "You're more than just a rancher. You are a force of Unnatural Selection, carefully planning out your bloodlines.",
   "icon": {
-    "item": "minecraft:goat_spawn_egg"
+    "item": "minecraft:horse_spawn_egg"
   },
-  "sort_order": 6,
-  "requirements": [
-    "questlog:2_03_breeding"
-  ],
+  "sort_order": 5,
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/pedigree",
       "name": "Breed a line out to generation 10"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:barn"

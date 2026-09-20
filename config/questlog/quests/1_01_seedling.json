@@ -14,11 +14,5 @@
       "name": "Find something you can grow"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
-    }
-  ],
   "chapter": "questlog:field"
 }

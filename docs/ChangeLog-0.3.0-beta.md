@@ -20,3 +20,4 @@ Added Reliable Name Tags for renaming without an anvil (right-click nametag in a
 
 Added a stub mod jar `cowpewter_bap.jar` to allow JEI to display a nice looking name instead of the namespace for items I added with KubeJS. Contains no code, only a metadata file.
 
+Updated Quests

@@ -1,24 +1,16 @@
 {
   "title": "Superior Genes",
-  "description": "[@todo description]",
+  "description": "Some animals are just built different, and you had a large hand in that. Improve your bloodlines and breed an animal with at least one stat near the maximum.\n\nDon't forget that too much inbreeding can impact your livestocks' stats!",
   "icon": {
-    "item": "minecraft:goat_spawn_egg"
+    "item": "minecraft:pig_spawn_egg"
   },
-  "sort_order": 7,
-  "requirements": [
-    "questlog:2_03_breeding"
-  ],
+  "sort_order": 6,
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/superior_genes",
-      "name": "Breed an animal with at least one maxed out stat"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
+      "name": "Breed an animal with at least one stat over 95%"
     }
   ],
   "chapter": "questlog:barn"

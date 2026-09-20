@@ -98,11 +98,5 @@
       "name": "Smoked Ham"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 90
-    }
-  ],
   "chapter": "questlog:completionism"
 }

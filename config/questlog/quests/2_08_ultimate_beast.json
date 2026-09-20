@@ -1,24 +1,16 @@
 {
   "title": "Ultimate Beast",
-  "description": "[@todo description]",
+  "description": "Frankly I'm frightened. Of you? Or of the Beast you've created? ... Yes.",
   "icon": {
     "item": "minecraft:goat_spawn_egg"
   },
-  "sort_order": 8,
-  "requirements": [
-    "questlog:2_03_breeding"
-  ],
+  "sort_order": 7,
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/ultimate_beast",
-      "name": "Breed an animal with all max stats"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
+      "name": "Breed an animal with all four stats over 99%"
     }
   ],
   "chapter": "questlog:barn"

@@ -26,11 +26,5 @@
       "name": "Craft a Backpack"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
-    }
-  ],
   "chapter": "questlog:storage"
 }

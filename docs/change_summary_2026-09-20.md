@@ -22,3 +22,8 @@
 
 11. Created stub jar for cowpewter_bap so JEI shows `Seed & Stock` instead of `cowpewter_bap`
 
+12. Added Name Tag sub-objective to Love & Care
+
+13. Completed writing all quests but Via Romana which I need to actually play with first ^^;
+
+

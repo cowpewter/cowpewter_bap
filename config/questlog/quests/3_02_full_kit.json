@@ -38,11 +38,5 @@
       "name": "Craft some Glass Bottles"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
-    }
-  ],
   "chapter": "questlog:kitchen"
 }

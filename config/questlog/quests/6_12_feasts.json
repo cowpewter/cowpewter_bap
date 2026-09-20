@@ -33,11 +33,5 @@
       "name": "Stuffed Pumpkin"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 25
-    }
-  ],
   "chapter": "questlog:completionism"
 }

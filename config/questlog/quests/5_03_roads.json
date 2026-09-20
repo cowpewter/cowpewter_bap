@@ -19,11 +19,5 @@
       "name": "Link 2 Signs using the Charting Map"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
-    }
-  ],
   "chapter": "questlog:storage"
 }

@@ -83,11 +83,5 @@
       "name": "Vegetable Noodles"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 75
-    }
-  ],
   "chapter": "questlog:completionism"
 }

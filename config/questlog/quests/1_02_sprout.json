@@ -1,27 +1,16 @@
 {
   "title": "Sprout",
-  "description": "Now that you have something to plant, it's time to start your farm. Prepare the land with a hoe, and right-click your seeds on the tilled land to plant.",
+  "description": "Now that you have something to plant, it's time to start your farm. Prepare the land with a Hoe, and right-click your seeds on the tilled land to plant. Plants will grow faster if there is water nearby. You can tell a piece of farmland is properly hydrated when the soil becomes dark.",
   "icon": {
     "item": "minecraft:tall_grass"
   },
   "sort_order": 2,
-  "requirements": [
-    {
-      "type": "questlog:quest_complete",
-      "quest": "questlog:1_01_seedling"
-    }
-  ],
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/plant_crop",
       "name": "Plant any crop"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:field"

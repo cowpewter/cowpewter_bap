@@ -2,25 +2,13 @@
   "title": "Useful Keybinds",
   "description": "This pack should install with minimal keybind conflicts out the box. Feel free to customize the controls to your liking, but here's some useful defaults:\n\n` (Open This Questbook)\nP (Open Coin Pouch)\nB (Open Backpack)\nZ (Zoom View)\nM (Open World Map)\nN (New Waypoint)\n- and = (Zoom Minimap)\nK (Toggle Shaders)\nR (Reload Shaders)\nT [in inventory] (Toggle Trash Slot)",
   "icon": {
-    "item": "minecraft:wheat"
+    "item": "minecraft:redstone_dust"
   },
   "sort_order": 2,
   "requirements": [],
   "objectives": [
     {
       "type": "questlog:read"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:item",
-      "item": "minecraft:bread",
-      "count": 4,
-      "auto_claim": true
-    },
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:main"

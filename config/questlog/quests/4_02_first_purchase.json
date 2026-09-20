@@ -1,6 +1,6 @@
 {
   "title": "The Wandering Trader",
-  "description": "",
+  "description": "The Wandering Trader is your source for new breeding stock and rare crafting ingredients. He can be summoned by ringing any Copper Bell, though there is a cooldown of 1 Minecraft day between summons. Natural Wandering Trader spawns are also still enabled.\n\nEach Trader will have a random selection of animals and one special crafting ingredient for sale.\n\nNote: Spawn Eggs purchased from the Trader do not currently automatically tame an animal upon use. Animals spawned from a Spawn Egg are considered wild and eligible for despawn until you feed/breed/name/tame them, just like in Vanilla. Make sure you have food on hand before throwing that Egg!",
   "icon": {
     "item": "cowpewter_bap:coin_500"
   },
@@ -11,12 +11,6 @@
       "type": "questlog:advancement",
       "advancement": "minecraft:adventure/trade",
       "name": "Buy something from the Wandering Trader"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:market"

@@ -23,11 +23,5 @@
       "name": "Nether Salad"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 15
-    }
-  ],
   "chapter": "questlog:completionism"
 }

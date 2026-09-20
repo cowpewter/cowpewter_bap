@@ -68,11 +68,5 @@
       "name": "Sweet Berry Cookie"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 60
-    }
-  ],
   "chapter": "questlog:completionism"
 }

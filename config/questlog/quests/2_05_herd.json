@@ -2,23 +2,15 @@
   "title": "Master Herder",
   "description": "Do you really love animals? So do I! Own a herd/flock of at least 25 animals of the same type.",
   "icon": {
-    "item": "minecraft:chicken_spawn_egg"
+    "item": "minecraft:cow_spawn_egg"
   },
-  "sort_order": 5,
-  "requirements": [
-    "questlog:2_01_taming"
-  ],
+  "sort_order": 4,
+  "requirements": [],
   "objectives": [
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/herd",
       "name": "Own at least 25 of any animal"
-    }
-  ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
     }
   ],
   "chapter": "questlog:barn"

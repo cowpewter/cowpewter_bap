@@ -80,11 +80,5 @@
       "name": "Find or grow Rice"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:experience",
-      "experience": 10
-    }
-  ],
   "chapter": "questlog:field"
 }
