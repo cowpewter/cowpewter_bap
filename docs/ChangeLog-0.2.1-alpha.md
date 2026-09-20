@@ -25,4 +25,9 @@ Re-worked Completionism quest chapter, quest objectives should make more sense w
 
 Added #cowpewter_bap:plantable tag so that root veg count for Seedling quest
 
+Fixed bug in Harvester quest trigger that triggered it on breaking any crop, regardless of hand used.
+
+Fixed auto-refill bug that broke auto-tool-replace
+
+Excluded hotbar slots from potential auto-tool-replace sources
 

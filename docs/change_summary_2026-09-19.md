@@ -26,7 +26,7 @@ Oofta. So it both went amazingly well in that most of it really does work exactl
 
 4. Added #cowpewter_bap:rices tag so both Rice and Rice Panicle count for rice acquisition quest
 
-5. Updated regenerate_prices.py to adjust calculations of base items, excluding intermediary ingredients like chopped raw meats, dough/raw pasta, bowls, compost, etc are no longer shippable.
+5. Updated regenerate_prices.py to adjust calculations of base items. intermediary ingredients like chopped raw meats, dough/raw pasta, bowls, compost, etc are no longer shippable.
 
 6. Resolved duplicate recipe - Fried Egg - Farmer's Delight vs Animal Husbandry. Kept FD, hid AH. Added new hide files `asstd_other_dupes.js` to client and server scripts. Right now it only removes the dupe egg. There just wasn't another appropriate file for those changs. The only hide scripts prior were weapon-specific and more useful copper-specific.
 
@@ -36,6 +36,4 @@ Oofta. So it both went amazingly well in that most of it really does work exactl
 
 9. Added #cowpewter_bap:plantable tag so that root veg count for Seedling quest
 
-10. 
-
-
+10. And got half-way through debugging Harvester quest when I ran out of steam

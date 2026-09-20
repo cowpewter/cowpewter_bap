@@ -52,6 +52,7 @@
     'c:tools/shear'
   ];
 
+
   // Audible feedback, so a swap that is otherwise invisible still registers.
   // Set SWAP_SOUND to '' to kill the noise entirely.
   var SWAP_SOUND = 'minecraft:entity.item.pickup';
@@ -89,19 +90,20 @@
   // --------------------------------------------------------------------
 
   // 0-8 hotbar, 9-35 main. 36-39 armor, 40 offhand -- leave those alone.
+  var SEARCH_MIN = 9;
   var SEARCH_MAX = 36;
 
-  // username -> { slot: int, item: Item } -- what the player held last tick
+  // uuid -> { slot: int, item: Item } -- what the player held last tick
   var lastHeld = {};
 
-  // username -> ticks of refill blackout remaining, after a deliberate removal
+  // uuid -> ticks of refill blackout remaining, after a deliberate removal
   var suppressTicks = {};
 
-  // username -> true while a container screen is open. Chests report both open
+  // uuid -> true while a container screen is open. Chests report both open
   // and close; the player's own inventory only ever reports close.
   var screenOpen = {};
 
-  // username -> true when a tool broke and its slot has not been handled yet
+  // uuid -> true when a tool broke and its slot has not been handled yet
   var toolBroke = {};
 
   // Arm the blackout and forget what was held, so nothing rushes back into the
@@ -197,7 +199,7 @@
     var bestSlot = -1;
     var bestRank = null;
 
-    for (i = 0; i < SEARCH_MAX; i++) {
+    for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       if (i == exclude) continue;
       stack = inv.getStackInSlot(i);
       if (stack.isEmpty() || !stack.isDamageableItem()) continue;
@@ -228,7 +230,7 @@
     var needed = held.getMaxStackSize() - held.getCount();
     var grew = false;
 
-    for (i = 0; i < SEARCH_MAX && needed > 0; i++) {
+    for (i = SEARCH_MIN; i < SEARCH_MAX && needed > 0; i++) {
       if (i == sel) continue;
       stack = inv.getStackInSlot(i);
       if (stack.isEmpty() || !stack.equalsIgnoringCount(held)) continue;
@@ -251,7 +253,7 @@
   function totalOf(inv, item) {
     var i, stack;
     var total = 0;
-    for (i = 0; i < SEARCH_MAX; i++) {
+    for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       stack = inv.getStackInSlot(i);
       if (!stack.isEmpty() && stack.getItem() == item) total += stack.getCount();
     }
@@ -260,7 +262,7 @@
 
   function findByItem(inv, item, exclude) {
     var i, stack;
-    for (i = 0; i < SEARCH_MAX; i++) {
+    for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       if (i == exclude) continue;
       stack = inv.getStackInSlot(i);
       if (!stack.isEmpty() && stack.getItem() == item) return i;
@@ -400,9 +402,11 @@
   });
 
   // A tool breaking. This is the only thing that authorises replacing one.
+  // Keyed by uuid to match the tick handler, but gated on username: mobs break
+  // items too, and every entity has a uuid, so uuid alone would let them in.
   ItemEvents.destroyed(function (event) {
     if (event.entity && event.entity.username) {
-      toolBroke[event.entity.username] = true;
+      toolBroke[event.entity.uuid] = true;
     }
   });
 
@@ -414,20 +418,20 @@
   // Own inventory (E) and any container. Closing also arms the timer, to cover
   // the gap before the client and server agree on the new slot contents.
   PlayerEvents.inventoryOpened(function (event) {
-    screenOpen[event.entity.username] = true;
+    screenOpen[event.entity.uuid] = true;
   });
 
   PlayerEvents.inventoryClosed(function (event) {
-    screenOpen[event.entity.username] = false;
+    screenOpen[event.entity.uuid] = false;
     suppress(event.entity);
   });
 
   PlayerEvents.chestOpened(function (event) {
-    screenOpen[event.entity.username] = true;
+    screenOpen[event.entity.uuid] = true;
   });
 
   PlayerEvents.chestClosed(function (event) {
-    screenOpen[event.entity.username] = false;
+    screenOpen[event.entity.uuid] = false;
     suppress(event.entity);
   });
 
