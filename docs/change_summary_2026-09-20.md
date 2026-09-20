@@ -26,4 +26,5 @@
 
 13. Completed writing all quests but Via Romana which I need to actually play with first ^^;
 
+14. Built 0.3.0-beta and then immediately had to rebuild a 0.3.1-beta because adding `cowpewter_bap.jar` makes Prism do a scary warning on install. I'd rather have ugly tooltips.
 
