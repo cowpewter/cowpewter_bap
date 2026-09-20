@@ -123,7 +123,7 @@
 
   const grantAdvancement = (player, adv) => {
     player.server.runCommandSilent(
-      'advancement grant ' + player.uuid + ' only ' + adv
+      'advancement grant ' + player.username + ' only ' + adv
     );
   };
 
