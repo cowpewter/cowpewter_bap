@@ -21,7 +21,7 @@ Cleaned up Shipping Bin list and price calculations. Intermediary ingredients li
 
 Resolved duplicate recipe - Fried Egg - Farmer's Delight vs Animal Husbandry.
 
-Re-worked Completionism quest chapter, quest objectives should make more sense with their chapter titles now.
+Re-worked Completionism quest chapter, quest objectives should make more sense with their chapters now.
 
 Added #cowpewter_bap:plantable tag so that root veg count for Seedling quest
 
@@ -29,7 +29,7 @@ Fixed bug in Harvester quest trigger that triggered it on breaking any crop, reg
 
 Fixed auto-refill bug that broke auto-tool-replace
 
-Excluded hotbar slots from potential auto-tool-replace sources
+Excluded hotbar slots from potential auto-replace sources so script doesn't move your items around
 
 Fixed bug in quest grant script for First Sale and all of Completionism
 
