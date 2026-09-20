@@ -3,8 +3,8 @@
 // which ticks a single objective in the Completionism chapter.
 
 global.BAP_SHIP_ADVANCEMENTS = {
-  'animal_husbandry:cooked_chevon': 'cowpewter_bap:ship/animal_husbandry/cooked_chevon',
-  'animal_husbandry:raw_chevon': 'cowpewter_bap:ship/animal_husbandry/raw_chevon',
+  'animalhusbandry:cooked_chevon': 'cowpewter_bap:ship/animalhusbandry/cooked_chevon',
+  'animalhusbandry:raw_chevon': 'cowpewter_bap:ship/animalhusbandry/raw_chevon',
   'animalhusbandry:truffle': 'cowpewter_bap:ship/animalhusbandry/truffle',
   'farmersdelight:apple_cider': 'cowpewter_bap:ship/farmersdelight/apple_cider',
   'farmersdelight:apple_pie': 'cowpewter_bap:ship/farmersdelight/apple_pie',
@@ -96,7 +96,7 @@ global.BAP_SHIP_ADVANCEMENTS = {
   'minecraft:dried_kelp_block': 'cowpewter_bap:ship/minecraft/dried_kelp_block',
   'minecraft:egg': 'cowpewter_bap:ship/minecraft/egg',
   'minecraft:feather': 'cowpewter_bap:ship/minecraft/feather',
-  'minecraft:glistening_melon_slice': 'cowpewter_bap:ship/minecraft/glistening_melon_slice',
+  'minecraft:glistering_melon_slice': 'cowpewter_bap:ship/minecraft/glistering_melon_slice',
   'minecraft:glow_berries': 'cowpewter_bap:ship/minecraft/glow_berries',
   'minecraft:golden_carrot': 'cowpewter_bap:ship/minecraft/golden_carrot',
   'minecraft:gray_wool': 'cowpewter_bap:ship/minecraft/gray_wool',

@@ -93,7 +93,7 @@ BASE = {
     "minecraft:feather": 6, "minecraft:cookie": 15, "minecraft:glow_lichen": 4,
     "minecraft:honeycomb": 25, "minecraft:leather": 20, "minecraft:pitcher_plant": 90,
     "minecraft:rabbit_foot": 70, "minecraft:rabbit_hide": 10, "minecraft:torchflower": 90,
-    "minecraft:glistening_melon_slice": 160,
+    "minecraft:glistering_melon_slice": 160,
 
     # FD crops / basics
     "farmersdelight:cabbage":8,"farmersdelight:tomato":8,"farmersdelight:onion":8,
@@ -102,7 +102,7 @@ BASE = {
     "farmersdelight:pie_crust":30, "farmersdelight:organic_compost":8,
     "farmersdelight:rich_soil":4,
     # Animal Husbandry
-    "animalhusbandry:truffle": 35, "animal_husbandry:raw_chevon": 16,
+    "animalhusbandry:truffle": 35, "animalhusbandry:raw_chevon": 16,
 }
 
 SMELT_MULTIPLIER = 1.5
@@ -138,7 +138,7 @@ BASE["farmersdelight:cooked_cod_slice"] = BASE["farmersdelight:cod_slice"]*SMELT
 BASE["farmersdelight:salmon_slice"]     = BASE["minecraft:salmon"]/2
 BASE["farmersdelight:cooked_salmon_slice"]=BASE["farmersdelight:salmon_slice"]*SMELT_MULTIPLIER
 BASE["farmersdelight:fried_egg"]        = BASE["minecraft:egg"]*SMELT_MULTIPLIER
-BASE["animal_husbandry:cooked_chevon"]  = BASE["animal_husbandry:raw_chevon"]*SMELT_MULTIPLIER
+BASE["animalhusbandry:cooked_chevon"]  = BASE["animalhusbandry:raw_chevon"]*SMELT_MULTIPLIER
 
 TAG = {
  "c:crops/wheat":"minecraft:wheat","c:crops/potato":"minecraft:potato",

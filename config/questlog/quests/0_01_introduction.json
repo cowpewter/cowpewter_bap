@@ -11,17 +11,5 @@
       "type": "questlog:read"
     }
   ],
-  "rewards": [
-    {
-      "type": "questlog:item",
-      "item": "minecraft:bread",
-      "count": 4,
-      "auto_claim": true
-    },
-    {
-      "type": "questlog:experience",
-      "experience": 10
-    }
-  ],
   "chapter": "questlog:main"
 }

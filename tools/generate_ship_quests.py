@@ -60,13 +60,13 @@ CATEGORIES = [
     ("wool", "A Woolen Rainbow", "minecraft:white_wool", "auto:wool"),
     ("raw_meat", "Raw Meat & Fish", "minecraft:beef", [
         "minecraft:beef", "minecraft:porkchop", "minecraft:mutton",
-        "minecraft:chicken", "minecraft:rabbit", "animal_husbandry:raw_chevon",
+        "minecraft:chicken", "minecraft:rabbit", "animalhusbandry:raw_chevon",
         "minecraft:cod", "minecraft:salmon",
     ]),
     ("cooked_meat", "Cooked Meat & Fish", "minecraft:cooked_beef", [
         "minecraft:cooked_beef", "minecraft:cooked_porkchop",
         "minecraft:cooked_mutton", "minecraft:cooked_chicken",
-        "minecraft:cooked_rabbit", "animal_husbandry:cooked_chevon",
+        "minecraft:cooked_rabbit", "animalhusbandry:cooked_chevon",
         "minecraft:cooked_cod",
         "minecraft:cooked_salmon", "farmersdelight:beef_patty",
         "farmersdelight:cooked_bacon",
@@ -140,7 +140,7 @@ CATEGORIES = [
     ("golden", "So Shiny", "minecraft:golden_carrot", [
         "minecraft:golden_carrot",
         "farmersdelight:gleaming_salad_block",
-        "minecraft:glistening_melon_slice"
+        "minecraft:glistering_melon_slice",
     ]),
 ]
 

@@ -3,8 +3,8 @@
 // Values are in dollars; 1 dollar = 1 copper coin.
 
 global.BAP_PRICES = {
-  'animal_husbandry:cooked_chevon': 24,
-  'animal_husbandry:raw_chevon': 16,
+  'animalhusbandry:cooked_chevon': 24,
+  'animalhusbandry:raw_chevon': 16,
   'animalhusbandry:truffle': 35,
   'farmersdelight:apple_cider': 48,
   'farmersdelight:apple_pie': 159,
@@ -96,7 +96,7 @@ global.BAP_PRICES = {
   'minecraft:dried_kelp_block': 27,
   'minecraft:egg': 10,
   'minecraft:feather': 6,
-  'minecraft:glistening_melon_slice': 160,
+  'minecraft:glistering_melon_slice': 160,
   'minecraft:glow_berries': 14,
   'minecraft:golden_carrot': 160,
   'minecraft:gray_wool': 12,

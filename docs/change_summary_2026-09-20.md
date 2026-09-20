@@ -15,3 +15,6 @@
 7. New shipping bin texture, edited from vanilla chest (resized, recolored)
 
 8. Added Guide Book item, given to players on start, that will open QuestLog on right-click
+
+9. Added "Sells for $x" tooltips on all shippable items
+
