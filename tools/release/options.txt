@@ -1,8 +1,11 @@
 version:3955
-resourcePacks:["vanilla","mod_resources","moonlight:merged_pack","file/Better-Leaves-9.5.zip","file/Comforts Modernized - V1.1.zip","file/FA+Player-v1.1.zip","file/Icon Xaero's 1.22.zip","file/RAYs_3D_Ladders_v2.2.zip","file/Simple Grass Flowers v2.0.0.zip","file/Theone's Eating Animation Pack v1.0.zip","mod/boatiview","file/FreshAnimations_v1.10.4.zip","vanillabackport:freshly_animated_legacy","vanillabackport:freshly_animated"]
+resourcePacks:["vanilla","mod_resources","moonlight:merged_pack","file/Better-Leaves-9.5.zip","file/Comforts Modernized - V1.1.zip","file/FA+Player-v1.1.zip","file/Simple Grass Flowers v2.0.0.zip","file/Theone\u0027s Eating Animation Pack v1.0.zip","mod/boatiview","file/FreshAnimations_v1.10.4.zip","vanillabackport:freshly_animated_legacy","vanillabackport:freshly_animated","file/Icon Fresh 0.4.zip","file/RAYs_3D_Ladders_v2.2.zip"]
 incompatibleResourcePacks:["file/Comforts Modernized - V1.1.zip"]
 key_gui.xaero_new_waypoint:key.keyboard.n
 key_treechop.key.open_settings_overlay:key.keyboard.j
 key_chloride.zoom:key.keyboard.z
 key_gui.xaero_enlarge_map:key.keyboard.unknown
 key_key.kubejs.kubedex:key.keyboard.unknown
+key_gui.xaero_zoom_in:key.keyboard.equal
+key_gui.xaero_zoom_out:key.keyboard.minus
+key_key.socialInteractions:key.keyboard.unknown

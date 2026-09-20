@@ -6,3 +6,6 @@
 
 3. Excluded hotbar slots from potential auto-tool-replace sources
 
+4. Fixed missing default keybind/resourcepack configs
+
+5. Fixed invisible beds

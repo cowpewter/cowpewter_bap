@@ -619,8 +619,9 @@ incompatible but works — without that line Minecraft silently disables it).
 Everything else falls back to Minecraft's defaults. If a resource pack is added
 or reordered, copy the two pack lines from the dev `options.txt` into it.
 
-It also fixes default keybind conflicts. Only binds that clash *in normal
-gameplay* matter — JEI's mouse/shift binds, Jade on Shift, TrashSlot on T and
+It also fixes default keybind conflicts, and ships Xaero's minimap zoom on
+`equal`/`minus` — not a clash, just unbound by default, so players had no zoom.
+Only binds that clash *in normal gameplay* matter — JEI's mouse/shift binds, Jade on Shift, TrashSlot on T and
 Sophisticated's `[`/`]` are menu-only or intentional.
 
 | Key | Default clash | Shipped |
@@ -630,6 +631,7 @@ Sophisticated's `[`/`]` are menu-only or intentional.
 | C | Chloride zoom ↔ Backpacks inventory interaction | Backpacks keep **C**; zoom → **Z** |
 | Z | (knock-on) zoom ↔ Xaero enlarge minimap | Xaero enlarge **unbound** (world map still on M) |
 | K | Iris toggle shaders ↔ KubeJS Kubedex | Kubedex **unbound** (dev tool); K stays shaders, as §5b tells players |
+| P | Social Interactions ↔ coin pouch (KubeJS) | Pouch keeps **P**; Social Interactions **unbound** |
 
 C is still shared with vanilla's "save hotbar activator", which only works in
 creative. Key lines use the exact `key_<id>` names from a real `options.txt` —

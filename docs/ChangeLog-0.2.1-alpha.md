@@ -31,3 +31,8 @@ Fixed auto-refill bug that broke auto-tool-replace
 
 Excluded hotbar slots from potential auto-tool-replace sources
 
+Fixed bug in quest grant script for First Sale and all of Completionism
+
+Fixed missing default keybind/resourcepack configs
+
+Fixed invisible beds
