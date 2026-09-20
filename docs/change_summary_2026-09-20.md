@@ -28,3 +28,4 @@
 
 14. Built 0.3.0-beta and then immediately had to rebuild a 0.3.1-beta because adding `cowpewter_bap.jar` makes Prism do a scary warning on install. I'd rather have ugly tooltips.
 
+15. Fixed icon for Useful Keybinds quest
