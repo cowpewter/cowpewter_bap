@@ -1010,6 +1010,14 @@
     "curseForgeHash": 1907698504,
     "modrinthHash": "904f815b1f5c48703c354d432fcbc3531022337f"
   },
+  "reliablenametags-2.0.0+1.21.1-neoforge.jar": {
+    "jarName": "reliablenametags-2.0.0+1.21.1-neoforge.jar",
+    "modId": "reliablenametags",
+    "name": "Reliable Name Tags",
+    "version": "1.0.0+1.21.1",
+    "curseForgeHash": 600525973,
+    "modrinthHash": "9af07a79b5137d3865436384d5c0384dc28696fe"
+  },
   "resourcefulconfig-neoforge-1.21-3.0.11.jar": {
     "jarName": "resourcefulconfig-neoforge-1.21-3.0.11.jar",
     "modId": "resourcefulconfig",
