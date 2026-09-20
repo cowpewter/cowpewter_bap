@@ -18,3 +18,7 @@
 
 9. Added "Sells for $x" tooltips on all shippable items
 
+10. Added Reliable Name Tags for renaming without an anvil
+
+11. Created stub jar for cowpewter_bap so JEI shows `Seed & Stock` instead of `cowpewter_bap`
+

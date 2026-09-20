@@ -269,6 +269,14 @@
     "curseForgeHash": 1306717928,
     "modrinthHash": "8a34424fc1428778be2fdbfa4da67b21b70bcbfe"
   },
+  "cowpewter_bap.jar": {
+    "jarName": "cowpewter_bap.jar",
+    "modId": "cowpewter_bap",
+    "name": "Seed \u0026 Stock",
+    "version": "0.3.0-beta",
+    "curseForgeHash": 3972362289,
+    "modrinthHash": "6b82c5e3d974c48e3df34d0c8b5af824b213a1ae"
+  },
   "CrashAssistant-neoforge-1.20.6-1.21.4-1.11.12.jar": {
     "jarName": "CrashAssistant-neoforge-1.20.6-1.21.4-1.11.12.jar",
     "modId": "crash_assistant",

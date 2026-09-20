@@ -23,6 +23,12 @@ RELEASE_OPTIONS = os.path.join(HERE, "release", "options.txt")
 ALLOW = [
     "config/*",
     "kubejs/*",
+    # The only jar that may ship in overrides: our own stub mod, which claims
+    # the cowpewter_bap namespace so JEI shows "Seed & Stock" instead of the
+    # raw id. Built by tools/build_stub_mod.py; not on Modrinth, so it cannot
+    # come down through the index like every other mod. Keep this exact-path,
+    # never a mods/* glob -- see OWN_JARS below.
+    "mods/cowpewter_bap.jar",
     # icon.png deliberately NOT shipped: the pack icon must not be AI-generated,
     # and the old one was. Re-add only once a human-made icon.png is in place.
 ]
@@ -37,6 +43,11 @@ DENY = [
     "config/xaeropatreon.txt",             # Xaero supporter key; empty today,
                                            # but ships silently once it isn't
 ]
+
+# Jars we author ourselves and therefore allow in overrides. Everything else
+# with a .jar extension is a packaging mistake (a mod that should be a Modrinth
+# index entry) and fails the export.
+OWN_JARS = {"mods/cowpewter_bap.jar"}
 
 # Only these shader packs may be referenced (license: see docs §5b).
 ALLOWED_SHADERS = {"shaderpacks/ComplementaryReimagined_r5.9.1.zip"}
@@ -121,7 +132,7 @@ def main():
             if rel == "options.txt":
                 continue                       # replaced below
             if matches(rel, ALLOW) and not matches(rel, DENY):
-                if rel.endswith(".jar"):
+                if rel.endswith(".jar") and rel not in OWN_JARS:
                     problems.append(f"jar in overrides: {rel}")
                 data = zin.read(name)
                 if rel in TOML_PATCHES:
