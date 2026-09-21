@@ -1,6 +1,6 @@
 (function () {
   const getOpenCommand = (username) =>
-      `questlog open questlog:none ${username}`;
+    `questlog open questlog:none ${username}`;
 
   ItemEvents.rightClicked('cowpewter_bap:guide_book', (event) => {
     if (!event.player) return;
