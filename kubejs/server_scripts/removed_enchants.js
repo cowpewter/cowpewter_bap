@@ -150,9 +150,9 @@
       var to = REPLACEMENTS[id];
       if (to === null) continue;
       if (REPLACEMENTS.hasOwnProperty(to)) {
-        console.error('[cowpewter_bap] ' + id + ' is replaced by ' + to + ', which is also removed');
+        console.log('[cowpewter_bap] ' + id + ' is replaced by ' + to + ', which is also removed');
       } else if (lookup(ra, to) === null) {
-        console.error('[cowpewter_bap] ' + id + ' is replaced by unknown enchantment ' + to);
+        console.log('[cowpewter_bap] ' + id + ' is replaced by unknown enchantment ' + to);
       }
     }
   });

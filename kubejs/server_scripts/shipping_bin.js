@@ -115,6 +115,8 @@
       // post condense for cleanup
       BAP_POUCH.condenseContainer(container);
     }
+    // Now that all items are wherever they will land...
+    event.player.sendInventoryUpdate();
 
     // Completionism: tick one objective per distinct item actually sold.
     grantShipAdvancements(event.player, shipped);

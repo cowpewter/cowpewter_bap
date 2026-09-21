@@ -44,7 +44,6 @@
   // calf's spawn position, so inherit from her.
   function inheritOwnerFromDam(entity, entityType) {
     var genetics = getGenetics(entity);
-    console.log('new stock generation:', genetics && genetics.generation);
     if (!genetics || parseInt(genetics.generation || '0') <= 0) {
       // return if generation-0 spawn - that wasn't a bred baby
       return;

@@ -16,4 +16,4 @@
 
 3. Fixed bugs with Animal Husbandry births not triggering either Parrots and Bees vanilla advancement or modpack quests. Animal Husbandry births will not be eligble for triggering the vanilla Two by Two advancement, but fixing that is too much effort for jam timeline.
 
-4. Fixed buggy bucket behavior in auto-refill script
+4. Fixed bug where consumable items would be used when right-clicking the Shipping Bin with them in your main hand

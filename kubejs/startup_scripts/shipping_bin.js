@@ -14,6 +14,7 @@
       .woodSoundType()
       .hardness(2.5)
       .resistance(3)
-      .tagBlock('minecraft:mineable/axe');
+      .tagBlock('minecraft:mineable/axe')
+      .rightClick(_ => {}); // Registering ANY handler here stops the item use phase when right-clicking on the shipping bin with a consumable like milk
   });
 })();

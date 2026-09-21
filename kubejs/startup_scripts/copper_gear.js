@@ -125,7 +125,7 @@
       } catch (e) {
         if (!reported) {
           reported = true;
-          console.error('[cowpewter_bap] copper_gear.js ' + name + ' failed, further errors hidden: ' + e);
+          console.log('[cowpewter_bap] copper_gear.js ' + name + ' failed, further errors hidden: ' + e);
         }
       }
     };

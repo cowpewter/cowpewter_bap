@@ -126,7 +126,7 @@ const BAP_POUCH = (function () {
         var remainder = container.addItem(Item.of(id, chunk));
         if (!remainder.isEmpty()) {
           // Can't happen: we just freed at least this much room
-          console.warn('[cowpewter_bap] compaction lost ' + remainder.count + ' ' + id);
+          console.log('[cowpewter_bap] compaction lost ' + remainder.count + ' ' + id);
           return;
         }
         left -= chunk;
@@ -213,13 +213,13 @@ const BAP_POUCH = (function () {
   const getPouchSlotStack = (player, debug = false) => {
     const curiosInv = CuriosApi.getCuriosInventory(player);
     if (!curiosInv.isPresent()) {
-      console.warn('[cowpewter_bap] no curios found');
+      console.log('[cowpewter_bap] no curios found');
       return { stack: null, curios: null };
     }
     const curios = curiosInv.get();
     const slotHandler = curios.getStacksHandler('coin_pouch');
     if (!slotHandler.isPresent()) {
-      console.warn('[cowpewter_bap] no pouch slot found');
+      console.log('[cowpewter_bap] no pouch slot found');
       return { stack: null, curios: curios };
     }
     const slot = slotHandler.get();
@@ -260,7 +260,7 @@ const BAP_POUCH = (function () {
     tempInv.addListener(() => {
       if (pouch.isEmpty()) {
         player.closeContainer();
-        console.warn('[cowpewter_bap] pouch moved');
+        console.log('[cowpewter_bap] pouch moved');
         return;
       }
       // When the inv contents change, copy content back to pouch

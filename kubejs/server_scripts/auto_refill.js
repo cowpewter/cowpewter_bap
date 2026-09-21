@@ -131,7 +131,7 @@
       player.playNotifySound(swapSound, 'players', SWAP_SOUND_VOLUME, pitch);
     } catch (err) {
       swapSoundBroken = true;
-      console.warn('[cowpewter_bap] auto_refill: swap sound disabled (' + err + ')');
+      console.log('[cowpewter_bap] auto_refill: swap sound disabled (' + err + ')');
     }
   }
 
@@ -202,7 +202,7 @@
     for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       if (i == exclude) continue;
       stack = inv.getStackInSlot(i);
-      console.log(stack,stack.isDamageableItem());
+
       if (stack.isEmpty() || !stack.isDamageableItem()) continue;
 
       // Same item always qualifies. A different one only qualifies if
@@ -234,7 +234,6 @@
     for (i = SEARCH_MIN; i < SEARCH_MAX && needed > 0; i++) {
       if (i == sel) continue;
       stack = inv.getStackInSlot(i);
-      console.log(stack, held, stack.equalsIgnoringCount(held));
       if (stack.isEmpty() || !stack.equalsIgnoringCount(held)) continue;
 
       pulled = inv.extractItem(i, needed, false);
