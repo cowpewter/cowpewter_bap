@@ -1,103 +1,80 @@
-<!--
-Modrinth page copy for Seed & Stock.
-
-Summary field (max 256 chars) — paste this into "Summary":
-
-A cozy, combat-free farming pack about evolution by hand. Selectively breed livestock into better bloodlines, grow and cook crops, sell your harvest for emeralds, and buy new animals from the wandering trader. No swords, no monsters.
-
-Everything below the line goes in "Description".
-Keep claims in sync with docs/farm-pack-design.md.
--->
-
 # Seed & Stock: Swords to Ploughshares
 
 **A cozy, combat-free farming and animal-breeding pack for Minecraft 1.21.1.**
 
-There are no monsters to fight and no swords to swing. Your days are spent tending a herd, planting fields, cooking what you grow, and selling the harvest to build something bigger. The rest is up to you and your animals.
+The land has been at peace for as long as anyone can remember. There are no swords. There are no monsters. There is only the calm, peaceful, rural life of the farmer.
 
 ---
 
-## 🧬 Evolution, by hand
+## 🧬 Evolution, hand picked by you
 
-*Made for the Big Autumn Packjam, theme: **Evolution**.*
+*Made for the Big Autumn Packjam 2026, theme: **Evolution**.*
 
-Nature doesn't pick the winners on this farm. You do.
+Nature doesn't drive the evolution of your herd - you do. Selectively breed your animals to improve their stats: yield, fertility, growth rate and constitution. Discover unique genetic traits like Gluttonous Pigs or Broody Chickens.
 
-- **Every animal carries traits.** Yield, fertility, growth rate and constitution are inherited from its parents, and no two animals are quite alike.
-- **You choose who breeds.** Keep the best producers, pair them up, and each generation gets a little better than the last. Every birth adds a generation, so you can watch a bloodline grow.
-- **The farm evolves too.** Start with flint and copper, then build up to rich soil, full kitchens, a trading economy and rare animals bought with emerald blocks.
-- **Even the world has evolved.** The swords are gone, beaten into ploughshares. What's left is a life built around growing things.
+Find new breeding stock in the wild, or sell crops for cash and buy new animals from the Wandering Trader.
 
-## 🌾 The loop
-
-> **Farm** → **Sell** → **Buy livestock** → **Breed** → **Farm more**
-
-- **Everything you earn comes from the farm.** Drop produce into the **Shipping Bin** and it pays out in emeralds. Raw crops keep you going, animal products pay better, and cooked meals are where the real money is.
-- **Round up wild animals, then buy the rest.** Cows, sheep, pigs and chickens roam as usual. The **Wandering Trader** sells what the wild doesn't: animals from far-off biomes, rare breeds, and the exact animal you've been waiting for. Every visit brings a different selection.
-- **Breed for better stock.** Every animal carries genes. Pair them carefully and each generation can outdo the last.
-
-## 🐄 Animals worth caring about
-
-Powered by **Animal Husbandry**, livestock here are more than walking drops:
-
-- **Genetics:** yield, fertility, growth rate and constitution are inherited and vary from animal to animal. Some animals are born with special traits.
-- **Care:** animals get hungry, happy, sick and pregnant. Look after them and they look after you.
-- **Bloodlines:** every birth counts a generation. Inspect an animal with a **magnifying glass** to see its stats, then decide who breeds next.
-- **Quests reward good breeding.** The Shipping Bin pays for quantity, but raising a prize animal or a long bloodline is what completes quests.
-- **Truffles, cheese and more** can turn a good herd into income.
-
-## 🛒 The Wandering Trader
-
-He sells livestock in tiers, from everyday farm animals to rare finds:
-
-- **Common:** chickens, pigs, sheep, cows, rabbits, goats, bees
-- **Uncommon:** horses, donkeys, llamas, cats, wolves, foxes, turtles, camels
-- **Rare:** mooshrooms, pandas, axolotls
-- **Top tier:** sniffers and allays, priced in emerald blocks
-
-He also carries one hard-to-find supply each visit: a waystone, ender pearls, blaze rods or ghast tears.
-
-## 🍲 Farm to table
-
-**Farmer's Delight** adds cutting boards, cooking pots, rich soil and dozens of meals. Every dish's price is worked out from its real recipe, so a cooked meal is worth more than the ingredients that went into it. **Shift-hover** any item to see what the Shipping Bin pays for it.
-
-## 🕊️ Swords to Ploughshares
-
-- **No hostile mobs.** No zombies, creepers, wardens, phantoms, raids or patrols.
-- **No swords.** They're gone from crafting and loot. The **knife** took over their job: it cuts through cobwebs, and it's the best tool for culling livestock because it guarantees drops.
-- **No villages, pillager outposts or mansions.** The farm is the economy.
-- **Copper tools come first.** Make shears and buckets from copper and a knife from flint, so you can start farming without a trip underground.
-- **Leather-free storage.** Canvas made from straw stands in for leather in backpack recipes, so you never have to cull your breeding stock for a satchel.
-
-## 🧭 Explore, travel, store
-
-- **New crop seeds are out in the world.** Explore to find them.
-- **Waystones** generate in the wild. Leashed animals travel with you, so your waystone network doubles as livestock transport.
-- **Sophisticated Backpacks**, with upgrades that feed you while you work and deposit straight into the Shipping Bin.
-- **You always start somewhere green:** plains, meadows, forests or cherry groves, with grass and wood to get going.
-
-## 📜 Guided start
-
-**24 quests across 5 chapters** (*Getting Started, The Herd, The Market, The Kitchen, Hauling & Storage*) walk you through everything, written for players new to modded Minecraft.
-
-## ✨ Looks & feel
-
-Fresh Animations, falling leaves, ambient sounds, dynamic lighting and more. **Shaders are included but off by default.** Press **K** in game to turn on Complementary Reimagined.
+An in-game quest book provides a guide to get you started.
 
 ---
 
-## 🐞 Found a bug? Crashed?
+## 💼 Featured Mods (full list in Dependencies tab)
 
-Report it on the **[Seed & Stock issue tracker](https://github.com/cowpewter/seed-and-stock-issues/issues/new/choose)**. If the game crashes, the Crash Assistant window has an **Upload all** button. Paste what it gives you into a crash report.
+### Gameplay
 
-Feedback on prices, pacing and balance is very welcome too. This is a jam pack, and playtest feedback shapes it.
+* Animal Husbandry
+* Farmers Delight
+* QuestLog
+* InControl
+* KubeJS/LootJS/MoreJS
+
+### Atmosphere and Ambience
+
+* Ambient Environment
+* Ambient Sounds
+* Climate Rivers
+* Geophilic/Geophilic Backport
+* More Mob Variants
+* Vanilla Backport
+* Particle Rain
+* Rainbows
+* Sound Physics Remastered
+* Sounds
+* SWAY/MC2 Interactive Foliage
+* Presence Footsteps
+* Wakes
+* YUNG's Better Mineshafts
+* Sodium/Chloride/LambDynamicLights/Iris
+
+### Utility
+
+* Via Romana
+* Horseman
+* HT's TreeChop
+* RightClickHarvest
+* Xaero's Map/Minimap
+* Curios
+* Gravestone
+* Sophisticated Backpacks
+* Sophisticated Sorter
+* More Useful Copper
+* Simple Backups
+* Crash Assistant
+
+---
+
+## 🐞 Found a bug? Have a suggestion?
+
+Report it on the **[Seed & Stock issue tracker](https://github.com/cowpewter/seed-and-stock-issues/issues/new/choose)**. Crash Assistant should open when the game crashes, allowing you to easily view/copy/upload your logs. Just paste them into the Issue tracker.
+
+I'm also very open to feedback, especially about pricing/balance/pacing, or new features you'd like to see.
 
 ## 💚 Credits
 
-Made by **cowpewter** for the **BAP** packjam.
+Made by **[cowpewter](https://github.com/cowpewter)** for the **BAP** packjam.
 
-**Shaders:** [Complementary Shaders – Reimagined](https://modrinth.com/shader/complementary-reimagined) by **EminGT**, included unmodified and off by default.
+**Shaders:** [Complementary Shaders – Reimagined](https://modrinth.com/shader/complementary-reimagined) by **EminGT**, included unmodified.
 
-Built on the work of many mod authors, especially **Animal Husbandry**, **Farmer's Delight**, **MoreJS**, **KubeJS**, **Questlog**, **In Control!**, **Waystones** and **Sophisticated Backpacks**. Full list on the Dependencies tab.
+Built on the work of many mod authors, without whose work this pack would not exist. Full list in Dependencies tab.
 
 *The Seed & Stock license (MIT) covers this pack's original scripts, quests and configuration. Mods, resource packs and shaders remain under their own authors' licenses.*
