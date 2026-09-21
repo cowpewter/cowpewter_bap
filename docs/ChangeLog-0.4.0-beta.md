@@ -6,7 +6,7 @@
 
 ## Changes
 
-BREAKING CHANGE: Due to changes in how the underlying data is stored, animals tamed before this version was installed will no longer count towards the Master Herder quest. Start a fresh world to avoid this.
+BREAKING CHANGE: A bug in the Master Herder quest required refactoring how its data is stored. Start a fresh world to avoid this quest triggering much too early. Or not. It's not that important.
 
 Fixed icon on Useful Keybinds quest
 
