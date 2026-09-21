@@ -20,7 +20,7 @@
   "sicknessChanceStarving": 0.2,
   "sicknessChanceCrammed": 0.15,
   "sicknessChanceNoSunlight": 0.1,
-  "sickDeathChancePerDay": 0.1,
+  "sickDeathChancePerDay": 0.025,
   "hardyTraitSicknessMultiplier": 0.5,
   "constitutionSicknessMultiplier": 0.9,
   "baseYieldMultiplier": 1.0,

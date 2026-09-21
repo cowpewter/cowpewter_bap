@@ -17,6 +17,9 @@
     });
   });
 
+  const STANDARD_STACK_SIZE = 64;
+  const SMALL_STACK_SIZE = 16;
+
   const BIN_SLOTS = 27;
 
   const OPEN_BINS = {};
@@ -36,7 +39,7 @@
       var numCoins = Math.floor(remaining / rung.value);
       remaining -= numCoins * rung.value;
       while (numCoins > 0) {
-        var chunk = Math.min(numCoins, 64);
+        var chunk = Math.min(numCoins, STANDARD_STACK_SIZE);
         coins.push(Item.of(rung.id, chunk));
         numCoins -= chunk;
       }
@@ -45,6 +48,18 @@
     return coins;
   };
 
+  const makeBuckets = (count) => {
+    var bucketStacks = [];
+    var remaining = count;
+
+    while (remaining > 0) {
+      var chunk = Math.min(remaining, SMALL_STACK_SIZE);
+      bucketStacks.push(Item.of('minecraft:bucket', chunk));
+      remaining -= chunk;
+    }
+
+    return bucketStacks;
+  };
 
   PlayerEvents.inventoryClosed('kubejs:menu', event => {
     if (!event.player) return;
@@ -53,37 +68,53 @@
 
     const numSlots = bin.getContainerSize();
     const shipped = {};
+    var bucketsToReturn = 0;
     var total = 0;
     for (var i = 0; i < numSlots; i++) {
       var stack = bin.getItem(i);
       var price = priceOf(stack);
       if (price > 0) shipped[String(stack.id)] = true;
       total += price * stack.count;
+
+      if (String(stack.id) === 'minecraft:milk_bucket') {
+        bucketsToReturn += stack.count; // should always be 1 but you never know
+      }
     }
     if (total === 0) {
-      // Cleanup
+      // Nothing to sell, Cleanup
       delete OPEN_BINS[event.player.uuid];
       return;
     }
 
-    const toAdd = totalToCoins(total);
-    const pouch = BAP_POUCH.getPouchSlotStack(event.player);
-    if (!pouch.stack) {
-      // Cleanup
-      delete OPEN_BINS[event.player.uuid];
-      return;
+    // If we sold Milk Buckets, return the empties
+    if (bucketsToReturn > 0) {
+      var buckets = makeBuckets(bucketsToReturn);
+      buckets.forEach(b => {
+        event.player.give(b);
+      });
     }
-    const container = BAP_POUCH.getLinkedContainerFromPouch(event.player, pouch.stack);
-    // precondense to maximize room
-    BAP_POUCH.condenseContainer(container);
-    toAdd.forEach(item => {
-      var remainder = container.addItem(item);
-      if (remainder.count) {
-        event.player.give(remainder);
-      } 
-    });
-    // post condense for cleanup
-    BAP_POUCH.condenseContainer(container);
+
+    // Deliver the money
+    var toAdd = totalToCoins(total);
+    var pouch = BAP_POUCH.getPouchSlotStack(event.player);
+    if (!pouch.stack) {
+      // just give to player directly if pouch lookup fails
+      toAdd.forEach(item => {
+        event.player.give(item);
+      });
+    } else {
+      var container = BAP_POUCH.getLinkedContainerFromPouch(event.player, pouch.stack);
+      // precondense to maximize room
+      BAP_POUCH.condenseContainer(container);
+      toAdd.forEach(item => {
+        var remainder = container.addItem(item);
+        if (remainder.count) {
+          event.player.give(remainder);
+        }
+      });
+      // post condense for cleanup
+      BAP_POUCH.condenseContainer(container);
+    }
 
     // Completionism: tick one objective per distinct item actually sold.
     grantShipAdvancements(event.player, shipped);

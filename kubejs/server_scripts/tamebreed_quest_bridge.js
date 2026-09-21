@@ -36,6 +36,34 @@
   var SUPERIOR_STAT_MIN = 0.95;
   var BEAST_STAT_MIN = 0.99;
 
+  var ADOPT_RADIUS = 2.0;
+
+  // Animal Husbandry's gestation birth spawns the calf straight into the world via
+  // addFreshEntityWithPassengers, so BabyEntitySpawnEvent never fires and
+  // startup_scripts/breeding_owner.js never stamps it. The dam is standing at the
+  // calf's spawn position, so inherit from her.
+  function inheritOwnerFromDam(entity, entityType) {
+    var genetics = getGenetics(entity);
+    console.log('new stock generation:', genetics && genetics.generation);
+    if (!genetics || parseInt(genetics.generation || '0') <= 0) {
+      // return if generation-0 spawn - that wasn't a bred baby
+      return;
+    }
+    var nearby = entity.level.getEntities(entity, entity.boundingBox.inflate(ADOPT_RADIUS));
+    var best = null;
+    var bestDist = Infinity;
+    for (var i = 0; i < nearby.size(); i++) {
+      var other = nearby.get(i);
+      if (String(other.type) !== entityType || other.baby) continue;
+      if (!getOwnerId(other)) continue;
+      var d = other.distanceToSqr(entity);
+      if (d < bestDist) { bestDist = d; best = other; }
+    }
+    if (!best) return;
+    var ownerId = getOwnerId(best);
+    setOwnerId(entity, ownerId);
+  }
+
   function grantAdvancement(server, adv, username) {
     server.runCommandSilent(
       'advancement grant ' + username + ' only ' + adv
@@ -177,12 +205,18 @@
     // This is an adult not baby
     if (!entity.baby) return;
 
-    // Unowned parents, so nobody gets the credit
+    if (!getOwnerId(entity)) {
+      inheritOwnerFromDam(entity, entityType);
+    }
+
+    // Unowned parents even after inherit check, so nobody gets the credit
     var owner = getOwner(entity);
     if (!owner) return;
 
     // Fire breed quest and update count
     grantAdvancement(owner.server, ADV_BREED, owner.username);
+    // This wont pop by default on AH births. Can fix ParrotsBees but not TwoByTwo without doing a bunch of extra work
+    grantAdvancement(owner.server, 'minecraft:husbandry/breed_an_animal', owner.username);
     incrementHerd(owner, entity);
 
     // Check stats and fire genetics advancements
