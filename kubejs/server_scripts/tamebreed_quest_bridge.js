@@ -42,28 +42,34 @@
     );
   }
 
-  function getHerdSizeEntityKey(entityId) {
-    return `herdSize:${entityId}`;
+  function getHerdSizeEntityKey(entityType) {
+    return `herdSize:${entityType}`;
   }
 
-  function getEverOwnedEntityKey(entityId) {
-    return `everOwned:${entityId}`;
+  function getEverOwnedEntityKey(entityType) {
+    return `everOwned:${entityType}`;
   }
 
-  function incrementHerd(player, entityId) {
+  function incrementHerd(player, entity) {
     var pData = player.persistentData;
+    var entityType = String(entity.type);
+
+    const isCounted = getIsCounted(entity);
+    if (isCounted) return;
 
     // Current Herd Size
-    var herdSizeKey = getHerdSizeEntityKey(entityId);
+    var herdSizeKey = getHerdSizeEntityKey(entityType);
     var currentHerdSize = pData.getInt(herdSizeKey) || 0;
     currentHerdSize++;
-    pData.setInt(herdSizeKey, currentHerdSize);
+    pData.putInt(herdSizeKey, currentHerdSize);
 
     // Total Ever everOwned
-    var everOwnedKey = getEverOwnedEntityKey(entityId);
+    var everOwnedKey = getEverOwnedEntityKey(entityType);
     var currentEverOwned = pData.getInt(everOwnedKey) || 0;
     currentEverOwned++;
-    pData.setInt(everOwnedKey, currentEverOwned);
+    pData.putInt(everOwnedKey, currentEverOwned);
+
+    setIsCounted(entity, true);
 
     // Fire quest completion triggers
     if (currentHerdSize >= HERD_COMPLETE_SIZE) {
@@ -72,13 +78,13 @@
     // @todo everOwned - do I even want this as a quest
   }
 
-  function decrementHerd(player, entityId) {
+  function decrementHerd(player, entityType) {
     var pData = player.persistentData;
-    var key = getHerdSizeEntityKey(entityId);
+    var key = getHerdSizeEntityKey(entityType);
 
     var currentCount = pData.getInt(key) || 0;
     var newCount = Math.max(0, currentCount - 1);
-    pData.setInt(key, newCount);
+    pData.putInt(key, newCount);
   }
 
   function getGenetics(entity) {
@@ -93,10 +99,23 @@
   // Livestock has no vanilla owner, so we stamp one when a player feeds an
   // animal. Babies inherit it in startup_scripts/breeding_owner.js, which must
   // use this same key.
-  var OWNER_KEY = 'bapOwner';
+  var OWNER_KEY = 'cowpewter_bap:owner';
+  var COUNTED_KEY = 'cowpewter_bap:counted';
 
   function getOwnerId(entity) {
     return String(entity.persistentData.getString(OWNER_KEY) || '');
+  }
+
+  function setOwnerId(entity, ownerId) {
+    entity.persistentData.putString(OWNER_KEY, ownerId);
+  }
+
+  function getIsCounted(entity) {
+    return entity.persistentData.getBoolean(COUNTED_KEY) || false;
+  }
+
+  function setIsCounted(entity, value) {
+    entity.persistentData.putBoolean(COUNTED_KEY, value);
   }
 
   // Null when the owner is offline: their herd counts live in player data, so
@@ -120,10 +139,10 @@
       return;
     }
 
-    var entityId = String(entity.type);
+    var entityType = String(entity.type);
 
     // Not tameable
-    if (ELIGIBLE_ENTITIES.indexOf(entityId) === -1) {
+    if (ELIGIBLE_ENTITIES.indexOf(entityType) === -1) {
       return;
     }
 
@@ -131,15 +150,15 @@
     if (getOwnerId(entity)) return;
 
     // Not a taming food
-    const eligibleItems = TAMING_FOODS[entityId] || [];
+    const eligibleItems = TAMING_FOODS[entityType] || [];
     if (eligibleItems.indexOf(item) === -1) {
       return;
     }
 
-    entity.persistentData.putString(OWNER_KEY, String(player.uuid));
+    setOwnerId(entity, String(player.uuid));
+    incrementHerd(player, entity);
 
     grantAdvancement(player.server, ADV_TAME, player.username);
-    incrementHerd(player, entityId);
   });
 
   // Manual food breeding is disabled in this pack; animals breed on their own
@@ -149,10 +168,10 @@
     var entity = event.getEntity();
     if (!entity) return;
 
-    var entityId = String(entity.type);
+    var entityType = String(entity.type);
 
     // Not an animal we count for this quest
-    if (ELIGIBLE_ENTITIES.indexOf(entityId) === -1) {
+    if (ELIGIBLE_ENTITIES.indexOf(entityType) === -1) {
       return;
     }
     // This is an adult not baby
@@ -164,16 +183,18 @@
 
     // Fire breed quest and update count
     grantAdvancement(owner.server, ADV_BREED, owner.username);
-    incrementHerd(owner, entityId);
+    incrementHerd(owner, entity);
 
     // Check stats and fire genetics advancements
     var genetics = getGenetics(entity);
-    var growthRate = parseFloat(genetics.growthRate);
+    if (!genetics) return;
+
+    var growthRate = parseFloat(genetics.growthRate || '0.0');
     // NB: `yield` is reserved in Rhino -- naming it that fails to parse.
-    var producYield = parseFloat(genetics.producYield);
-    var fertility = parseFloat(genetics.fertility);
-    var constitution = parseFloat(genetics.constitution);
-    var generation = parseInt(genetics.generation);
+    var producYield = parseFloat(genetics.producYield || '0');
+    var fertility = parseFloat(genetics.fertility || '0');
+    var constitution = parseFloat(genetics.constitution || '0');
+    var generation = parseInt(genetics.generation || '0');
     var statArray = [growthRate, producYield, fertility, constitution];
 
     if (generation >= PEDIGREE_MIN_GENERATION) {
@@ -195,16 +216,19 @@
     var entity = event.getEntity();
     if (!entity) return;
 
-    var entityId = String(entity.type);
+    var entityType = String(entity.type);
 
     // Not an animal we track head count
-    if (ELIGIBLE_ENTITIES.indexOf(entityId) === -1) {
+    if (ELIGIBLE_ENTITIES.indexOf(entityType) === -1) {
       return;
     }
 
     var owner = getOwner(entity);
     if (!owner) return;
 
-    decrementHerd(owner, entityId);
+    var counted = getIsCounted(entity);
+    if (!counted) return;
+
+    decrementHerd(owner, entityType);
   });
 })();
