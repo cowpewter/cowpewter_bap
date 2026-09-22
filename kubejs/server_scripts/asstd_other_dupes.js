@@ -1,5 +1,3 @@
-// kubejs/server_scripts/asstd_other_dupes.js
-//
 // A place to remove duped items that have no other home
 
 (function () {
