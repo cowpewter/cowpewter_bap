@@ -9,7 +9,7 @@
     var i;
     for (i = 0; i < RECIPE_IDS.length; i++) {
       event.replaceInput(
-        { id: RECIPE_IDS[i] },
+        { output: RECIPE_IDS[i] },
         'minecraft:iron_nugget',
         '#cowpewter_bap:util_nuggets'
       );
