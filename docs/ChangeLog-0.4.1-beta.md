@@ -10,6 +10,8 @@
 
 2. Updated default keybinds: Sophisticated Backpack Sort: unbound, Sophisticated Sorter Sort: Middle Mouse
 
+3. Copper Nuggets usable in place of Iron Nuggets in Name Tag, Lantern, and Soul Lantern recipes
+
 ## Bug Fixes
 
 1. Shipping Bin should now return empty Buckets after selling Milk Buckets
