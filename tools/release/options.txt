@@ -9,3 +9,6 @@ key_key.kubejs.kubedex:key.keyboard.unknown
 key_gui.xaero_zoom_in:key.keyboard.equal
 key_gui.xaero_zoom_out:key.keyboard.minus
 key_key.socialInteractions:key.keyboard.unknown
+key_key.sophisticatedcore.sort:key.keyboard.unknown
+key_key.sophisticatedsorter.sort:key.mouse.middle
+key_key.sophisticatedsorter.disable:scancode.85
