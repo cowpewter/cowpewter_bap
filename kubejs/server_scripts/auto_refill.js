@@ -52,7 +52,6 @@
     'c:tools/shear'
   ];
 
-
   // Audible feedback, so a swap that is otherwise invisible still registers.
   // Set SWAP_SOUND to '' to kill the noise entirely.
   var SWAP_SOUND = 'minecraft:entity.item.pickup';

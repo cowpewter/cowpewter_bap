@@ -60,4 +60,13 @@
       event.addTableModifier(/.*/).removeLoot(item);
     });
   });
+
+  // Register More Useful Copper tool tags - needed for auto-refill script
+  ServerEvents.tags('item', event => {
+    event.add('minecraft:pickaxes', 'more_useful_copper:copper_pickaxe');
+    event.add('minecraft:axes', 'more_useful_copper:copper_axe');
+    event.add('minecraft:shovels', 'more_useful_copper:copper_shovel');
+    event.add('minecraft:hoes', 'more_useful_copper:copper_hoe');
+    event.add('c:tools/shear', 'more_useful_copper:copper_shears');
+  });
 })();
