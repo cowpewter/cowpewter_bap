@@ -11,3 +11,5 @@
 2. Applied real pack icon
 
 3. Updated/finalized missing quest text
+
+4. Custom main menu pano
