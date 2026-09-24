@@ -13,3 +13,6 @@
 3. Updated/finalized missing quest text
 
 4. Custom main menu pano
+
+5. Use American spelling of "Plow"
+

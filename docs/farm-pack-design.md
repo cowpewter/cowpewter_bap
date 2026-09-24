@@ -1,4 +1,4 @@
-# Seed & Stock: Swords to Ploughshares — Design Document
+# Seed & Stock: Swords to Plowshares — Design Document
 
 Minecraft 1.21.1, NeoForge 21.1.250. A pack about breeding farm animals and
 building an agricultural economy. No combat.
@@ -8,12 +8,12 @@ survives only in internal identifiers (namespace, instance name, repo name).
 
 ### Name
 
-**Seed & Stock: Swords to Ploughshares** (short form: **Seed & Stock**).
+**Seed & Stock: Swords to Plowshares** (short form: **Seed & Stock**).
 
 - *Seed* — crops, and the exploration that finds new seeds.
 - *Stock* — livestock, "good stock" bloodlines (genetics, generation quests),
   and trade value (selling bin, trader).
-- *Swords to Ploughshares* — no combat, backed by a real design choice: swords
+- *Swords to Plowshares* — no combat, backed by a real design choice: swords
   are removed and the knife took over their one farm job (§4).
 
 Chosen 2026-09-14. Free as a Modrinth modpack title at the time; also checked
@@ -35,7 +35,7 @@ How Seed & Stock uses it:
   decoration.
 - **The farm evolves:** flint and copper → rich soil and kitchens → a trading
   economy → rare stock bought in emerald blocks.
-- **The world has evolved:** swords removed, beaten into ploughshares (the
+- **The world has evolved:** swords removed, beaten into Plowshares (the
   subtitle).
 
 Where it's stated: Modrinth summary ("evolution by hand") and the
@@ -683,10 +683,10 @@ server install would crash. Re-tick the boxes below for each new release.
 - [ ] Pack name everywhere it shows. The export is still named
       `cowpewter-bap` / `0.0.1-alpha`:
       - Prism export dialog: name **Seed & Stock**, version e.g. `1.0.0`
-      - Modrinth project title **Seed & Stock: Swords to Ploughshares**
+      - Modrinth project title **Seed & Stock: Swords to Plowshares**
       - optional: Getting Started quest text
       - done 2026-09-14: crash screen `modpack_name = "Seed & Stock"`,
-        window title `Seed & Stock: Swords to Ploughshares`
+        window title `Seed & Stock: Swords to Plowshares`
 - [x] **Create the public issues repo `cowpewter/seed-and-stock-issues`**
       (exact name; Issues enabled). The main repo is private, so crash reports
       go here. Crash Assistant already points at

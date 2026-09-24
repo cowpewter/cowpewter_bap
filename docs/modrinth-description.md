@@ -1,4 +1,4 @@
-# Seed & Stock: Swords to Ploughshares
+# Seed & Stock: Swords to Plowshares
 
 **A cozy, combat-free farming and animal-breeding pack for Minecraft 1.21.1.**
 
