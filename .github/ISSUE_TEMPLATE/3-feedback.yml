@@ -1,0 +1,39 @@
+name: Feedback or balance
+description: Prices, pacing, the trader, quests, or anything you'd change.
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Seed & Stock is a jam pack and feedback genuinely shapes it. Too slow to earn emeralds? Trader never shows up? Cooking not worth it? Tell us!
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: What's it about?
+      options:
+        - Selling bin prices / earning emeralds
+        - Wandering trader (spawns, stock, prices)
+        - Breeding and genetics
+        - Crops and finding seeds
+        - Cooking
+        - Quests
+        - Storage and backpacks
+        - Performance
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your feedback
+    validations:
+      required: true
+
+  - type: input
+    id: progress
+    attributes:
+      label: How far in are you?
+      description: Rough is fine, e.g. "first day", "have a small herd", "a few hours in, bought a sniffer".

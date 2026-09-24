@@ -1,0 +1,52 @@
+name: Bug or something feels off
+description: No crash, but something is broken, missing, or doesn't work the way the quests say.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Things like a recipe that won't craft, a quest that won't complete, a trader with nothing to sell, or an item the selling bin won't take all belong here.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we see it happen?
+      description: Steps, if you know them. Screenshots are very welcome, drag them into this box.
+      placeholder: |
+        1. Put a milk bucket in the selling bin
+        2. ...
+
+  - type: input
+    id: version
+    attributes:
+      label: Pack version
+    validations:
+      required: true
+
+  - type: dropdown
+    id: changes
+    attributes:
+      label: Have you changed the pack?
+      options:
+        - No, it's as downloaded
+        - Added mods
+        - Removed or disabled mods
+        - Updated mods
+        - Changed config files
+    validations:
+      required: true

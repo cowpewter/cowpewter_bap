@@ -1,0 +1,77 @@
+name: Crash report
+description: The game crashed or won't start.
+title: "[Crash] "
+labels: ["crash"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sorry about the crash! When Seed & Stock crashes, a **Crash Assistant** window opens.
+        Click **Upload all**, then paste the message it gives you below. That message has links to your logs, which is usually everything needed to find the problem.
+
+  - type: textarea
+    id: upload
+    attributes:
+      label: Crash Assistant message
+      description: Paste the whole message from the **Upload all** button.
+      placeholder: Paste here...
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What were you doing?
+      description: For example "opening a backpack", "loading my world", "breeding cows near a waystone".
+    validations:
+      required: true
+
+  - type: dropdown
+    id: when
+    attributes:
+      label: When did it crash?
+      options:
+        - While the game was starting up
+        - When loading or creating a world
+        - During normal play
+        - When leaving a world or quitting
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Pack version
+      description: Shown in your launcher, e.g. 1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: launcher
+    attributes:
+      label: Launcher
+      options:
+        - Modrinth App
+        - Prism Launcher
+        - CurseForge App
+        - ATLauncher
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: changes
+    attributes:
+      label: Have you changed the pack?
+      description: It's fine if you have, it just helps narrow things down.
+      options:
+        - No, it's as downloaded
+        - Added mods
+        - Removed or disabled mods
+        - Updated mods
+        - Changed config files
+        - Added a shader or resource pack
+    validations:
+      required: true
