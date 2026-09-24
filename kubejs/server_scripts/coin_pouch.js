@@ -17,7 +17,6 @@ const BAP_POUCH = (function () {
     { from: 'cowpewter_bap:coin_10',  to: 'cowpewter_bap:coin_100', ratio: 10 },
     { from: 'cowpewter_bap:coin_100', to: 'cowpewter_bap:coin_500', ratio: 5 },
   ];
-  const KEEP_PER_DENOM = 64;
   // Coins stack to 64, see economy.js
   const MAX_COIN_STACK = 64;
 
@@ -89,7 +88,7 @@ const BAP_POUCH = (function () {
     var converted = false;
     COIN_LADDER.forEach(rung => {
       count = getDenominationCount(container, rung.from);
-      batches = Math.floor((count - KEEP_PER_DENOM) / rung.ratio);
+      batches = Math.floor(count / rung.ratio);
       if (batches <= 0) return;
 
       var left = batches;
