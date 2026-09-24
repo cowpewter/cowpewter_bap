@@ -72,10 +72,10 @@ const BAP_POUCH = (function () {
   });
 
   const getDenominationCount = (container, denomId) => {
-    var numSlots = container.getContainerSize();
-    var count = 0;
-    for (var i = 0; i < numSlots; i++) {
-      var stack = container.getItem(i);
+    let numSlots = container.getContainerSize();
+    let count = 0;
+    for (let i = 0; i < numSlots; i++) {
+      let stack = container.getItem(i);
       if (String(stack.id) === denomId) {
         count += stack.count;
       }
@@ -84,19 +84,19 @@ const BAP_POUCH = (function () {
   };
 
   const condenseContainer = (container) => {
-    var count, batches, added;
-    var converted = false;
+    let count, batches, added;
+    let converted = false;
     COIN_LADDER.forEach(rung => {
       count = getDenominationCount(container, rung.from);
       batches = Math.floor(count / rung.ratio);
       if (batches <= 0) return;
 
-      var left = batches;
+      let left = batches;
       added = 0;
       while (left > 0) {
-        var chunk = Math.min(left, MAX_COIN_STACK);
-        var remainder = container.addItem(Item.of(rung.to, chunk));
-        var accepted = chunk - remainder.count;
+        let chunk = Math.min(left, MAX_COIN_STACK);
+        let remainder = container.addItem(Item.of(rung.to, chunk));
+        let accepted = chunk - remainder.count;
         added += accepted;
         if (accepted < chunk) break;   // pouch is full, stop trying
         left -= chunk;
@@ -114,15 +114,15 @@ const BAP_POUCH = (function () {
   // denomination out and put it back as whole stacks. Cosmetic only.
   const compactContainer = (container) => {
     COIN_IDS.forEach(id => {
-      var total = getDenominationCount(container, id);
+      let total = getDenominationCount(container, id);
       if (total <= 0) return;
 
       removeDenomination(container, id, total);
 
-      var left = total;
+      let left = total;
       while (left > 0) {
-        var chunk = Math.min(left, MAX_COIN_STACK);
-        var remainder = container.addItem(Item.of(id, chunk));
+        let chunk = Math.min(left, MAX_COIN_STACK);
+        let remainder = container.addItem(Item.of(id, chunk));
         if (!remainder.isEmpty()) {
           // Can't happen: we just freed at least this much room
           console.log('[cowpewter_bap] compaction lost ' + remainder.count + ' ' + id);
@@ -134,10 +134,10 @@ const BAP_POUCH = (function () {
   };
 
   const removeDenomination = (container, denomId, amount) => {
-    var numSlots = container.getContainerSize();
-    var left = amount;
-    var stack, removed;
-    for (var i = 0; i < numSlots; i++) {
+    let numSlots = container.getContainerSize();
+    let left = amount;
+    let stack, removed;
+    for (let i = 0; i < numSlots; i++) {
       stack = container.getItem(i);
       if (String(stack.id) === denomId) {
         removed = container.removeItem(i, Math.min(left, stack.count));
@@ -178,9 +178,9 @@ const BAP_POUCH = (function () {
 
   const addToContainer = (event, container) => {
     const origCount = event.item.getCount();
-    var remainders = container.addItem(event.item);
-    var remainderCnt = remainders.getCount();
-    var numInserted = origCount - remainderCnt;
+    let remainders = container.addItem(event.item);
+    let remainderCnt = remainders.getCount();
+    let numInserted = origCount - remainderCnt;
 
     // Nothing inserted, bag full, fallback to vanilla pickup
     if (!numInserted) {
@@ -240,7 +240,7 @@ const BAP_POUCH = (function () {
     // Need to create an array of POUCH_SLOTS ItemStack.EMPTY
     // As subclassing SimpleContainer means we can't use the int constructor
     const tempArr = [];
-    for (var i = 0; i < POUCH_SLOTS; i++) {
+    for (let i = 0; i < POUCH_SLOTS; i++) {
       tempArr.push(ItemStack.EMPTY);
     }
 

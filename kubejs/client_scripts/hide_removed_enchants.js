@@ -1,12 +1,9 @@
-// kubejs/client_scripts/hide_removed_enchants.js
-// Hides enchanted books for removed enchantments from JEI. Tags and the
-// inventory swap are in server_scripts/removed_enchants.js — keep REMOVED
-// in sync with the keys of REPLACEMENTS there.
-//
-// Only takes effect on a full client restart, not /reload or F3+T.
+// Hides enchanted books for removed enchantments from JEI.
+// See also server_scripts/removed_enchants.js
+// * Must keep REMOVED in sync with the keys of REPLACEMENTS there.
 
 (function () {
-  var REMOVED = [
+  let REMOVED = [
     'minecraft:sharpness',
     'minecraft:smite',
     'minecraft:bane_of_arthropods',
@@ -29,15 +26,15 @@
     'minecraft:vanishing_curse',
   ];
 
-  var EnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper');
+  let EnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper');
 
   RecipeViewerEvents.removeEntries('item', function (event) {
-    var hidden = 0;
+    let hidden = 0;
     // Every book is the same item; only its stored enchantment differs, so
     // this needs a predicate rather than an item ID.
     event.remove(function (stack) {
       if (stack.id !== 'minecraft:enchanted_book') return false;
-      var it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator();
+      let it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator();
       while (it.hasNext()) {
         if (REMOVED.indexOf(String(it.next().getRegisteredName())) >= 0) {
           hidden++;

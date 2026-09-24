@@ -1,25 +1,20 @@
-// kubejs/server_scripts/gamerules.js
-// Default gamerules for a farm-animal breeding pack.
-// Combat is removed, but difficulty stays on Normal so hunger still works.
-//
+// Default gamerules for Normal difficulty with no combat
 // Spawn control itself is handled by In Control!. The rules below cover the
 // things In Control! CANNOT catch, plus general pack defaults.
 //
 // Applies ONCE per world by default so players can adjust afterward.
 // Set ALWAYS_APPLY to true to enforce the pack's values on every load.
-//
-// Rhino-safe style: var only, no arrows or template strings.
 
 (function () {
-  var ALWAYS_APPLY = false;
+  let ALWAYS_APPLY = false;
 
-  var GAMERULES = {
+  let GAMERULES = {
     // --- Spawns that bypass normal spawn logic (In Control! won't catch these) ---
     doWardenSpawning: false,    // Wardens emerge from sculk shriekers, not spawn
     // attempts. Deep Dark / ancient cities. IMPORTANT.
     doInsomnia: false,          // phantoms, triggered by sleep timer
     doPatrolSpawning: false,    // pillager patrols (overworld)
-    doTraderSpawning: true,     // wandering traders — only source of rare stock. Keep true.
+    doTraderSpawning: true,     // wandering traders, keep true for bonus traders beyond bell summons
     disableRaids: true,         // raids, triggered by Bad Omen
 
     // --- Hunger loop: keep intact, this is the point of Normal difficulty ---
@@ -40,15 +35,15 @@
   };
 
   ServerEvents.loaded(function (event) {
-    var server = event.server;
-    var data = server.persistentData;
+    let server = event.server;
+    let data = server.persistentData;
 
     if (!ALWAYS_APPLY && data.getBoolean('packGamerulesApplied')) {
       return;
     }
 
-    var count = 0;
-    var rule;
+    let count = 0;
+    let rule;
     for (rule in GAMERULES) {
       server.runCommandSilent('gamerule ' + rule + ' ' + GAMERULES[rule]);
       count++;

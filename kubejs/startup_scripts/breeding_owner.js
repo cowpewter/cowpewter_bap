@@ -14,9 +14,9 @@
     if (!child) return;
 
     const parents = [event.getParentA(), event.getParentB()];
-    for (var i = 0; i < parents.length; i++) {
+    for (let i = 0; i < parents.length; i++) {
       if (!parents[i]) continue;
-      var owner = parents[i].persistentData.getString(OWNER_KEY);
+      let owner = parents[i].persistentData.getString(OWNER_KEY);
       if (owner) {
         child.persistentData.putString(OWNER_KEY, owner);
         return;

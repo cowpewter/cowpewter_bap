@@ -2,7 +2,7 @@
   const DataComponents = Java.loadClass('net.minecraft.core.component.DataComponents');
 
   const getStackValue = (stack) => {
-    var value = 0;
+    let value = 0;
     switch (String(stack.id)) {
     case 'cowpewter_bap:coin_1':
       value = 1;
@@ -37,10 +37,10 @@
       return;
     }
 
-    var contentLength = pouch.getSlots();
-    var total = 0;
-    var stack;
-    for (var i = 0; i < contentLength; i++) {
+    let contentLength = pouch.getSlots();
+    let total = 0;
+    let stack;
+    for (let i = 0; i < contentLength; i++) {
       stack = pouch.getStackInSlot(i);
       total += getStackValue(stack);
     }

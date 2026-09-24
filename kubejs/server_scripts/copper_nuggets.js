@@ -1,12 +1,12 @@
 (function () {
-  var RECIPE_IDS = [
+  let RECIPE_IDS = [
     'minecraft:name_tag',
     'minecraft:lantern',
     'minecraft:soul_lantern',
   ];
 
   ServerEvents.recipes(event => {
-    var i;
+    let i;
     for (i = 0; i < RECIPE_IDS.length; i++) {
       event.replaceInput(
         { output: RECIPE_IDS[i] },

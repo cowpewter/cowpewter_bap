@@ -1,19 +1,5 @@
-// kubejs/server_scripts/no_swords.js
-//
-// No combat, so swords have no job. Axes cull livestock, and the Farmer's
-// Delight knife covers the sword's one farm use — cobweb -> string. Knives
-// are DiggerItems with cobweb in farmersdelight:mineable/knife, so they
-// already count as the correct tool and the vanilla loot table drops string.
-//
-// The sword items still exist (they can't be unregistered); this removes
-// every way to get one. JEI hiding is in client_scripts/hide_swords.js.
-//
-// Now removes all ranged weapons too
-//
-// Rhino-safe style: var only, indexed loops, no arrows.
-
 (function () {
-  var SWORDS = [
+  let SWORDS = [
     'minecraft:wooden_sword',
     'minecraft:stone_sword',
     'minecraft:iron_sword',
@@ -22,14 +8,14 @@
     'minecraft:netherite_sword',
   ];
 
-  var RANGED = [
+  let RANGED = [
     'minecraft:bow',
     'minecraft:crossbow',
     'minecraft:arrow',
   ];
 
   ServerEvents.recipes(function (event) {
-    var i;
+    let i;
     for (i = 0; i < SWORDS.length; i++) {
       event.remove({ output: SWORDS[i] });
     }

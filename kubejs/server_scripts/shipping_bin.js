@@ -33,13 +33,13 @@
 
   const totalToCoins = (total) => {
     const coins = [];
-    var remaining = total;
+    let remaining = total;
 
     COIN_VALUES.forEach(rung => {
-      var numCoins = Math.floor(remaining / rung.value);
+      let numCoins = Math.floor(remaining / rung.value);
       remaining -= numCoins * rung.value;
       while (numCoins > 0) {
-        var chunk = Math.min(numCoins, STANDARD_STACK_SIZE);
+        let chunk = Math.min(numCoins, STANDARD_STACK_SIZE);
         coins.push(Item.of(rung.id, chunk));
         numCoins -= chunk;
       }
@@ -49,11 +49,11 @@
   };
 
   const makeBuckets = (count) => {
-    var bucketStacks = [];
-    var remaining = count;
+    let bucketStacks = [];
+    let remaining = count;
 
     while (remaining > 0) {
-      var chunk = Math.min(remaining, SMALL_STACK_SIZE);
+      let chunk = Math.min(remaining, SMALL_STACK_SIZE);
       bucketStacks.push(Item.of('minecraft:bucket', chunk));
       remaining -= chunk;
     }
@@ -68,11 +68,11 @@
 
     const numSlots = bin.getContainerSize();
     const shipped = {};
-    var bucketsToReturn = 0;
-    var total = 0;
-    for (var i = 0; i < numSlots; i++) {
-      var stack = bin.getItem(i);
-      var price = priceOf(stack);
+    let bucketsToReturn = 0;
+    let total = 0;
+    for (let i = 0; i < numSlots; i++) {
+      let stack = bin.getItem(i);
+      let price = priceOf(stack);
       if (price > 0) shipped[String(stack.id)] = true;
       total += price * stack.count;
 
@@ -88,26 +88,26 @@
 
     // If we sold Milk Buckets, return the empties
     if (bucketsToReturn > 0) {
-      var buckets = makeBuckets(bucketsToReturn);
+      let buckets = makeBuckets(bucketsToReturn);
       buckets.forEach(b => {
         event.player.give(b);
       });
     }
 
     // Deliver the money
-    var toAdd = totalToCoins(total);
-    var pouch = BAP_POUCH.getPouchSlotStack(event.player);
+    let toAdd = totalToCoins(total);
+    let pouch = BAP_POUCH.getPouchSlotStack(event.player);
     if (!pouch.stack) {
       // just give to player directly if pouch lookup fails
       toAdd.forEach(item => {
         event.player.give(item);
       });
     } else {
-      var container = BAP_POUCH.getLinkedContainerFromPouch(event.player, pouch.stack);
+      let container = BAP_POUCH.getLinkedContainerFromPouch(event.player, pouch.stack);
       // precondense to maximize room
       BAP_POUCH.condenseContainer(container);
       toAdd.forEach(item => {
-        var remainder = container.addItem(item);
+        let remainder = container.addItem(item);
         if (remainder.count) {
           event.player.give(remainder);
         }
@@ -161,9 +161,9 @@
   };
 
   const grantShipAdvancements = (player, shipped) => {
-    var id;
+    let id;
     for (id in shipped) {
-      var adv = global.BAP_SHIP_ADVANCEMENTS[id];
+      let adv = global.BAP_SHIP_ADVANCEMENTS[id];
       if (!adv) continue;
       grantAdvancement(player, adv);
     }
@@ -180,7 +180,7 @@
     // Need to create an array of BIN_SLOTS ItemStack.EMPTY
     // As subclassing SimpleContainer means we can't use the int constructor
     const tempArr = [];
-    for (var i = 0; i < BIN_SLOTS; i++) {
+    for (let i = 0; i < BIN_SLOTS; i++) {
       tempArr.push(ItemStack.EMPTY);
     }
 

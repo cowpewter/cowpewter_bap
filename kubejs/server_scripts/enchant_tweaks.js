@@ -1,18 +1,7 @@
-// kubejs/server_scripts/enchant_tweaks.js
-//
-// Changes to how kept enchantments behave. Removed enchantments live in
-// removed_enchants.js.
-//
-// Rhino-safe style: var only, indexed loops, no arrows.
+// let Mending and Swift Sneak roll on enchant table
 
 (function () {
   ServerEvents.tags('enchantment', function (event) {
-    // Infinity + Mending on one bow. Infinity's exclusive_set is this tag and
-    // Mending has none of its own, so dropping Mending from it clears the
-    // conflict in both directions (anvil included).
-    event.remove('minecraft:exclusive_set/bow', 'minecraft:mending');
-    console.info('[cowpewter_bap] infinity and mending now compatible on bows');
-
     // Mending rolls at the enchanting table. Treasure-ness is only tags in
     // 1.21.1; the table has no separate treasure check. Mending's own JSON
     // keeps it rare: weight 2, and min_cost 25 means it realistically only

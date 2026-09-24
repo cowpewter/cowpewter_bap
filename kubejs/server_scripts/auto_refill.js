@@ -1,5 +1,3 @@
-// kubejs/server_scripts/auto_refill.js
-//
 // Keeps the main hand stocked from the rest of the inventory:
 //   - tools swap out *before* they break        (TOOL_DURABILITY_LEFT)
 //   - stacks top up *before* they run dry       (STACK_TOPUP_AT)
@@ -12,7 +10,6 @@
 // can only replace a tool after it breaks; this beats both.
 //
 // Server-side, so it works for everyone with no client mod.
-// Rhino-safe style: var only, indexed loops, no arrows.
 
 (function () {
   // --- Tuning ---------------------------------------------------------
@@ -20,30 +17,30 @@
   //   0 = never swap early, only replace it once it has actually broken
   //   1 = swap with one use left, so the tool never breaks     (default)
   //   N = swap with N uses left
-  var TOOL_DURABILITY_LEFT = 0;
+  let TOOL_DURABILITY_LEFT = 0;
 
   // Count at which the held stack gets topped up from elsewhere.
   //   0  = never top up early, only refill once the stack is empty
   //   8  = keep at least 8 in hand                             (default)
   //   32 = top up sooner, at the cost of more inventory shuffling
-  var STACK_TOPUP_AT = 1;
+  let STACK_TOPUP_AT = 1;
 
   // A replacement tool must have MORE than this much durability left,
   // else we would just swap into another nearly-dead tool and ping-pong.
-  var MIN_REPLACEMENT_DURABILITY = 1;
+  let MIN_REPLACEMENT_DURABILITY = 1;
 
   // Swap across tiers: a dying stone axe will accept a wooden one.
   // false = only ever swap a tool for the exact same item.
-  var CROSS_TIER_SWAP = true;
+  let CROSS_TIER_SWAP = true;
 
   // At equal tier, reach for an unenchanted tool before an enchanted one.
-  var AVOID_ENCHANTED = true;
+  let AVOID_ENCHANTED = true;
 
   // What counts as "the same kind of tool" for a cross-tier swap. A candidate
   // has to carry the same tag as the worn tool. If the worn tool has none of
   // these, we fall back to exact-item matching, which is the safe behaviour
   // for modded tools that tag themselves oddly. Add your own here.
-  var TOOL_TYPE_TAGS = [
+  let TOOL_TYPE_TAGS = [
     'minecraft:pickaxes',
     'minecraft:axes',
     'minecraft:shovels',
@@ -54,13 +51,13 @@
 
   // Audible feedback, so a swap that is otherwise invisible still registers.
   // Set SWAP_SOUND to '' to kill the noise entirely.
-  var SWAP_SOUND = 'minecraft:entity.item.pickup';
-  var SWAP_SOUND_VOLUME = 0.2;
-  var SWAP_SOUND_PITCH = 2.0;
+  let SWAP_SOUND = 'minecraft:entity.item.pickup';
+  let SWAP_SOUND_VOLUME = 0.2;
+  let SWAP_SOUND_PITCH = 2.0;
 
-  var SOUND_ON_TOOL_SWAP = true;
-  var SOUND_ON_STACK_TOPUP = false;   // fires while building; noisy on purpose off
-  var SOUND_ON_REACTIVE_REFILL = true;
+  let SOUND_ON_TOOL_SWAP = true;
+  let SOUND_ON_STACK_TOPUP = false;   // fires while building; noisy on purpose off
+  let SOUND_ON_REACTIVE_REFILL = true;
 
   // DELIBERATE REMOVAL
   // An empty slot looks identical whether you used the last item or yanked the
@@ -81,34 +78,34 @@
   //
   //   0  = no blackout, drops refill instantly (still governed by 1 and 2)
   //   20 = one second, long enough to drop a stack and walk away   (default)
-  var SUPPRESS_TICKS = 20;
+  let SUPPRESS_TICKS = 20;
 
   // Largest single-tick fall in stack size still read as consumption. Eating or
   // placing takes 1; pulling a stack out by hand takes far more than this.
-  var CONSUME_STEP_MAX = 4;
+  let CONSUME_STEP_MAX = 4;
   // --------------------------------------------------------------------
 
   // 0-8 hotbar, 9-35 main. 36-39 armor, 40 offhand -- leave those alone.
-  var SEARCH_MIN = 9;
-  var SEARCH_MAX = 36;
+  let SEARCH_MIN = 9;
+  let SEARCH_MAX = 36;
 
   // uuid -> { slot: int, item: Item } -- what the player held last tick
-  var lastHeld = {};
+  let lastHeld = {};
 
   // uuid -> ticks of refill blackout remaining, after a deliberate removal
-  var suppressTicks = {};
+  let suppressTicks = {};
 
   // uuid -> true while a container screen is open. Chests report both open
   // and close; the player's own inventory only ever reports close.
-  var screenOpen = {};
+  let screenOpen = {};
 
   // uuid -> true when a tool broke and its slot has not been handled yet
-  var toolBroke = {};
+  let toolBroke = {};
 
   // Arm the blackout and forget what was held, so nothing rushes back into the
   // slot now OR when the blackout lapses.
   function suppress(player) {
-    var key = player.uuid;
+    let key = player.uuid;
     suppressTicks[key] = SUPPRESS_TICKS;
     delete lastHeld[key];
   }
@@ -116,8 +113,8 @@
   // Resolved lazily on first use and cached. If the lookup or the packet
   // ever fails we log once and go silent -- a cosmetic pop must never be
   // able to break the refill itself.
-  var swapSound = null;
-  var swapSoundBroken = false;
+  let swapSound = null;
+  let swapSoundBroken = false;
 
   function playSwapSound(player) {
     if (!SWAP_SOUND || swapSoundBroken) return;
@@ -126,7 +123,7 @@
         swapSound = Registry.of('minecraft:sound_event').get(SWAP_SOUND);
       }
       // Vanilla's pickup pop is quiet, high and jittered a little each time.
-      var pitch = ((Math.random() - Math.random()) * 0.7 + 1.0) * SWAP_SOUND_PITCH;
+      let pitch = ((Math.random() - Math.random()) * 0.7 + 1.0) * SWAP_SOUND_PITCH;
       player.playNotifySound(swapSound, 'players', SWAP_SOUND_VOLUME, pitch);
     } catch (err) {
       swapSoundBroken = true;
@@ -140,7 +137,7 @@
 
   // Which of TOOL_TYPE_TAGS this tool carries, or null if none of them.
   function toolTypeOf(stack) {
-    var i;
+    let i;
     for (i = 0; i < TOOL_TYPE_TAGS.length; i++) {
       if (stack.hasTag(TOOL_TYPE_TAGS[i])) return TOOL_TYPE_TAGS[i];
     }
@@ -183,7 +180,7 @@
   }
 
   function rankLess(a, b) {
-    var i;
+    let i;
     for (i = 0; i < a.length; i++) {
       if (a[i] != b[i]) return a[i] < b[i];
     }
@@ -194,9 +191,9 @@
   // candidate must clear: pre-emptively we insist on a genuinely usable tool,
   // but once the old one has actually broken anything beats an empty hand.
   function findReplacementTool(inv, heldItem, heldType, exclude, minLeft) {
-    var i, stack, rank;
-    var bestSlot = -1;
-    var bestRank = null;
+    let i, stack, rank;
+    let bestSlot = -1;
+    let bestRank = null;
 
     for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       if (i == exclude) continue;
@@ -226,9 +223,9 @@
   // (equalsIgnoringCount) -- tipped arrows and fireworks stack to 64 but are
   // very much not interchangeable.
   function topUp(inv, held, sel) {
-    var i, stack, pulled;
-    var needed = held.getMaxStackSize() - held.getCount();
-    var grew = false;
+    let i, stack, pulled;
+    let needed = held.getMaxStackSize() - held.getCount();
+    let grew = false;
 
     for (i = SEARCH_MIN; i < SEARCH_MAX && needed > 0; i++) {
       if (i == sel) continue;
@@ -251,8 +248,8 @@
   // Only consulted when the held stack is down to its last item, so the scan
   // is skipped on almost every tick.
   function totalOf(inv, item) {
-    var i, stack;
-    var total = 0;
+    let i, stack;
+    let total = 0;
     for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       stack = inv.getStackInSlot(i);
       if (!stack.isEmpty() && stack.getItem() == item) total += stack.getCount();
@@ -261,7 +258,7 @@
   }
 
   function findByItem(inv, item, exclude) {
-    var i, stack;
+    let i, stack;
     for (i = SEARCH_MIN; i < SEARCH_MAX; i++) {
       if (i == exclude) continue;
       stack = inv.getStackInSlot(i);
@@ -271,14 +268,14 @@
   }
 
   PlayerEvents.tick(function (event) {
-    var player = event.player;
-    var inv = player.inventory;
-    var sel = player.selectedSlot;
-    var key = player.uuid;
-    var held = inv.getStackInSlot(sel);
-    var prev = lastHeld[key];
-    var src, count, fresh, worn;
-    var blackout, sameAsPrev, prevCount;
+    let player = event.player;
+    let inv = player.inventory;
+    let sel = player.selectedSlot;
+    let key = player.uuid;
+    let held = inv.getStackInSlot(sel);
+    let prev = lastHeld[key];
+    let src, count, fresh, worn;
+    let blackout, sameAsPrev, prevCount;
 
     sameAsPrev = prev && prev.slot == sel && prev.item == held.getItem();
     prevCount = sameAsPrev ? prev.count : -1;
@@ -436,7 +433,7 @@
   });
 
   PlayerEvents.loggedOut(function (event) {
-    var key = event.player.uuid;
+    let key = event.player.uuid;
     delete lastHeld[key];
     delete suppressTicks[key];
     delete screenOpen[key];

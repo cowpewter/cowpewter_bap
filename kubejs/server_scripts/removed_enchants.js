@@ -1,5 +1,3 @@
-// kubejs/server_scripts/removed_enchants.js
-//
 // No combat, so combat enchantments have no job, and curses are just
 // punishment. Enchantments are registry
 // entries and can't be unregistered; this removes every way to get one.
@@ -17,8 +15,6 @@
 //      and mob gear, raid vindicator axes, pillager crossbows. When an item carrying a removed enchantment
 //      lands in a player's inventory, it is swapped per REPLACEMENTS. Also
 //      cleans up old worlds.
-//
-// Rhino-safe style: var only, indexed loops, no arrows.
 
 (function () {
   // removed enchantment -> kept enchantment it turns into.
@@ -27,7 +23,7 @@
   // doesn't conflict with what's already on it; otherwise it's just removed.
   // Two removed enchantments mapping to one replacement keep the higher level.
   // null = no replacement, just remove it.
-  var REPLACEMENTS = {
+  let REPLACEMENTS = {
     // melee
     'minecraft:sharpness':             'minecraft:efficiency',
     'minecraft:smite':                 'minecraft:unbreaking',
@@ -57,16 +53,16 @@
     'minecraft:vanishing_curse':       null,
   };
 
-  var SOURCE_TAGS = [
+  let SOURCE_TAGS = [
     'minecraft:non_treasure',
     'minecraft:on_random_loot',
     'minecraft:tradeable',
   ];
 
-  var EnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper');
-  var Registries = Java.loadClass('net.minecraft.core.registries.Registries');
-  var ResourceKey = Java.loadClass('net.minecraft.resources.ResourceKey');
-  var ResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation');
+  let EnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper');
+  let Registries = Java.loadClass('net.minecraft.core.registries.Registries');
+  let ResourceKey = Java.loadClass('net.minecraft.resources.ResourceKey');
+  let ResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation');
 
   function idOf(holder) {
     return String(holder.getRegisteredName());
@@ -89,7 +85,7 @@
 
   function hasRemoved(stack) {
     // stored_enchantments for books, enchantments for everything else
-    var it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator();
+    let it = EnchantmentHelper.getEnchantmentsForCrafting(stack).keySet().iterator();
     while (it.hasNext()) {
       if (isRemoved(it.next())) return true;
     }
@@ -100,25 +96,25 @@
   // is a book left with no enchantments at all (only possible when every
   // replacement was null or conflicted with something already on it).
   function swapEnchantments(stack, registryAccess) {
-    var isBook = stack.id === 'minecraft:enchanted_book';
+    let isBook = stack.id === 'minecraft:enchanted_book';
     if (!hasRemoved(stack)) return false;
 
-    var left = EnchantmentHelper.updateEnchantments(stack, function (m) {
+    let left = EnchantmentHelper.updateEnchantments(stack, function (m) {
       // collect before removing; keySet is live
-      var swaps = [];
-      var keys = m.keySet().iterator();
+      let swaps = [];
+      let keys = m.keySet().iterator();
       while (keys.hasNext()) {
-        var h = keys.next();
+        let h = keys.next();
         if (isRemoved(h)) swaps.push({ to: REPLACEMENTS[idOf(h)], level: m.getLevel(h) });
       }
       m.removeIf(isRemoved);
 
-      var i;
+      let i;
       for (i = 0; i < swaps.length; i++) {
         if (swaps[i].to === null) continue;
-        var rep = lookup(registryAccess, swaps[i].to);
+        let rep = lookup(registryAccess, swaps[i].to);
         if (rep === null) continue;
-        var level = Math.min(swaps[i].level, rep.value().getMaxLevel());
+        let level = Math.min(swaps[i].level, rep.value().getMaxLevel());
         if (m.getLevel(rep) > 0) {
           m.upgrade(rep, level);   // already there: keep the higher level
           continue;
@@ -133,9 +129,9 @@
   }
 
   ServerEvents.tags('enchantment', function (event) {
-    var n = 0;
-    for (var id in REPLACEMENTS) {
-      for (var t = 0; t < SOURCE_TAGS.length; t++) {
+    let n = 0;
+    for (let id in REPLACEMENTS) {
+      for (let t = 0; t < SOURCE_TAGS.length; t++) {
         event.remove(SOURCE_TAGS[t], id);
       }
       n++;
@@ -145,9 +141,9 @@
 
   // Catch typos and replacements that are themselves removed.
   ServerEvents.loaded(function (event) {
-    var ra = event.server.registryAccess();
-    for (var id in REPLACEMENTS) {
-      var to = REPLACEMENTS[id];
+    let ra = event.server.registryAccess();
+    for (let id in REPLACEMENTS) {
+      let to = REPLACEMENTS[id];
       if (to === null) continue;
       if (REPLACEMENTS.hasOwnProperty(to)) {
         console.log('[cowpewter_bap] ' + id + ' is replaced by ' + to + ', which is also removed');
@@ -162,10 +158,10 @@
   // only a trigger: fix the real stacks by scanning the inventory.
   PlayerEvents.inventoryChanged(function (event) {
     if (!event.item || event.item.isEmpty() || !hasRemoved(event.item)) return;
-    var inv = event.player.inventory;
-    var ra = event.player.server.registryAccess();
-    for (var i = 0; i < inv.getContainerSize(); i++) {
-      var stack = inv.getItem(i);
+    let inv = event.player.inventory;
+    let ra = event.player.server.registryAccess();
+    for (let i = 0; i < inv.getContainerSize(); i++) {
+      let stack = inv.getItem(i);
       if (stack.isEmpty()) continue;
       if (swapEnchantments(stack, ra)) inv.setItem(i, Item.of('minecraft:book', stack.count));
     }

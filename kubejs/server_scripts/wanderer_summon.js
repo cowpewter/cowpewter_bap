@@ -12,9 +12,9 @@
   // /kubejs persistent-data entity @s remove trader_cooldown
 
   const canSummonNow = (player) => {
-    var pData = player.persistentData;
-    var lastSummonTime = pData.getLong(COOLDOWN_KEY) || 0;
-    var now = player.level.time;
+    let pData = player.persistentData;
+    let lastSummonTime = pData.getLong(COOLDOWN_KEY) || 0;
+    let now = player.level.time;
     return !lastSummonTime || now - lastSummonTime > COOLDOWN_DAYS * DAY_IN_TICKS;
   };
 
@@ -24,7 +24,7 @@
       (MAX_SUMMON_DELAY - MIN_SUMMON_DELAY)) + MIN_SUMMON_DELAY;
 
     server.scheduleInTicks(delay, () => {
-      var trader = level.createEntity('minecraft:wandering_trader');
+      let trader = level.createEntity('minecraft:wandering_trader');
       trader.setPos(pos.above());
       trader.spawn();
     });

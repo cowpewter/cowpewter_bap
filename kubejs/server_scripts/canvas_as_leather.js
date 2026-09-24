@@ -1,7 +1,5 @@
-// kubejs/server_scripts/canvas_as_leather.js
-
 (function () {
-  var MODS = [
+  let MODS = [
     'sophisticatedbackpacks',
     'sophisticatedcore'
   ];
@@ -9,7 +7,7 @@
   // Individual storage recipes outside those mods. Matched by recipe ID, since
   // Vanilla Backport registers its bundle as minecraft:bundle (a mod filter on
   // 'vanillabackport' would miss it). Vanilla leather armor stays leather-only.
-  var RECIPE_IDS = [
+  let RECIPE_IDS = [
     'minecraft:bundle'
   ];
 
@@ -20,7 +18,7 @@
 
   ServerEvents.recipes(event => {
     // covers the stragglers that hardcode the item
-    var i;
+    let i;
     for (i = 0; i < MODS.length; i++) {
       event.replaceInput(
         { mod: MODS[i] },

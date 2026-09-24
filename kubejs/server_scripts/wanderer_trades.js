@@ -1,10 +1,4 @@
-// kubejs/server_scripts/wanderer_trades.js
-// Turns the wandering trader into the pack's livestock supplier.
-// Requires MoreJS (morejs-neoforge-1.21.1-0.16.0 or newer).
-//
-// NOTE: on 1.21 builds the global is `MoreJS`, NOT `MoreJSEvents` as the
-// (2023-era) wiki shows. If this errors again, the name changed once more —
-// check the mod's changelog rather than the wiki.
+// Replaces Wandering Trader trades with custom livestock pool
 //
 // How the wanderer works: he has two internal trade levels.
 //   Level 1 = standard pool, he picks SEVERAL from it
@@ -14,8 +8,7 @@
 //
 // Vanilla draws 5 from level 1. SUPPLIES are kept OUT of that pool so they
 // don't crowd livestock out of those 5 slots; instead postUpdateOffers appends
-// SUPPLY_SLOTS of them after the draw. Old odds: 5 from 19 (26% for any one
-// animal). New odds: 5 from 15 (33%), plus supplies on top.
+// SUPPLY_SLOTS of them after the draw.
 
 (function () {
   const CLEAR_VANILLA = true;   // false = keep vanilla's saplings/dyes/etc alongside
@@ -73,7 +66,7 @@
   //
   // Distinct supplies each trader carries. 1 matches the old average (5 draws
   // from 19 with 4 supplies = ~1.05 per trader).
-  var SUPPLY_SLOTS = 1;
+  let SUPPLY_SLOTS = 1;
 
   const SUPPLIES = [
     // Mob drops with no source left in the pack. All gate storage and
@@ -118,9 +111,9 @@
   MoreJS.postUpdateOffers(function (event) {
     if (!event.isWanderer()) return;
 
-    var pool = SUPPLIES.slice();
-    var n = Math.min(SUPPLY_SLOTS, pool.length);
-    var i, pick, entry, trade, reqData;
+    let pool = SUPPLIES.slice();
+    let n = Math.min(SUPPLY_SLOTS, pool.length);
+    let i, pick, entry, trade, reqData;
     for (i = 0; i < n; i++) {
       pick = Math.floor(Math.random() * pool.length);
       entry = pool.splice(pick, 1)[0];
