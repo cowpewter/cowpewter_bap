@@ -23,8 +23,7 @@ RELEASE_OPTIONS = os.path.join(HERE, "release", "options.txt")
 ALLOW = [
     "config/*",
     "kubejs/*",
-    # icon.png deliberately NOT shipped: the pack icon must not be AI-generated,
-    # and the old one was. Re-add only once a human-made icon.png is in place.
+    "icon.png",
 ]
 
 # Exceptions inside ALLOW. Each is private or per-install.

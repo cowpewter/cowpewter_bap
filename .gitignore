@@ -12,6 +12,7 @@ __pycache__/
 /tools/fd_recipes/
 !/kubejs/
 !/config/
+!/icon.png
 
 # Shipped shader: track only its Modrinth metadata (the zip is downloaded by
 # the .mrpack). Solas/Unbound are local-only.
