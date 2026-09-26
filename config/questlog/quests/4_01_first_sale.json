@@ -11,12 +11,12 @@
       "type": "questlog:block_place",
       "block": "cowpewter_bap:shipping_bin",
       "required_amount": 1,
-      "name": "Craft and place a Shipping Bin"
+      "name": "Place a Shipping Bin"
     },
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/first_sale",
-      "name": "Sell your first item"
+      "name": "Sell an item"
     }
   ],
   "chapter": "questlog:market"

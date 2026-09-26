@@ -1,6 +1,6 @@
 {
   "title": "Comfort & Nourishment",
-  "description": "With your new kitchen, you can now cook both Meals and Feasts. Meals will provide Comfort when eaten, providing a short period of natural health regeneration. Feasts, which, like Vanilla Cake, must be placed before eating, provide Nourishment. Nourishment prevents the loss of Saturation through actions like running and jumping, and lasts much longer than Comfort.",
+  "description": "With your new kitchen, you can now cook both Meals and Feasts.\n\nMeals will provide Comfort when eaten, providing a short period of natural health regeneration.\n\nFeasts, which, like Vanilla Cake, must be placed before eating, provide Nourishment. Nourishment prevents the loss of Saturation through actions like running and jumping, and lasts much longer than Comfort.",
   "icon": {
     "item": "farmersdelight:beef_stew"
   },

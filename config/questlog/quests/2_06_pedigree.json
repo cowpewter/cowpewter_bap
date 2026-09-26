@@ -1,6 +1,6 @@
 {
   "title": "Pedigree",
-  "description": "You're more than just a rancher. You are a force of Unnatural Selection, carefully planning out your bloodlines.",
+  "description": "You're more than just a rancher. You are a force of Unnatural Selection, carefully planning out your bloodlines.\n\nBreed a bloodline out to the 10th generation.",
   "icon": {
     "item": "minecraft:horse_spawn_egg"
   },
@@ -10,7 +10,7 @@
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/pedigree",
-      "name": "Breed a line out to generation 10"
+      "name": "Breed to Generation 10"
     }
   ],
   "chapter": "questlog:barn"

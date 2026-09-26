@@ -1,17 +1,17 @@
 {
   "title": "Copper",
-  "description": "In this pack, Copper Ore only drops 1 Raw Copper per block (unless you have Fortune). All of your basic tools can be crafted with Copper. Copper tools have the same mining level as Stone, with the mining speed of Iron, and a durability in between the two. You can also craft Shears and Buckets from Copper, two vital pieces of farm equipment. This pack also adds the Copper Bell, which can be rung to summon a Wandering Trader once per day.",
+  "description": "In this pack, Copper Ore only drops 1 Raw Copper per block (plus any bonus from Fortune). All of your basic tools can be crafted with Copper. Copper tools have the same mining level as Stone, with the mining speed of Iron, and a durability in between the two.\n\nYou can also craft Shears and Buckets from Copper, two vital pieces of farm equipment.\n\nThis pack also adds the Copper Bell, which can be rung to summon a Wandering Trader once per day.",
   "icon": {
     "item": "minecraft:copper_ingot"
   },
-  "sort_order": 5,
+  "sort_order": 6,
   "requirements": [],
   "objectives": [
     {
       "type": "questlog:item_obtain",
       "item": "minecraft:raw_copper",
       "required_amount": 8,
-      "name": "Mine least 8 Raw Copper"
+      "name": "Acquire 8 Raw Copper"
     },
     {
       "type": "questlog:item_obtain",
@@ -23,13 +23,13 @@
       "type": "questlog:item_obtain",
       "item": "more_useful_copper:copper_shears",
       "required_amount": 1,
-      "name": "Craft a pair of Shears"
+      "name": "Craft Copper Shears"
     },
     {
       "type": "questlog:block_place",
       "block": "more_useful_copper:copper_bell",
       "required_amount": 1,
-      "name": "Craft and place a Copper Bell"
+      "name": "Place a Copper Bell"
     }
   ],
   "chapter": "questlog:main"

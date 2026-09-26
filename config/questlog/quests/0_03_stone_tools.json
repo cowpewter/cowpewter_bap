@@ -1,41 +1,41 @@
 {
   "title": "Stone Tools",
-  "description": "Wooden tools won't take you very far. Luckily you're pretty handy. Craft a full set of stone tools. Remember, there are no swords here, but there is a Knife, made from Flint and a Stick. To find Flint, break Gravel with a Shovel, either on the ground or a Cutting Board.",
+  "description": "Wooden tools won't take you very far. Good thing you're pretty handy.\n\nCraft a full set of stone tools. Remember, there are no swords to be found in these lands, but you can craft a Knife, made from Flint and a Stick.\n\nFlint can be crafted from 3 Gravel, or randomly obtained when breaking Gravel, either placed on the ground or on the Cutting Board.",
   "icon": {
     "item": "minecraft:stone_hoe"
   },
-  "sort_order": 4,
+  "sort_order": 5,
   "requirements": [],
   "objectives": [
     {
       "type": "questlog:item_obtain",
       "item": "minecraft:stone_pickaxe",
       "required_amount": 1,
-      "name": "Craft a stone pickaxe"
+      "name": "Craft a Stone Pickaxe"
     },
     {
       "type": "questlog:item_obtain",
       "item": "minecraft:stone_axe",
       "required_amount": 1,
-      "name": "Craft a stone axe"
+      "name": "Craft a Stone Axe"
     },
     {
       "type": "questlog:item_obtain",
       "item": "minecraft:stone_shovel",
       "required_amount": 1,
-      "name": "Craft a stone shovel"
+      "name": "Craft a Stone Shovel"
     },
     {
       "type": "questlog:item_obtain",
       "item": "minecraft:stone_hoe",
       "required_amount": 1,
-      "name": "Craft a stone hoe"
+      "name": "Craft a Stone Hoe"
     },
     {
       "type": "questlog:item_obtain",
       "item": "farmersdelight:flint_knife",
       "required_amount": 1,
-      "name": "Craft a flint knife"
+      "name": "Craft a Flint Knife"
     }
   ],
   "chapter": "questlog:main"

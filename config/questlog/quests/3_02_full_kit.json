@@ -1,6 +1,6 @@
 {
   "title": "Professional Kitchen",
-  "description": "To cook more complex meals, you're going to need a fully kitted out kitchen. Craft the following to create your dream kitchen:",
+  "description": "To cook more complex meals, you're going to need a fully kitted out kitchen. Craft each of the following to build your dream kitchen:",
   "icon": {
     "item": "farmersdelight:stove"
   },
@@ -35,7 +35,7 @@
       "type": "questlog:item_obtain",
       "item": "minecraft:glass_bottle",
       "required_amount": 6,
-      "name": "Craft some Glass Bottles"
+      "name": "Craft some Bottles"
     }
   ],
   "chapter": "questlog:kitchen"

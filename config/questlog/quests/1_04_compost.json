@@ -17,13 +17,13 @@
       "type": "questlog:block_place",
       "block": "farmersdelight:organic_compost",
       "required_amount": 1,
-      "name": "Place your new compost down to mature"
+      "name": "Place Compost to mature"
     },
     {
       "type": "questlog:item_obtain",
       "item": "farmersdelight:rich_soil",
       "required_amount": 1,
-      "name": "Harvest your newly improved Rich Soil"
+      "name": "Harvest Rich Soil"
     }
   ],
   "chapter": "questlog:field"

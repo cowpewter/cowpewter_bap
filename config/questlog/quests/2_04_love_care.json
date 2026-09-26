@@ -1,6 +1,6 @@
 {
   "title": "Love & Care",
-  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty!\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's genetics.\n\nAnd don't forget to give your favorites a name! Not only are Name Tags craftable in this pack, but they do not require an Anvil to use. Simply right-click the air while holding a Name Tag to set the name.",
+  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty!\n\nIf one of your animals does fall ill, cure them with Animal Medicine.\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's genetics.\n\nDon't forget to give your favorites a name! Not only are Name Tags craftable in this pack, but they do not require an Anvil to use. Simply right-click the air while holding a Name Tag to set the name.",
   "icon": {
     "item": "animalhusbandry:brush"
   },
@@ -17,25 +17,31 @@
       "type": "questlog:block_place",
       "block": "animalhusbandry:brushing_post",
       "required_amount": 1,
-      "name": "Craft and place a Brushing Post"
+      "name": "Place a Brushing Post"
     },
     {
       "type": "questlog:block_place",
       "block": "animalhusbandry:feeding_trough",
       "required_amount": 1,
-      "name": "Craft and place a Feeding Trough"
+      "name": "Place a Feeding Trough"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "item": "animalhusbandry:fertility_potion",
+      "required_amount": 1,
+      "name": "Craft a Fertility Potion"
     },
     {
       "type": "questlog:block_place",
       "block": "animalhusbandry:chicken_nest",
       "required_amount": 1,
-      "name": "Craft and place a Chicken Nest"
+      "name": "Place a Chicken Nest"
     },
     {
       "type": "questlog:item_obtain",
       "item": "animalhusbandry:magnifying_glass",
       "required_amount": 1,
-      "name": "Craft a Farm Magnifying Glass"
+      "name": "Craft a Magnifying Glass"
     },
     {
       "type": "questlog:item_obtain",

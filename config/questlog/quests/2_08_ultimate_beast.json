@@ -1,6 +1,6 @@
 {
   "title": "Ultimate Beast",
-  "description": "Frankly I'm frightened. Of you? Or of the Beast you've created? ... Yes.",
+  "description": "Frankly I'm frightened. Of you? Or of the Beast you've created? ... Yes.\n\nBreed a Beast with all maximized stats.",
   "icon": {
     "item": "minecraft:goat_spawn_egg"
   },
@@ -10,7 +10,7 @@
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/ultimate_beast",
-      "name": "Breed an animal with all four stats over 99%"
+      "name": "All stats over 99%"
     }
   ],
   "chapter": "questlog:barn"

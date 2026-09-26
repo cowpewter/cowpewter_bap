@@ -1,6 +1,6 @@
 {
   "title": "Seedling",
-  "description": "Every farm has to start somewhere. Obtain your first seeds or plantable root vegetable. You can either break grass to find wheat seeds, or find patches of vegetables growing in the wild.",
+  "description": "Every farm has to start somewhere. Obtain your first seeds or plantable root vegetable.\n\nYou can break grass to find Wheat Seeds, or explore to find patches of vegetables growing in the wild.\n\nCabbages and Beetroot can be found on Beaches.\n\nPotatoes can be found in cold biomes.\n\nOnions and Carrots can be found in temperate biomes.\n\nTomatoes are found in arid biomes.\n\nAnd Rice can be found in Swamps and Jungles.\n\nIf you need help finding a particular biome, you can craft a Nature's Compass to point you in the right direction.",
   "icon": {
     "item": "minecraft:wheat_seeds"
   },
@@ -11,7 +11,7 @@
       "type": "questlog:item_obtain",
       "item": "#cowpewter_bap:plantable",
       "required_amount": 1,
-      "name": "Find something you can grow"
+      "name": "Find something plantable"
     }
   ],
   "chapter": "questlog:field"

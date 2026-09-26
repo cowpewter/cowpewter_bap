@@ -1,6 +1,6 @@
 {
   "title": "Basic Breeding",
-  "description": "Breeding works a little differently in this pack. Animals have sexes, and instead of just feeding any two animals of the same type, you will need a breeding pair that is happy, comfortable, and well-fed. Happy animals will breed on their own.\n\nFeel like it's taking too long? You can use Fertility Potions to increase the chances that a pregnancy will happen, as well as influence the quality of the baby born.",
+  "description": "Breeding works a little differently in this pack. Animals have sexes, so instead of just feeding any two animals of the same type, you will need to maintain a breeding pair that is happy, comfortable, and well-fed. Happy animals will breed on their own.\n\nFeel like it's taking too long? You can use Fertility Potions to increase the chances that a pregnancy will happen, as well as influence the quality of the baby born.",
   "icon": {
     "item": "minecraft:sheep_spawn_egg"
   },

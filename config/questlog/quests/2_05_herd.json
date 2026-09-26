@@ -10,7 +10,7 @@
     {
       "type": "questlog:advancement",
       "advancement": "cowpewter_bap:quest/herd",
-      "name": "Own at least 25 of any animal"
+      "name": "Own 25+ of any animal"
     }
   ],
   "chapter": "questlog:barn"

@@ -1,6 +1,6 @@
 {
   "title": "Country Roads",
-  "description": "Long distance travel in this pack is handled by Via Romana. Via Romana lets you build roads and chart them for travel benefits.\n\nTo make a road, build a path out of any non-naturally occuring blocks that is at least 3 blocks wide. Then, right-click your Charting Map at one end of the road. You should see wispy white trails as you walk the road, committing the route to your Charting Map.\n\nCharted roads increase your movement speed, and you can establish fast travel points anywhere along your charted roads by placing a sign and clicking 'Add to Path'. Once a sign is linked, you can click it to teleport to any other linked sign along the road. Mounts and carried entities will teleport with you. Leashed entities will be left behind and the lead will break. So pick that sheep up before you teleport!",
+  "description": "Long distance travel in this pack is handled by Via Romana. Via Romana lets you build roads and map them for travel benefits.\n\nTo make a road, build a path out of any non-naturally occuring blocks that is at least 3 blocks wide. Then, right-click your Charting Map at one end of the road. You should see wispy white trails as you walk the road, committing the route to your Charting Map.\n\nCharted roads increase your movement speed, and you can establish fast travel points anywhere along your charted roads by placing a sign and clicking 'Add to Path'.\n\nOnce a sign is linked, you can click it to teleport to any other linked sign along the road. Mounts and carried entities will teleport with you. Leashed entities will be left behind and the lead will break. So pick that sheep up before you teleport!",
   "icon": {
     "item": "via_romana:charting_map"
   },
@@ -16,7 +16,7 @@
     {
       "type": "questlog:advancement",
       "advancement": "via_romana:story/a_strand_type_game",
-      "name": "Chart your first road"
+      "name": "Chart a road"
     }
   ],
   "chapter": "questlog:storage"
