@@ -21,7 +21,7 @@
     },
     {
       "type": "questlog:item_obtain",
-      "item": "sophisticatedbackpacks:backpack",
+      "item": "#cowpewter_bap:backpacks",
       "required_amount": 1,
       "name": "Craft a Backpack"
     }
