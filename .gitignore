@@ -4,6 +4,7 @@
 !/.github
 !/.eslintrc.json
 !/.gitignore
+!/LICENSE
 !/package.json
 !/package-lock.json
 !/docs/
