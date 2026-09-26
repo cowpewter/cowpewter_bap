@@ -70,13 +70,16 @@
 
   const SUPPLIES = [
     // Mob drops with no source left in the pack. All gate storage and
-    // automation (Sophisticated upgrades, sticky pistons, cardboard boxes), not
+    // automation (Sophisticated upgrades, sticky pistons, potion brewing), not
     // combat — so they're consumable components, priced below livestock and with
     // generous uses since players need them in batches.
-    // but you really dont need many ghast tears i think one at a time is fine.
     ['minecraft:ender_pearl',   1200, 1800, 4],
     ['minecraft:blaze_rod',     1400, 2000, 4],
-    ['minecraft:ghast_tear',    1800, 2600, 1],
+    ['minecraft:breeze_rod',    1400, 2000, 4],
+    ['minecraft:gunpowder',     1000, 1400, 4],
+    ['minecraft:spider_eye',    1000, 1400, 4],
+    ['minecraft:phantom_membrane', 1200, 1800, 4],
+    ['minecraft:ghast_tear',    1800, 2600, 4],
   ];
 
   MoreJS.wandererTrades(event => {

@@ -26,3 +26,5 @@
 6. Added Animal Medicine object to Love & Care quest
 
 7. Animal Medicine can be made with more mushrooms
+
+8. Added a few missing mob drops to Wandering Trader, generally only needed for alchemy or sophisticated upgrades
