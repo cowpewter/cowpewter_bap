@@ -1,6 +1,6 @@
 {
   "title": "The Shipping Bin",
-  "description": "The Shipping Bin is how you sell your produce, animal products, and crafted meals. Anything that can be sold in the Shipping Bin will have a unit price listed in its tooltip. You can also hover an item in JEI to see the same tooltip.\n\nTo sell items, right-click on the Shipping Bin, insert your items, then press Escape to close the Bin.\nCareful! Anything inside the bin when it is closed will be automatically sold.\n\nYour profits will be delivered directly to your Coin Pouch. You can open your Coin Pouch with P. The Coin Pouch automatically condenses smaller denominations into larger ones. Larger Coins can be broken down into smaller at any Crafting Table.",
+  "description": "The Shipping Bin is how you sell your produce, animal products, and crafted meals. Anything that can be sold in the Shipping Bin will have a unit price listed in its tooltip. You can also hover an item in JEI to see the same tooltip.\n\nTo sell items, right-click on the Shipping Bin, insert your items, then press Escape to close the Bin.\n\nCareful! Anything inside the bin when it is closed will be automatically sold.\n\nYour profits will be delivered directly to your Coin Pouch. You can open your Coin Pouch with P. The Coin Pouch automatically condenses smaller denominations into larger ones. Larger Coins can be broken down into smaller at any Crafting Table.",
   "icon": {
     "item": "cowpewter_bap:coin_100"
   },

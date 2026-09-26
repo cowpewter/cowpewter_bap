@@ -15,4 +15,3 @@
 4. Custom main menu pano
 
 5. Use American spelling of "Plow"
-

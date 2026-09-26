@@ -1,4 +1,4 @@
-# Changelog v0.4.1-beta to v1.0.0-release
+# Changelog v1.0.0-release to v1.0.1-release
 
 ## Removed
 
@@ -9,10 +9,11 @@
 1. Flint can now be crafted from 3 Gravel
 
 2. Animal Husbandry config tweaks:
-  * Disabled death chance from sickness
-  * Reduced sickness chance across the board
-  * Reduced gestation times across the board
-  * Reduced Truffle Hunt success rate
+
+* Disabled death chance from sickness
+* Reduced sickness chance across the board
+* Reduced gestation times across the board
+* Reduced Truffle Hunt success rate
 
 3. Backpack quest objective now triggers on any level backpack
 
@@ -22,6 +23,6 @@
 
 6. Added informational JEI chapter to quests
 
-6. Added Animal Medicine object to Love & Care
+6. Added Animal Medicine object to Love & Care quest
 
 7. Animal Medicine can be made with more mushrooms

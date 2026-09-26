@@ -1,6 +1,6 @@
 {
   "title": "Compost",
-  "description": "The soil here is fertile, but you know you can make it even better.\n\nCraft Organic Compost from Dirt, Tree Bark, Bone Meal, and Straw.\nTree Bark can be obtained by stripping Logs on the Cutting Board with an Axe, and Straw can be obtained from cutting tall grass with a Knife. Then place your Organic Compost outdoors to mature into Rich Soil. Sunlight, nearby water, and mushrooms all accelerate the process.\n\nTill your new soil into Farmland, and your crops will thrive.",
+  "description": "The soil here is fertile, but you know you can make it even better.\n\nCraft Organic Compost from Dirt, Tree Bark, Bone Meal, and Straw.\n\nTree Bark can be obtained by stripping Logs on the Cutting Board with an Axe, and Straw can be obtained from cutting tall grass with a Knife. Then place your Organic Compost outdoors to mature into Rich Soil. Sunlight, nearby water, and mushrooms all accelerate the process.\n\nTill your new soil into Farmland, and your crops will thrive.",
   "icon": {
     "item": "farmersdelight:organic_compost"
   },

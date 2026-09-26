@@ -1,6 +1,6 @@
 {
   "title": "Just Enough Items (JEI)",
-  "description": "Not sure how to find or craft something? JEI has your back.\n\nWhen you open your Inventory screen (default E), you may have noticed the giant block of items over on the right-hand side of your screen. Welcome to every modded Minecraft player's best friend: JEI.\n\nThe search bar at the bottom allows you to search for any item in the game.\nLeft-click an item to bring up a screen showing all the ways you can craft or acquire that item.\nRight-click an item to show all the ways you can use that item to create other things.",
+  "description": "Not sure how to find or craft something? JEI has your back.\n\nWhen you open your Inventory screen (default E), you may have noticed the giant block of items over on the right-hand side of your screen. Welcome to every modded Minecraft player's best friend: JEI.\n\nThe search bar at the bottom allows you to search for any item in the game.\n\nLeft-click an item to bring up a screen showing all the ways you can craft or acquire that item.\n\nRight-click an item to show all the ways you can use that item to create other things.",
   "icon": {
     "item": "minecraft:crafting_table"
   },

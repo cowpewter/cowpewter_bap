@@ -27,9 +27,9 @@
     },
     {
       "type": "questlog:item_obtain",
-      "item": "animalhusbandry:fertility_potion",
+      "item": "animalhusbandry:animal_medicine",
       "required_amount": 1,
-      "name": "Craft a Fertility Potion"
+      "name": "Craft Animal Medicine"
     },
     {
       "type": "questlog:block_place",
