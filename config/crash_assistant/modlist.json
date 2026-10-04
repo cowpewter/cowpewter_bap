@@ -461,14 +461,6 @@
     "curseForgeHash": 2808038058,
     "modrinthHash": "9563692efb708b6b568df27a01ec52f6311928ef"
   },
-  "firstperson-neoforge-2.7.2-mc1.21.1.jar": {
-    "jarName": "firstperson-neoforge-2.7.2-mc1.21.1.jar",
-    "modId": "firstperson",
-    "name": "FirstPerson",
-    "version": "2.7.2",
-    "curseForgeHash": 2493303665,
-    "modrinthHash": "8faf96d7c3c12eaec819b4e273e58c048e8de125"
-  },
   "fixboatbreak-neoforge-1.21.1-1.0.0.jar": {
     "jarName": "fixboatbreak-neoforge-1.21.1-1.0.0.jar",
     "modId": "fixboatbreak",
@@ -697,6 +689,14 @@
     "version": "2101.7.2-build.377",
     "curseForgeHash": 2817384932,
     "modrinthHash": "7313fcd99318834c642ee9f3a05ed7fd7bcb6ef4"
+  },
+  "kubejsdelight-1.1.6.jar": {
+    "jarName": "kubejsdelight-1.1.6.jar",
+    "modId": "kubejsdelight",
+    "name": "KubeJSDelight",
+    "version": "1.1.6",
+    "curseForgeHash": 1762483755,
+    "modrinthHash": "66a5de83677d38828242ab3dc96bf1b6f2771198"
   },
   "lambdynamiclights-4.8.11+1.21.1.jar": {
     "jarName": "lambdynamiclights-4.8.11+1.21.1.jar",

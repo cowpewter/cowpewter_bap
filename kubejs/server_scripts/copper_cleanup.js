@@ -52,6 +52,13 @@
     ALL_IDS.forEach(item => {
       event.remove({ output: item });
     });
+
+    // Also modify copper bell to take rope
+    event.replaceInput(
+      { output: 'more_useful_copper:copper_bell'},
+      'minecraft:string',
+      'farmersdelight:rope'
+    );
   });
 
   // Loot tables
