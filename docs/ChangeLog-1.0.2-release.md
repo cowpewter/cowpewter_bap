@@ -19,3 +19,5 @@ KubeJS Delight
 4. Copper Bell now craftable with Farmers Delight Rope instead of String, so that Trader summon is not gated by Sheep
 
 5. Minor quest text tweaks to add more info
+
+6. Fixed Animal Husbandry Feeding Trough, Chicken Nest, and Brushing Post not dropping self when broken

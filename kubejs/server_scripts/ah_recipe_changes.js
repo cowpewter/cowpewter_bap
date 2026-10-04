@@ -14,7 +14,7 @@
       'animalhusbandry:fertility_potion',
       2,
       200,
-      'minecraft:glass_bottle',
+      'minecraft:glass_bottle'
     );
   });
 })();
