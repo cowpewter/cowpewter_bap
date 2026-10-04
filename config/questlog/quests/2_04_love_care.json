@@ -1,10 +1,10 @@
 {
   "title": "Love & Care",
-  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty!\n\nIf one of your animals does fall ill, cure them with Animal Medicine.\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's genetics.\n\nDon't forget to give your favorites a name! Not only are Name Tags craftable in this pack, but they do not require an Anvil to use. Simply right-click the air while holding a Name Tag to set the name.",
+  "description": "It's important to keep your animals happy and well-cared for. Here's some tools to help you out.\n\nThe Grooming Brush and Brushing Post allow you to groom your animals, keeping them clean, happy, and healthy.\n\nThe Feeding Trough allows animals to feed themselves when they get hungry. Just don't let it run empty! Right-clck the Trough with food in hand to fill it.\n\nIf one of your animals does fall ill, cure them with Animal Medicine. You can find Truffles anywhere you find happy Pigs, both wild and domesticated.\n\nWithout a nest, your chickens will lay their eggs anywhere they feel like. Put a Chicken Nest in their enclosure, and it will collect the eggs in one place for you, held safely so they do not despawn.\n\nThe Farm Magnifying Glass allows you to see a given animal's health stats.\n\nAnd the Farm Ledger will you show you a given animal's sex and genetics.\n\nDon't forget to give your favorites a name! Not only are Name Tags craftable in this pack, but they do not require an Anvil to use. Simply right-click the air while holding a Name Tag to set the name.",
   "icon": {
     "item": "animalhusbandry:brush"
   },
-  "sort_order": 3,
+  "sort_order": 2,
   "requirements": [],
   "objectives": [
     {
